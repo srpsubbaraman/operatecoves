@@ -1,0 +1,161 @@
+
+<!-- 
+<h2>Estimation</h2>
+
+<div>
+    <ul>
+        <li><strong>Client Name:</strong> <pre>{{ detailedInformation["0"].clientName }}</pre></li>
+        <li><strong>Project Name:</strong> <pre>{{ detailedInformation["0"].projectName }}</pre></li>
+        <li><strong>Created Date:</strong> <pre>{{ detailedInformation["0"].quoteCrtDate }}</pre></li>
+        
+        <div id="ngfor" *ngFor="let info of detailedInformation">
+            <li><strong>Functional Effort:</strong> <pre>{{ info.feEffort }}</pre></li>
+            <li><strong>Technical Effort:</strong> <pre>{{ info.teEffort }}</pre></li>
+        
+        <li><strong>QA Effort:</strong> <pre>{{ info.qaEffort }}</pre></li>
+        <li><strong>RT Effort:</strong> <pre>{{ info.rtEffort }}</pre></li>
+        
+        <li><strong>FAT Effort:</strong> <pre>{{ info.fatEffort }}</pre></li>
+        
+
+
+
+        </div>
+    </ul>
+</div> -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+<div class="full">
+    
+    <i class="material-icons" style="cursor: pointer;margin-right: 10px;" title="Save as PDF" (click)="downloadPDF()">save_alt</i>
+    <!-- <i class="material-icons" style="cursor: pointer;" (click)="openPrintDialog()">print</i> -->
+    <!-- <button class="close"  (click)="close()">Close</button> -->
+
+    
+    
+<div class="invoice" #containerFluid #contentToExport>
+    <h1>Estimation</h1>
+    <h3>Quote #{{detailedInformation["0"].quoteID}}</h3>
+    <div class="billing-info">
+        <p><b>Client Name: </b> {{ detailedInformation[0].clientName }}</p>
+        <p><b>Project Name: </b> {{ detailedInformation[0].projectName }}</p>
+        <p><b>Total Effort:</b> {{detailedInformation[detailedInformation.length - 1].totalEff}} </p>
+        <p><b>Created Date: </b> {{ detailedInformation[0].quoteCrtDate }}</p>
+        <p><b>Printed Date:</b> {{Date}}</p>
+       
+    </div>
+
+    <table id="effortTable" >
+        <thead>
+            <tr>
+                <th>Description</th>
+                <th>Functional Effort</th>
+                <th>Technical Effort</th>
+                <th>FAT Effort</th>
+                <th>QA Effort</th>
+                <th>RT Effort</th>
+            </tr>
+        </thead>
+        <tbody id="effortRows">
+            <tr *ngFor="let info of detailedInformation">
+                <td>{{ info.desc }}</td>
+
+                <td>
+                    <tr> <label>Config</label>     {{ info.feConfig }}</tr>  
+                    <tr> <label>Analyse RD</label>     {{ info.feAnalyseRD }}</tr>   
+                    <tr> <label>SUC</label>     {{ info.feSUC }}</tr>   
+                    <tr> <label>SUC Review</label>     {{ info.feSUCReview }}</tr>   
+                    <tr> <label>UAT Support</label>     {{ info.feUATSupport }}</tr>   
+                    <tr> <label>Crt Launch Del</label>     {{ info.feCrtLaunchDel }}</tr> 
+
+
+                    <tr class="total"> <label>Functional Total Effort</label>     {{ info.feEffort }}</tr>   
+                </td>
+
+
+                <td>
+                    <tr><label>Coding</label> {{ info.teCod }}</tr>
+                    <tr><label>SUC Analysis</label> {{ info.teSUCAnalysis }}</tr>
+                    <tr><label>Detailed Design</label> {{ info.teDetailedDesign }}</tr>
+                    <tr><label>Design Review</label> {{ info.teDesignReview }}</tr>
+                    <tr><label>Code Review</label> {{ info.teCodeReview }}</tr>
+                    <tr><label>Developer Testing</label> {{ info.teDevTest }}</tr>
+                
+                    
+                    <tr class="total"><label>Technical Total Effort</label>   {{ info.teEffort }}</tr>
+                </td>
+
+
+                <td>
+                    <tr><label>Test Design Review</label> {{ info.fatDesignReview }}</tr>
+                    <tr><label>Test Cases</label> {{ info.fatTestCases }}</tr>
+                    <tr><label>Test Execution</label> {{ info.fatTestExe }}</tr>
+                    <tr><label>Analysis & KT</label> {{ info.fatAutoAnalysisKT }}</tr>
+                    <tr><label>Manual Execution</label> {{ info.fatAutoManualExec }}</tr>
+                    <tr><label>Test Script Design</label> {{ info.fatAutoTSDesign }}</tr>
+                    <tr><label>Script Execution</label> {{ info.fatScriptExe }}</tr>
+
+
+                    <tr class="total"><label>FAT Total Effort</label> {{ info.fatEffort }}</tr>
+                </td>
+
+
+                <td>
+                    <tr><label>Test Design Review</label> {{ info.qasDesignReview }}</tr> 
+                    <tr><label>Test Cases</label> {{ info.qasTestCases }}</tr> 
+                    <tr><label>Test Execution</label> {{ info.qasTestExe }}</tr> 
+                    <tr><label>Analysis & KT</label> {{ info.qasAutoAnalysisKT }}</tr> 
+                    <tr><label>Manual Execution</label> {{ info.qasAutoManualExec }}</tr> 
+                    <tr><label>Test Script Design</label> {{ info.qasAutoTSDesign }}</tr> 
+                    <tr><label>Script Execution</label> {{ info.qasScriptExe }}</tr> 
+
+
+                   <tr class="total"><label>QAS Total Effort</label> {{ info.qaEffort }}</tr> 
+                </td>
+
+
+                <td>
+                    <tr><label>Test Design Review</label> {{ info.rtDesignReview }}</tr>
+                    <tr><label>Test Cases</label> {{ info.rtTestCases }}</tr>
+                    <tr><label>Test Execution</label> {{ info.rtTestExe }}</tr>
+                    <tr><label>Analysis & KT</label> {{ info.rtAutoAnalysisKT }}</tr>
+                    <tr><label>Manual Execution</label> {{ info.rtAutoManualExec }}</tr>
+                    <tr><label>Test Script Design</label> {{ info.rtAutoTSDesign }}</tr>
+                    <tr><label>Test Description</label> {{ info.rtScriptExe }}</tr>
+
+                    
+                    <tr class="total"><label>RT Total Effort</label> {{ info.rtEffort }}</tr>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+</div>
+
+<!-- <script>
+    document.getElementById("effortTable").addEventListener("input", function (event) {
+        var table = document.getElementById("effortTable");
+        var lastRow = table.rows[table.rows.length - 1];
+
+        for (var i = 0; i < lastRow.cells.length; i++) {
+            if (lastRow.cells[i].textContent.trim() === "") {
+                // If any cell in the last row is empty, do not add a new row
+                return;
+            }
+        }
+
+        // All cells in the last row are filled, add a new row
+        addEffortRow();
+    });
+
+    function addEffortRow() {
+        var table = document.getElementById("effortTable");
+        var newRow = table.insertRow(table.rows.length);
+
+        for (var i = 0; i < 6; i++) { // Update the loop to match the number of cells in your table
+            var cell = newRow.insertCell(i);
+            cell.appendChild(document.createTextNode(""));
+        }
+    }
+</script>
+
+ -->

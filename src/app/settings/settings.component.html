@@ -1,0 +1,99 @@
+<div class="header">
+  Settings
+</div>
+<hr>
+<mat-sidenav-container class="sidenav-container" style="width: fit-content; height: 350px">
+  <mat-sidenav #sidenav mode="side" opened>
+    <mat-nav-list>
+      <a mat-list-item (click)="showAccount()" style="width: 15rem;">User Account</a>
+      <a mat-list-item (click)="showAppearance()">Appearance</a>
+      <a mat-list-item (click)="showLanguage()">Language</a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <div *ngIf="isAccount">
+      <div class="top2">Account</div>
+      <div style="padding-left: 6rem;">
+        <label>Name: </label>
+        <input id="name" style="margin-left: 12px;" />
+      </div><br>
+      <div style="padding-left: 6rem;">
+        <label>E-Mail: </label>
+        <input id="email" style="margin-left: 12px;" />
+      </div>
+    </div>
+    <div *ngIf="isAppearance">
+      <div class="top">Appearance</div>
+      <div class="top1">Theme</div>
+      <hr>
+      <mat-nav-list>
+        <mat-list-item (click)="setTheme('light')" [ngClass]="{ 'selected': selectedTheme === 'light' }">
+          ⚪ Light-Theme
+          <span *ngIf="selectedTheme === 'light'">&#10004;</span>
+        </mat-list-item>
+        <mat-list-item (click)="setTheme('dark')" [ngClass]="{ 'selected': selectedTheme === 'dark' }">
+          ⚫ Dark-Theme
+          <span *ngIf="selectedTheme === 'dark'">&#10004;</span>
+        </mat-list-item>
+        <mat-list-item (click)="setTheme('purple')" [ngClass]="{ 'selected': selectedTheme === 'purple' }">
+          🟣 Purple-Theme
+          <span *ngIf="selectedTheme === 'purple'">&#10004;</span>
+        </mat-list-item>
+        <mat-list-item (click)="setTheme('green')" [ngClass]="{ 'selected': selectedTheme === 'green' }">
+          🟢 Green-Theme
+          <span *ngIf="selectedTheme === 'green'">&#10004;</span>
+        </mat-list-item>
+        <mat-list-item (click)="setTheme('pale')" [ngClass]="{ 'selected': selectedTheme === 'pale' }">
+          🟠 Pale-Theme
+          <span *ngIf="selectedTheme === 'pale'">&#10004;</span>
+        </mat-list-item>
+        <mat-list-item (click)="setTheme('blue')" [ngClass]="{ 'selected': selectedTheme === 'blue' }">
+          🔵 Blue-Theme
+          <span *ngIf="selectedTheme === 'blue'">&#10004;</span>
+        </mat-list-item>
+      </mat-nav-list>
+    </div>
+    
+   <div *ngIf="isLanguage">
+    <div class="top2">Language</div>
+   </div>
+<div class="google_translate_container" id="google_translate_container" [hidden]="!isLanguage">
+  
+  <div id="google_translate_element"></div>
+</div>
+    
+  
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+
+
+
+
+
+
+<hr>
+<div style="display: flex; justify-content: flex-end; padding: 10px;">
+  <button style="margin-right: 25px;" (click)="onsave()">Save</button>
+  <button (click)="oncancel()">Cancel</button>
+</div>
+
+<script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', function () {
+    function loadGoogleTranslateScript() {
+      const script = document.createElement('script');
+      script.type = 'text/javascript';
+      script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+      document.head.appendChild(script);
+    }
+
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+    }
+
+    window.googleTranslateElementInit = googleTranslateElementInit;
+
+    loadGoogleTranslateScript();
+  });
+</script>

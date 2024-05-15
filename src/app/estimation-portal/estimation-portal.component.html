@@ -1,0 +1,97 @@
+<title>Estimation Portal</title>
+<div class="loader-container" *ngIf="loading">
+  <div>
+    <span class="letter">D</span>
+    <span class="dot"></span>
+  </div>
+</div>
+
+<div class="content" *ngIf="!loading">
+<div class="header">
+  <!-- <i style="cursor: pointer; margin-right: 5px;" (click)="toggleSidenav()" class="fas fa-angle-double-left" [class.rotate180]="!isSidenavOpened"></i> -->
+  <!-- <span class="nav-list-name"></span> -->
+
+  <button mat-button [matMenuTriggerFor]="menu" title="Select Category"><i class="fa-solid fa-bars"></i> {{ navListName }}</button>
+
+
+  <div class="header-icons">
+      <i class="fas fa-shopping-cart" title="My Cart" routerLink="/Mycart" routerLinkActive="router-link-active"><sub class="count">{{countGetter()}}</sub></i>
+      <span style="margin-right: 10px;"></span>
+       <i class="fas fa-archive" title="My Quote" (click)="showMyquote()"></i>
+  </div>
+</div>
+
+<mat-sidenav-container class="sidenav-container" style="z-index: 0;">
+  <!-- <mat-sidenav #sidenav mode="side" opened="true" [style.width.px]="isSidenavOpened ? '200' : '50'"  [@sidenavWidth]="isSidenavOpened ? 'open' : 'closed'" (openedChange)="onSidenavToggle($event)" [style.margin-top.px]="isSidenavOpened ? '0' : '3rem'"> -->
+    <!-- <mat-nav-list >
+      <a mat-list-item (click)="showDashboard(); navListName = 'Dashboard'" [class.selected-tab]="isDashboardVisible" [style.color]="getTextColor()">
+        <span *ngIf="isSidenavOpened">Dashboard</span>
+        <i *ngIf="!isSidenavOpened" class="fa-solid fa-chart-simple"></i>
+      </a>
+      <a mat-list-item (click)="showClientQualification(); navListName = 'Client Qualification'" [class.selected-tab]="isClientQualificationVisible"> 
+        <span *ngIf="isSidenavOpened">Client Qualification</span>
+        <i *ngIf="!isSidenavOpened" class="fa fa-user"></i>
+      </a>
+      <a mat-list-item (click)="showABAP(); navListName = 'ABAP'" [class.selected-tab]="isABAPVisible"> 
+        <span *ngIf="isSidenavOpened">ABAP</span>
+        <img  *ngIf="!isSidenavOpened" class="img" src="/assets/images/ABAP1.png">
+      </a>
+      <a mat-list-item (click)="showPIPOCPI(); navListName = 'PI/PO & CPI'" [class.selected-tab]="isPIPOCPIVisible">
+        <span *ngIf="isSidenavOpened">PI/PO & CPI</span>
+        <img  *ngIf="!isSidenavOpened" class="img" src="/assets/images/SAPCPI.png">
+        <i class="fas fa-tachometer-alt" ></i>
+      </a>
+      <a mat-list-item (click)="showBasis(); navListName = 'Basis'" [class.selected-tab]="isBasisVisible">
+        <span *ngIf="isSidenavOpened">Basis</span>
+        <img  *ngIf="!isSidenavOpened" class="img" src="/assets/images/Basis1.png">
+      </a>
+    </mat-nav-list> -->
+
+
+    <mat-sidenav>
+
+<mat-menu #menu="matMenu">
+  <button mat-menu-item (click)="showOverview(); navListName = 'Overview'" [class.selected-tab]="isOverviewVisible">
+    <span *ngIf="isSidenavOpened">Overview</span>
+    <i *ngIf="!isSidenavOpened" class="fa-solid fa-chart-simple"></i>
+  </button>
+  <button mat-menu-item (click)="showDashboard(); navListName = 'Dashboard'" [class.selected-tab]="isDashboardVisible" [style.color]="getTextColor()">
+    <span *ngIf="isSidenavOpened">Dashboard</span>
+    <i *ngIf="!isSidenavOpened" class="fa-solid fa-chart-simple"></i>
+  </button>
+  <button mat-menu-item (click)="showClientQualification(); navListName = 'Client Qualification'" [class.selected-tab]="isClientQualificationVisible"> 
+    <span *ngIf="isSidenavOpened">Client Qualification</span>
+    <i *ngIf="!isSidenavOpened" class="fa fa-user"></i>
+  </button>
+  <button mat-menu-item (click)="showABAP(); navListName = 'ABAP'" [class.selected-tab]="isABAPVisible"> 
+    <span *ngIf="isSidenavOpened">ABAP</span>
+    <img  *ngIf="!isSidenavOpened" class="img" src="/assets/images/ABAP1.png">
+  </button>
+  <!-- <button mat-menu-item (click)="showPIPOCPI(); navListName = 'PI/PO & CPI'" [class.selected-tab]="isPIPOCPIVisible">
+    <span *ngIf="isSidenavOpened">PI/PO & CPI</span>
+    <img  *ngIf="!isSidenavOpened" class="img" src="/assets/images/SAPCPI.png">
+  </button>
+  <button mat-menu-item (click)="showBasis(); navListName = 'Basis'" [class.selected-tab]="isBasisVisible">
+    <span *ngIf="isSidenavOpened">Basis</span>
+    <img  *ngIf="!isSidenavOpened" class="img" src="/assets/images/Basis1.png">
+  </button> -->
+</mat-menu>
+
+  </mat-sidenav>
+  <!-- <mat-sidenav-content [@contentAnimation]="isSidenavOpened ? 'open' : 'closed'" [style.margin-left.px]="isSidenavOpened ? 200 : 50"> -->
+    <mat-sidenav-content>
+   <app-client-qualification *ngIf="isClientQualificationVisible"></app-client-qualification>
+<app-overview *ngIf="isOverviewVisible"></app-overview>
+   
+    <app-dashboard *ngIf="isDashboardVisible"></app-dashboard>
+    <app-abap *ngIf="isABAPVisible"></app-abap>
+    <app-pipo *ngIf="isPIPOCPIVisible"></app-pipo>
+    <app-myquote *ngIf="ismyQuoteVisible"></app-myquote>
+    
+  </mat-sidenav-content>
+</mat-sidenav-container>
+<div  class="foot">
+  <app-footer></app-footer>
+
+</div>
+</div>

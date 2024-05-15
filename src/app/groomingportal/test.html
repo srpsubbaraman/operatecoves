@@ -1,0 +1,596 @@
+
+<div *ngIf="selectedOption === 'ADO'" ng-init="loadADOProjectInfo()">
+    <div class="content_section" >
+       <div class="jira">
+           <!-- <div class="jira_img">
+               <table class="tabprop">
+                   <tr class="tabprop">
+                       <td class="tabprop">
+                           <div class="myproj_flipcard">
+                               <div class="myproj_flipcard_inner">
+                                   <div class="myproj_flipcard_inner_front">
+                                       <label id="lb_pnameado" name="lb_jirapjtname">{{ adoProjectName }}</label>
+                                   </div>
+                                   <div class="myproj_flipcard_inner_back">
+                                       <select id="adoProjectName" name="jiraProjectName"
+                                               ng-change="loadIssueTypes1()" (change)="loadIssueTypes1()"></select>
+                                   </div>
+                               </div>
+                           </div>
+                       </td>
+                       <td class="tabprop">
+                           <div class="myproj_flipcard">
+                               <div class="myproj_flipcard_inner">
+                                   <div class="myproj_flipcard_inner_front">
+                                       <label id="lb_catnameado" name="lb_categoryname" >{{ adoWorkItemCategory }}</label>
+                                   </div>
+                                   <div class="myproj_flipcard_inner_back">
+                                       <select id="adoWorkItemCategory" name="jiraIssueCategory"
+                                               ng-change="loadIssues1()" (change)="loadIssues1()"></select>
+                                   </div>
+                               </div>
+                           </div>
+                       </td>
+                   </tr>
+               </table>
+           </div>
+           <div class="jira_project">
+               <table class="tabprop">
+                   <tr class="tabprop">
+                       <td class="tabprop">
+                           <div class="myproj_flipcard1">
+                               <div class="myproj_flipcard_inner">
+                                   <div class="myproj_flipcard_inner_front1">
+                                       <table class="tabprop">
+                                           <tr class="tabprop">
+                                               <td class="tabprop">
+                                                   
+                                                   <b><label id="lb_statusado" name="lb_status"
+                                                             ng-change="loadWorkitemInfo()"
+                                                             ng-init="loadWorkitemInfo()"
+                                                             
+                                                             
+                                                             style="font-size: 12px">{{ status }}</label></b>
+                                               </td>
+                                           </tr>
+                                           <tr class="tabprop" rowspan="3">
+                                               <td class="tabprop">
+                                                <label id="lb_countado" name="lb_count" style="font-size: 12px">{{ count }}</label></td>
+                                                                          
+                                           </tr>
+                                           <tr class="tabprop">
+                                               <td class="tabprop"></td>
+                                           </tr>
+                                           <tr class="tabprop">
+                                               <td class="tabprop"></td>
+                                           </tr>
+                                       </table>
+                                   </div>
+                                   <div class="myproj_flipcard_inner_back">
+                                       <select id="lb_issueStatus1" name="issueStatus"  (change)="loadWorkitemInfo()">
+                                           <option>NEW</option>
+                                           <option>ANALYZE</option>
+                                           <option>READY TO WORK</option>
+                                           <option>IN PROGRESS</option>
+                                           <option>IN DEV</option>
+                                           <option>IN QA</option>
+                                           <option>UAT</option>
+                                           <option>READY TO RELEASE</option>
+                                           <option>DONE</option>
+                                           <option>ON HOLD</option>
+                                       </select>
+                                   </div>
+                               </div>
+                           </div>
+                       </td>
+                       <td align="center" class="tabprop">
+                           <select id="adoWorkitemID" name="jiraIssueID" (change)="loadIssueInfo1()"></select>
+                       </td>
+                   </tr>
+               </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+           
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+           </div> -->
+ 
+
+
+
+           <div class="jira_project">
+            <table class="tabprop"  style="table-layout: fixed; border: 0px">
+                 <tbody>
+                 <tr style="border: 0px">
+                     <td style="border: 1.5px solid; font-size: 14px;font-weight: bold;"> Select Project:</td>
+                     <td style="border: 1.5px solid; font-size: 14px;font-weight: bold;">Select Issue Category:</td>
+                     <td style="border: 1.5px solid; font-size: 14px;font-weight: bold;">
+                         Select Status:
+                     </td>
+                 
+                     <td style="border: 1.5px solid; font-size: 14px;font-weight: bold;">Select Issue Id:</td>
+                  
+                 </tr>
+                 <tr style="border: 1.5px">
+                     <td style="border: 1.5px solid;">
+                         <select id="adoProjectName" name="jiraProjectName"
+                          (change)="loadIssueTypes1()"></select>
+ 
+                         <!-- <select class="select1" [(ngModel)]="selectedALM"
+                             (change)="onALMSelectionChange()">
+                             <option value="Jira">Jira</option>
+                             <option value="ADO">ADO</option>
+                         </select> -->
+ 
+                     </td>
+                     <td style="border: 1.5px solid;">
+                         <select id="adoWorkItemCategory" name="jiraIssueCategory"
+                         ng-change="loadIssues1()" (change)="loadIssues1()"></select>
+                         <!-- <select class="select1" id="jiraProject"
+                             (change)="loadIssueTypes()"></select> </td> -->
+ 
+                     <td style="border: 1.5px solid;">
+                         <select id="lb_issueStatus1" name="issueStatus"  (change)="loadWorkitemInfo()">
+                             <option>NEW</option>
+                             <option>ANALYZE</option>
+                             <option>READY TO WORK</option>
+                             <option>IN PROGRESS</option>
+                             <option>IN DEV</option>
+                             <option>IN QA</option>
+                             <option>UAT</option>
+                             <option>READY TO RELEASE</option>
+                             <option>DONE</option>
+                             <option>ON HOLD</option>
+                         </select>
+                     </td>
+                     <td style="border: 1.5px solid;">
+                         <select id="adoWorkitemID" name="jiraIssueID" (change)="loadIssueInfo1()"></select>
+                         <!-- <select class="select1" id="jiraIssueID"
+                             (change)="loadSummary()"></select></td> -->
+                     
+                     </td>
+                 </tr>
+             </tbody>
+             </table>
+
+
+
+
+
+
+
+             <div  class="mainsel">
+                <div style="font-size: 14px; font-weight: bold; flex: 1;"> Select Project:</div>
+                <div style="  flex: 1;">
+                    <select id="adoProjectName" name="jiraProjectName" (change)="loadIssueTypes1()"></select>                
+                </div>  
+                <br>
+
+                <div style="font-size: 14px; font-weight: bold; flex: 1;">Select Issue Category:</div>
+                <div style="  flex: 1;">
+                    <select id="adoWorkItemCategory" name="jiraIssueCategory" ng-change="loadIssues1()" (change)="loadIssues1()"></select>
+                </div>
+
+                <br>
+
+                <div style="font-size: 14px; font-weight: bold; flex: 1;">Select Status:</div>
+                <div style="  flex: 1;">
+                    <select id="lb_issueStatus1" name="issueStatus"  (change)="loadWorkitemInfo()">
+                        <option>NEW</option>
+                        <option>ANALYZE</option>
+                        <option>READY TO WORK</option>
+                        <option>IN PROGRESS</option>
+                        <option>IN DEV</option>
+                        <option>IN QA</option>
+                        <option>UAT</option>
+                        <option>READY TO RELEASE</option>
+                        <option>DONE</option>
+                        <option>ON HOLD</option>
+                    </select>
+                </div>
+
+
+                <br>
+
+                <div style="font-size: 14px; font-weight: bold; flex: 1;">Select Issue Id:</div>
+                <div style="  flex: 1;">
+                    <select id="adoWorkitemID" name="jiraIssueID" (change)="loadIssueInfo1()"></select>
+                </div>
+
+            </div>
+
+
+ 
+ <!-- Label kept aside and hidden only accessible for backend  -->
+     <table class="tabprop" style="display: none;">
+        <tr>
+ 
+         <td class="tabprop">
+          
+                     <label>Project Name</label>
+                     </td>
+                     <td class="tabprop">
+                         <label id="lb_pnameado" name="lb_jirapjtname">{{ adoProjectName }}</label>
+                     </td>
+ 
+ 
+ 
+ 
+                     <td class="tabprop">
+                         <label>Issue Category</label>  
+                         </td>
+                          <td class="tabprop">
+                             <label id="lb_catnameado" name="lb_categoryname" >{{ adoWorkItemCategory }}</label>
+                             </td>
+                             <td class="tabprop">
+                                 <label>Count</label>  
+                                 </td>
+                             <td class="tabprop">
+                                <!-- <tbody> -->
+                                    <tr class="tabprop" rowspan="3">
+                                        <!-- <tbody>  -->
+                                        <td class="tabprop">
+                                            <label id="lb_countado" name="lb_count" style="font-size: 12px">{{ count }}</label>
+                                        </td>
+                                    <!-- </tbody> -->
+                                       
+                                    </tr>
+                                <!-- </tbody> -->
+                               
+                             </td>
+                         </tr>
+                     </table>
+                     </div>
+           <div class="jira_issue">
+               <div class="jira_issue_details">
+                   <div class="issueSummary">
+                       <label id="ado_issue_details_summary"></label>
+                   </div>
+                   <div class="jira_issue_details_addl_label1">
+                       <table>
+                           <tr>
+                               <td style="text-align:left">Snow Ref#</td>
+                               <td style="text-align:left">ADO Status</td>
+                               <td style="text-align:left">ADO Effort</td>
+                               <td style="text-align:left">ADO Assignee</td>
+                           </tr>
+                       </table>
+                   </div>
+                   <div class="jira_issue_details_addl">
+                       <table>
+                        <tbody>
+                            <tr class="tr1">
+                                <td id="snowRef1" style="text-align:left"></td>
+                                <td id="issueStatus1" style="text-align:left"></td>
+                                <td id="totalEffort1" style="text-align:left"></td>
+                                <td id="assignee1" style="text-align:left">
+                                    <div class="myproj_flipcard_assignee">
+                                        <div class="myproj_flipcard_inner_assignee">
+                                            <div class="myproj_flipcard_inner_front_assignee" style="text-align:left">
+                                                <label id="assignee1">{{WorkItem_assignee}}</label>
+                                            </div>
+                                            <div class="myproj_flipcard_inner_back">
+                                                <select id="assigneeNameado" name="assigneeName"
+                                                        ng-change="changeAssignee1()"
+                                                        (change)="changeAssignee1()"
+                                                        ng-init="loadAssignee1()"></select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                          
+                       </table>
+                   </div>
+               </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+               <div class="jira_issue_subtasks">
+                   <div class="subtasksPanel">
+                       <table class="subTaskTable">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    Sub Tasks:
+                                </td>
+                                <td>
+                                    <select id="adoSubTasks" name="jiraSubTasks" ng-change="loadSubTaskInfo1()" (change)="loadSubTaskInfo1()"></select>
+                                </td>
+                            </tr>
+                        </tbody>
+                           
+                       </table>
+                   </div>
+                   <div class="jira_issue_details_addl_label1">
+                       <table>
+                        <tbody>
+                            <tr class="tr2">
+                                <td style="text-align:left">Sub-Task ID</td>
+                                <td style="text-align:left">Status</td>
+                                <td style="text-align:left">Effort</td>
+                                <td style="text-align:left">Assignee</td>
+                            </tr>
+                        </tbody>
+                       </table>
+                   </div>
+                   <div class="jira_issue_details_addl1">
+                       <table>
+                        <tbody>
+                            <tr> 
+                                <td id="subTaskID1" style="text-align:left"></td>
+                                <td id="subTaskStatus1" style="text-align:left"></td>
+                                <td id="subTaskEffort1" style="text-align:left"></td>
+                                <td id="subTaskType" style="text-align:left">
+                                    <div class="myproj_flipcard_subtask_assignee">
+                                        <div class="myproj_flipcard_inner_subtask_assignee">
+                                            <div class="myproj_flipcard_inner_front_subtask_assignee"
+                                                 style="text-align:left">
+                                                <label id="subtaskassignee1">{{taskWorkItem_assignee}}</label>
+                                            </div>
+                                            <div class="myproj_flipcard_inner_back">
+                                                <select id="taskassigneeName" name="taskassigneeName"
+                                                        ng-change="taskChangeAssignee1()"
+                                                        (change)="taskChangeAssignee1()"
+                                                        ng-init="taskLoadAssignee1()"></select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>  
+                            </tr>
+                        </tbody>
+                           
+                       </table>
+                   </div>
+                   <div class="subTaskEditPanel">
+                       <div>
+                           <button (click)="deleteSubTask1()">Delete SubTask</button>
+                       </div>
+                       <div>
+                           <button (click)="createSubTask1('task')">New General SubTask</button>
+                       </div>
+                       <div>
+                           <button (click)="createSubTask1('bug')">New Bug SubTask</button>
+                       </div>
+                   </div>
+               </div>
+
+
+
+
+
+
+
+
+               <div class="jira_issue_subtasks">
+                <div class="subtasksPanel">
+                    <table class="subTaskTable">
+                        <tbody>
+                            <tr>
+                                <td >
+                                    Sub Tasks:
+                                </td>
+                                <td>
+                                    <select id="adoSubTasks" name="jiraSubTasks" ng-change="loadSubTaskInfo1()" (change)="loadSubTaskInfo1()"></select>
+                                </td>
+                            </tr>
+                        </tbody>
+                     
+                    </table>
+                </div>
+                <!-- <div class="jira_issue_details_addl_label">
+                    <table> 
+                        <tr class="tr2">
+                            <td style="text-align:left">Sub-Task ID</td>
+                            <td style="text-align:left">Status</td>
+                            <td style="text-align:left">Effort</td>
+                            <td style="text-align:left">Assignee</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="jira_issue_details_addl">
+                    <table>
+                        <tr>
+                            <td id="subTaskID" style="text-align:left"></td>
+                            <td id="subTaskStatus" style="text-align:left"></td>
+                            <td id="subTaskEffort" style="text-align:left"></td>
+                            <td id="subTaskType" style="text-align:left">
+                                <div class="myproj_flipcard_subtask_assignee">
+                                    <div class="myproj_flipcard_inner_subtask_assignee">
+                                        <div class="myproj_flipcard_inner_front_subtask_assignee"
+                                             style="text-align:left">
+                                            <label id="subtaskassignee" ></label>
+                                        </div>
+                                        <div class="myproj_flipcard_inner_back">
+                                            <select id="subtaskassigneeName" name="subtaskassigneeName"
+                                                    ng-change="subtaskChangeAssignee()"
+                                                    (change)="subtaskChangeAssignee()"
+                                                    ng-init="subtaskLoadAssignee()"></select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>   
+                        </tr>
+                    </table>
+                </div> -->
+
+
+
+                <div class="jira_issue_details_addl_label">
+                    <!-- <div style="display: table;"> -->
+                        <!-- <div class="tr2" > -->
+                            <div class="subdiv">
+                                <div class="jirasubtaskid">
+                                    <div style="text-align: left; display: table-cell;">Sub-Task ID </div>
+                                    <div id="subTaskID" style="text-align: left; display: table-cell;"></div>
+                                </div>
+                               
+                                <div class="jirastatus">
+                                <div style="text-align: left; display: table-cell;">Status </div>
+                                    <div id="subTaskStatus" style="text-align: left; display: table-cell;"></div>
+                                </div>    
+                            </div>
+                           
+                            <div class="subdiv1">
+
+                                <div class="jiraeffort">
+                                <div style="text-align: left; display: table-cell;">Effort </div>
+                                    <div id="subTaskEffort" style="text-align: left; display: table-cell;"></div>
+                                </div>
+                                
+
+                                <div class="jiraassignee">
+                                <div style="text-align: left; display: table-cell;">Assignee</div>
+                                <div id="subTaskType" style="text-align: left; display: table-cell;">
+                                    <div class="myproj_flipcard_subtask_assignee">
+                                        <div class="myproj_flipcard_inner_subtask_assignee">
+                                            <div class="myproj_flipcard_inner_front_subtask_assignee" style="text-align: left;">
+                                                <label id="subtaskassignee"></label>
+                                            </div>
+                                            <div class="myproj_flipcard_inner_back">
+                                                <select id="subtaskassigneeName" name="subtaskassigneeName"
+                                                        ng-change="subtaskChangeAssignee()" (change)="subtaskChangeAssignee()"
+                                                        ng-init="subtaskLoadAssignee()"></select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                            
+                        <!-- </div>   -->
+                    <!-- </div> -->
+                </div>
+                <!-- <div class="jira_issue_details_addl">
+                    <div style="display: table;">
+                        <div style="display: table-row;">
+                            <div id="subTaskID" style="text-align: left; display: table-cell;"></div>
+                            <div id="subTaskStatus" style="text-align: left; display: table-cell;"></div>
+                            <div id="subTaskEffort" style="text-align: left; display: table-cell;"></div>
+                            <div id="subTaskType" style="text-align: left; display: table-cell;">
+                                <div class="myproj_flipcard_subtask_assignee">
+                                    <div class="myproj_flipcard_inner_subtask_assignee">
+                                        <div class="myproj_flipcard_inner_front_subtask_assignee" style="text-align: left;">
+                                            <label id="subtaskassignee"></label>
+                                        </div>
+                                        <div class="myproj_flipcard_inner_back">
+                                            <select id="subtaskassigneeName" name="subtaskassigneeName"
+                                                    ng-change="subtaskChangeAssignee()" (change)="subtaskChangeAssignee()"
+                                                    ng-init="subtaskLoadAssignee()"></select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+                
+                <div class="subTaskEditPanel">
+                    <div>
+                        <button (click)="deleteSubTask()">Delete SubTask</button>
+                    </div>
+                    <div>
+                        <button (click)="createSubTask(10003)">New General SubTask</button>
+                    </div>
+                    <div>
+                        <button (click)="createSubTask(10059)">New Bug SubTask</button>
+                    </div>
+                    
+                   
+
+
+                    <!-- <div #contentToExport style="display: none;">
+                     
+                     <h1>{{ count }}</h1>
+                     <p>{{ jiraIssueCategory }}</p>
+                    
+                   </div> -->
+                   <!-- <button (click)="exportToPDF()">Export to PDF</button> -->
+               
+
+                  
+
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+           </div>
+       </div>
+       <!-- <div class="estimation">    
+           <div>
+               <img height="95%" src="resources/images/OS.png" width="95%"/>
+           </div>
+       </div> -->
+  </div>
+</div>

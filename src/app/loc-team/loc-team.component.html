@@ -1,0 +1,105 @@
+    
+    <title>Team Profile</title>
+    
+    <div class="loader-container" *ngIf="loading">
+      <div>
+        <span class="letter">D</span>
+        <span class="dot"></span>
+      </div>
+    </div>
+    
+    <div class="content" *ngIf="!loading">
+    <mat-sidenav-container class="full">
+      <!-- Sidebar -->
+      <!-- <mat-sidenav #sidenav mode="side" opened="true" style="width: 250px;">
+        <div class="grp">
+          <mat-form-field>
+            <mat-label>Group by</mat-label>
+            <mat-select [(ngModel)]="selectedValue" name="grp">
+              <mat-option (click)="showLoc()" value="location">Location</mat-option>
+              <mat-option (click)="showSkills()" value="skills">Skills</mat-option>
+              <mat-option (click)="showProj()" value="project">Project</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <div *ngIf="isLoc">
+            <div class="location-container">
+              <div *ngFor="let location of locations" (click)="showMembers(location)">
+                <div>{{ location.name }}</div>
+              </div>
+            </div>
+          </div>
+
+          <div *ngIf="isSkills">
+            <div class="skills-container">
+              <div *ngFor="let skill of skills" (click)="filterBySkill(skill)">
+                <label style="cursor: pointer;">{{ skill }}</label>
+              </div>
+            </div>
+          </div>
+
+          <div *ngIf="isProj">
+            <div class="projects-container">
+              <div *ngFor="let project of projects" (click)="filterByProject(project)">
+                <label style="cursor: pointer;">{{ project }}</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </mat-sidenav> -->
+
+      <!-- Main Content Area -->
+     
+
+      <mat-sidenav-content class="main">
+        <mat-form-field class="selLocation">
+          <mat-label>Location</mat-label>
+          <mat-select [(ngModel)]="selectedLocation" (selectionChange)="showMembers($event.value)">
+            <mat-option *ngFor="let location of locations" [value]="location">
+              {{ location.name }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+          
+        
+
+          <ng-container [ngSwitch]="selectedLocation?.Component"> 
+            <app-mum-team *ngSwitchCase="'MUMTeamComponent'" ></app-mum-team>
+            <app-cbe-team *ngSwitchCase="'CBETeamComponent'"></app-cbe-team>
+            <app-chen-team *ngSwitchCase="'ChenTeamComponent'"></app-chen-team>
+            <app-bang-team *ngSwitchCase="'BangTeamComponent'"></app-bang-team>
+            <app-hyd-team *ngSwitchCase="'HydTeamComponent'"></app-hyd-team>
+            <app-pune-team *ngSwitchCase="'PuneTeamComponent'"></app-pune-team>
+            <app-ahm-team  *ngSwitchCase="'AhmTeamComponent'"></app-ahm-team>
+            <app-bhu-team  *ngSwitchCase="'BhuTeamComponent'"></app-bhu-team>
+            <app-kol-team  *ngSwitchCase="'KolTeamComponent'"></app-kol-team>
+            <app-del-team  *ngSwitchCase="'DelTeamComponent'"></app-del-team>
+            <app-thane-team *ngSwitchCase="'ThaneTeamComponent'"></app-thane-team>
+            <app-all-team *ngSwitchCase="'AllTeamComponent'"></app-all-team>
+      
+           
+            <!-- Add more cases as needed -->
+            <!-- <div *ngSwitchDefault>
+              <div class="team-container">
+                <div class="team-member" *ngFor="let member of filteredMembers">
+                  <div class="member-card">
+                    <div class="card-front">
+                      <img [src]="member.profilePicture" alt="{{ member.name }}">
+                        <label>{{ member.name }}</label>
+                      <label>{{ member.position }}</label>
+                    </div>
+                    <div class="card-back">
+                      <ul>
+                        <li *ngFor="let skill of member.skills">{{ skill }}</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+          </ng-container>
+      
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+    <app-footer></app-footer>
+    </div>

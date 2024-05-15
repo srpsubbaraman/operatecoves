@@ -1,0 +1,743 @@
+.process-overview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.infographic {
+  /* margin-bottom: 2rem; */
+}
+
+canvas {
+  display: block;
+}
+
+.process-list {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.process-item {
+  display: flex;
+  align-items: center;
+  margin: 1rem;
+  padding: 1rem;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+}
+
+.process-number {
+  font-size: 2rem;
+  /* font-weight: bold; */
+  margin-right: 1rem;
+  color: #333;
+}
+
+
+
+.process-content h3 {
+  margin-top: 0;
+  color: #333;
+}
+
+.process-content p {
+  margin-bottom: 0;
+  color: #666;
+}
+
+.landing-page {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  padding: 2rem;
+  background-image: url(/assets/images/Aboutusbg.jpeg);
+  background-size: cover;
+  overflow: hidden !important;
+ 
+}
+
+
+
+
+.hero {
+  text-align: center;
+  margin-bottom: 4rem;
+  background-color: #ffffffab;
+  border-radius: 15px;
+  z-index: 999;
+}
+
+ 
+.hero h1 {
+  font-size: 4rem;
+  color: green;
+  /* margin-bottom: 2rem; */
+  transition: font-size 0.5s ease, color 0.5s ease;
+}
+
+.hero h3{
+  font-size: 1.5rem;
+  /* color: #000; */
+  transition: font-size 0.5s ease, color 0.5s ease;
+  opacity: 100%;
+
+  z-index: 999;
+}
+
+.hero:hover h1 {
+font-size: 3rem;
+color: green;
+margin-bottom: 1rem;
+opacity: 0;
+transition: font-size 0.5s ease, color 0.5s ease, margin-bottom 0.5s ease;
+}
+
+.hero:hover h3 {
+  font-size: 1.7rem;
+  color: #000;
+  z-index: 999;
+  opacity: 100%;
+  transition: font-size 0.5s ease, color 0.5s ease;
+
+}
+
+.animate__animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+.animate__fadeInDown {
+  animation-name: fadeInDown;
+}
+
+.animate__fadeInUp {
+  animation-name: fadeInUp;
+}
+
+
+@keyframes fadeInDown {
+  from {
+      opacity: 0;
+      transform: translateY(-50px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+.delay-animation {
+  animation-delay: 0.1s;
+}
+@keyframes fadeInUp {
+  from {
+      opacity: 0;
+      transform: translateY(50px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.process-flow {
+  background-color: #ffffffab;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-width: 1200px;
+  margin: 0 auto;
+  z-index: 999;
+
+}
+
+.process-flow h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+.call-to-action {
+  text-align: center;
+  margin-top: 4rem;
+  display:none;
+}
+
+.call-to-action h2 {
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.call-to-action button {
+  background-color: #333;
+  color: #fff;
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.call-to-action button:hover {
+  background-color: #555;
+}
+/* Previous styles... */
+
+.process-item.active {
+  background-color: #e6f7ff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* .process-item.active .process-number {
+  background-color: #007bff;
+  color: #fff;
+} */
+
+.process-step-details {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.card {
+  background-color: #fff;
+  /* border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
+  max-width: 800px;
+  width: 80%;
+  opacity: 90%;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  background-color: #000000;
+  color: #fff;
+  padding: 1rem;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.card-body {
+  padding: 1rem;
+}
+
+.button-group{
+  align-items: center;
+  margin-left: 50%;
+}
+
+.process-title{
+  padding-top: 5px;
+}
+.process-number-circle {
+  width: 40px;
+  height: 40px;
+  background-color: #040404; 
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  margin-right: 10px; 
+}
+
+.close-icon {
+  margin-left: auto; /* Pushes the close icon to the right */
+  cursor: pointer;
+}
+.process-roadmap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.process-step-container {
+  display: flex;
+  align-items: center;
+}
+
+.process-step {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+
+  /* margin: 1rem; */
+  /* opacity: 0.5; */
+  /* transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out; */
+}
+
+
+
+/* Existing styles... */
+
+.process-circle1 {
+  color:white;
+  width: 105px;
+  height: 105px;
+  padding-left: 4px;
+  /* border: 4px double #fff;  */
+  border-radius: 50% 0px 50% 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  position: relative;
+  /* cursor: pointer; */
+  margin: 2.5rem;
+  transition: box-shadow 0.3s ease-in-out; /* Smooth transition for the glow effect */
+
+}
+.process-step:hover .process-circle1,
+.process-step:hover .notch-card2 {
+  box-shadow: 0 0 10px #0076a8; 
+  
+}
+.process-circle2 {
+  color:white;
+  width: 105px;
+  height: 105px;
+  padding-left: 4px;
+  /* border: 4px double #fff;  */
+  border-radius: 50% 0px 50% 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  position: relative;
+  /* cursor: pointer; */
+  margin: 2.5rem;
+  transition: box-shadow 0.3s ease-in-out; /* Smooth transition for the glow effect */
+
+}
+.process-step:hover .process-circle2,
+.process-step:hover .notch-card1  {
+  box-shadow: 0 0 10px #00abab; /* Adjust the color and intensity of the glow as needed */
+}
+.process-circle3 {
+  color:white;
+  width: 105px;
+  height: 105px;
+  padding-left: 4px;
+  /* border: 4px double #fff;  */
+  border-radius: 50% 0px 50% 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  position: relative;
+  /* cursor: pointer; */
+  margin: 2.5rem;
+  transition: box-shadow 0.3s ease-in-out; /* Smooth transition for the glow effect */
+
+}
+.process-step:hover .process-circle3,
+.process-step:hover .notch-card4  {
+  box-shadow: 0 0 10px #26890d; /* Adjust the color and intensity of the glow as needed */
+}
+.process-circle4 {
+  color:white;
+  width: 105px;
+  height: 105px;
+  padding-left: 4px;
+  /* border: 4px double #fff;  */
+  border-radius: 50% 0px 50% 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  position: relative;
+  /* cursor: pointer; */
+  margin: 2.5rem;
+  transition: box-shadow 0.3s ease-in-out; /* Smooth transition for the glow effect */
+
+}
+.process-step:hover .process-circle4,
+.process-step:hover .notch-card1  {
+  box-shadow: 0 0 10px rgb(13, 131, 144)/* Adjust the color and intensity of the glow as needed */
+}
+.process-circle5 {
+  color:white;
+  width: 105px;
+  height: 105px;
+  padding-left: 4px;
+  /* border: 4px double #fff;  */
+  border-radius: 50% 0px 50% 50%;
+  display: flex;
+  flex-direction: coluAmn;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  position: relative;
+  /* cursor: pointer; */
+  margin: 2.5rem;
+  transition: box-shadow 0.3s ease-in-out; /* Smooth transition for the glow effect */
+
+}
+.process-step:hover .process-circle5,
+.process-step:hover .notch-card6 {
+  box-shadow: 0 0 10px #ed8b00; 
+}
+
+.notch-card2 {
+  position: absolute;
+  top: -135px;
+  left: 70%;
+  transform: rotateZ(45deg);
+  margin: 4%;
+  width: 230px; 
+  height: 100px;
+  background-color: #fff; /* Adjust the background color */
+  border-radius: 8px; /* Adjust the border radius */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adjust the box shadow */
+  padding: 0.5rem; /* Adjust the padding */
+  text-align: center;
+  z-index: 99; /* Ensure the card appears above the process circle */
+  transition: box-shadow 0.3s ease-in-out; /* Smooth transition for the glow effect */
+
+}
+
+.notch-card2::before {
+  content: "";
+  position: absolute;
+  top: 100px;
+  left: 47.8%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: calc(60.9% + 5px);
+  background-color: transparent;
+  border-left: 1px solid #75787b;
+  z-index: -1;
+}
+
+.notch-card4 {
+  position: absolute;
+  top: -135px;
+  left: 70%;
+  transform: rotateZ(45deg);
+  margin: 4%;
+  width: 230px; 
+  height: 100px;
+  background-color: #fff; /* Adjust the background color */
+  border-radius: 8px; /* Adjust the border radius */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adjust the box shadow */
+  padding: 0.5rem; /* Adjust the padding */
+  text-align: center;
+  z-index: 99; /* Ensure the card appears above the process circle */
+  transition: box-shadow 0.3s ease-in-out; /* Smooth transition for the glow effect */
+
+}
+
+.notch-card4::before {
+  content: "";
+  position: absolute;
+  top: 100px;
+  left: 47.8%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: calc(60.9% + 5px);
+  background-color: transparent;
+  border-left: 1px solid #75787b;
+  z-index: -1;
+}
+
+
+.notch-card6 {
+  position: absolute;
+  top: -135px;
+  left: 70%;
+  transform: rotateZ(45deg);
+  margin: 4%;
+  width: 230px; 
+  height: 100px;
+  background-color: #fff; /* Adjust the background color */
+  border-radius: 8px; /* Adjust the border radius */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adjust the box shadow */
+  padding: 0.5rem; /* Adjust the padding */
+  text-align: center;
+  z-index: 99; /* Ensure the card appears above the process circle */
+  transition: box-shadow 0.3s ease-in-out; /* Smooth transition for the glow effect */
+
+}
+
+.notch-card6::before {
+  content: "";
+  position: absolute;
+  top: 100px;
+  left: 47.8%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: calc(60.9% + 5px);
+  background-color: transparent;
+  border-left: 1px solid #75787b;
+  z-index: -1;
+}
+.notch-card1 {
+position: absolute;
+top: -135px;
+left: 70%;
+transform: rotateZ(225deg);
+margin: 4%;
+width: 230px; 
+height: 100px;
+background-color: #fff; /* Adjust the background color */
+border-radius: 8px; /* Adjust the border radius */
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adjust the box shadow */
+padding: 0.5rem; /* Adjust the padding */
+text-align: center;
+z-index: 99; /* Ensure the card appears above the process circle */
+}
+
+.notch-card1::before {
+  content: "";
+  position: absolute;
+  top: -66px;
+  left: 52.8%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: calc(60.9% + 5px);
+  background-color: transparent;
+  border-left: 1px solid #75787b;
+  z-index: -1;
+}
+
+.process-circle:first-child .notch-card::before {
+  display: block; /* Hide the line before the first process circle */
+}
+
+.process-circle:first-child::before {
+  display: block; /* Hide the line before the first process circle */
+}
+
+/* .process-step.active .process-circle {
+  box-shadow: 0 0 10px rgba(66, 211, 9, 0.991);
+} */
+
+/* .process-circle:nth-child(even) {
+  transform: rotateZ(315deg);
+}
+
+.process-circle:nth-child(odd) {
+  transform: rotateZ(315deg);
+} */
+
+/* Previous styles... */
+
+
+
+.process-icon {
+  font-size: 2.5rem;
+  color: white;
+}
+
+.process-title {
+  font-size: 1rem;
+  text-align: center;
+  color: white;
+  padding-left: 20px;
+}
+
+.title{
+  font-size: larger;
+  text-decoration: underline;
+  padding-bottom: 3px;
+}
+.des{
+  font-size: small;
+  font-weight: 100;
+}
+/* .process-step.active {
+  transform: scale(1.2);
+} */
+
+/* .process-step.active .process-circle {
+  box-shadow: 0 0 10px rgba(66, 211, 9, 0.991);
+} */
+
+/* .process-step:hover .process-circle {
+  box-shadow: 0 0 10px rgba(66, 211, 9, 0.991);
+} */
+/* .process-step.active .process-icon .process-title{
+  font-size: 2rem;
+} */
+/* .process-step.active::before {
+  content: "";
+  position: absolute;
+  bottom: -5px; 
+  left: 50%; 
+  transform: translateX(-50%);
+  width: 50px; 
+  height: 5px; 
+  background-image: linear-gradient(45deg, #007bff 25%, transparent 25%, transparent 50%, #007bff 50%, #007bff 75%, transparent 75%, transparent); 
+  background-size: 10px 10px;
+}
+ */
+
+
+
+/* .process-step:hover {
+  transform: rotate(45deg) scale(1.2); 
+ 
+  
+} */
+
+
+/* .outline-circle {
+  position: absolute;
+  top: 50%;
+  left: 34%;
+  transform: translate(-50%, -50%);
+  width: 110%; 
+  height: 110%; 
+ 
+  box-sizing: border-box;
+  z-index: 999; 
+} */
+
+.process-number {
+  font-size: 2rem;
+  margin-bottom: 0.25rem;
+  color: black;
+  /* z-index: 9999; */
+  padding-right: 24%;
+}
+
+.process-icon{
+  font-size: 1.8rem;
+  z-index: 9999;
+  padding-right: 30%;
+}
+
+.process-title {
+  font-size: 10.3px;
+  text-align: center;
+  color: white;
+  z-index: 9999;
+  /* padding-right: 32%; */
+}
+
+/* .line {
+  width: 100px;
+  height: 2px;
+  margin: 0 1rem;
+} */
+
+/* .process-step.active {
+  opacity: 1;
+  transform: scale(1.2);
+} */
+
+/*   
+.process-number {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+} */
+
+
+
+/* Parallax animation */
+.process-roadmap::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -25%;
+  width: 150%;
+  height: 100%;
+  /* background-image: url('/assets/images/stars.png'); */
+  background-size: cover;
+  background-position: center;
+  transform: translateX(-50%);
+  z-index: -1;
+  animation: parallax 20s linear infinite;
+}
+
+@keyframes parallax {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(50%);
+  }
+}
+
+.process-number-circle {
+  width: 40px;
+  height: 40px;
+  background-color: #86BC25; 
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  margin-bottom: 0.5rem; 
+}
+
+.close-icon {
+  margin-left: auto; /* Pushes the close icon to the right */
+  cursor: pointer;
+}
+
+/* 
+
+.circle {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: lightblue;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 30%;
+  margin-top: 10;
+ 
+}
+
+.center {
+  position: absolute;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.branch {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  transform-origin: 50% 100%; 
+
+.branch-text {
+  position: absolute;
+  top: -15px;
+  font-size: 0.8rem;
+}
+
+.branch-name {
+  position: absolute;
+  font-size: 0.8rem;
+  transform: translateX(50%) translateY(-100%); 
+}
+ */

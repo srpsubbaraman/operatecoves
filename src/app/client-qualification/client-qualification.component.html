@@ -1,0 +1,1058 @@
+
+ 
+ <div class="estimationbgimage">
+
+
+  
+
+
+
+
+
+
+  <mat-tab-group (focusChange)="tabChanged($event)" #tabGroup  animationDuration="0ms">
+
+    <mat-tab label="General Info">
+      <div>
+      <div class="steps">
+        <button disabled id="NewCl_Next" (click)="switchToTab_stepper($event, 'firstPage_Cl')" class="btn">
+          <img src="/assets/images/Gen_b.png" alt="General Information"  id="NewCl_Next" (click)="switchToTab_stepper($event, 'firstPage_Cl')">
+          General Information
+        </button>
+
+        <hr class="step-divider">
+
+        <button disabled id="NewCl_Next" (click)="switchToTab_stepper($event,'step2')" class="btn">
+          <img src="/assets/images/Pre_w.png" alt="Pre-requisites"  id="NewCl_Next" (click)="switchToTab_stepper($event,'step2')">
+          Pre-requisites
+        </button>
+
+        <hr class="step-divider">
+
+        <button disabled id="NewCl_Next" (click)="switchToTab_stepper($event,'step3')" class="btn">
+          <img src="/assets/images/Eff_w.png" alt="Efforts"  id="NewCl_Next" (click)="switchToTab_stepper($event,'step3')">
+          Efforts
+        </button>
+        
+
+       
+
+        
+      </div>
+
+
+
+
+
+      <!-- <div class="steps">
+        <button id="NewCl_Next" (click)="switchToTab_stepper($event, 'firstPage_Cl')" class="btn">
+          <span class="step 1" >
+          <img src="/assets/images/Clip_w.png" >
+          <p>step 1</p>
+         </span>
+         </button>
+
+
+         <button id="NewCl_Next" (click)="switchToTab_stepper($event,'step2')" class="btn">
+          <span class="step 1" >
+          <img src="/assets/images/Clip_w.png" >
+          <p>step 2</p>
+         </span>
+         </button>
+
+         <button id="NewCl_Next" (click)="switchToTab_stepper($event,'step3')" class="btn">
+          <span class="step 1" >
+          <img src="/assets/images/Clip_w.png" >
+          <p>step 3</p>
+         </span>
+         </button>
+        
+      </div> -->
+
+
+
+
+
+     
+    
+      <div class="tab-content" >
+       
+       
+
+
+   
+        <div class="left-cover">
+        <label>Select Client Type:</label>
+        <select [(ngModel)]="clientType" (change)="onClientType($event)" class="custom-select" id="Select_type">
+            <option value="isExtCl">Existing Client</option>
+            <option value="isNewCl">New Client</option>
+        </select>
+        <!-- <div class="spacer"></div> -->
+       
+        <div class="form-group" *ngIf="clientType==='isNewCl'" class="bordered">
+            <div class="new-details">
+              <div class="dropdown-container">
+                <div class="left-dropdowns">
+                <label class="input-label">Client Name 
+                  <span class="required">*</span>
+                </label>
+                <input class="inputbox" id="clientName" type="text" />
+                <label class="input-label">Project Name                 
+                <span class="required">*</span>
+                </label>
+                <input class="inputbox" id="pjtName" type="text" />
+                <!-- <br> -->
+
+
+
+    
+
+
+                <label class="input-label">Project Description
+                  <span class="required">*</span>
+              </label>
+              <input class="inputbox" id="projectDescription" type="text"/>
+              
+              <label class="input-label">Country
+                <span class="required">*</span>
+                <!-- <button (click)="accessSelectedCountry()">Access Selected Country</button> -->
+            </label>
+            <select id="country"  class="select" name="country" (change)="onSelect($event)">
+              <option *ngFor="let country of countries" [value]="country.code">{{ country.name }}</option>
+            </select>
+            <!-- <input class="inputbox" id="location" type="text"/> -->
+            
+            <label class="input-label">Project Partner
+              <span class="required">*</span>
+          </label>
+          <input class="inputbox" id="projectPartner" type="text"/>
+          <label class="input-label">SDM of Project
+            <span class="required">*</span>
+        </label>
+        <input class="inputbox" id="SDM" type="text"/>
+        
+          </div>
+          
+
+          <div class="right-dropdowns">
+            <label class="input-label">Function
+              <span class="required">*</span>
+          </label>
+          <input class="inputbox" id="function" type="text"/>
+          
+          <label class="input-label">Service Line
+              <span class="required">*</span>
+          </label>
+          <input class="inputbox" id="serviceLine" type="text"/>
+          
+          
+             
+          <label class="input-label">Start Date
+              <span class="required">*</span>
+          </label>
+          <input class="inputbox" id="startDate" type="date"/>
+          
+          <label class="input-label">End Date
+              <span class="required">*</span>
+          </label>
+          <input class="inputbox" id="endDate" type="date"/>
+          
+           
+         
+          <label class="input-label">Purpose
+            <span class="required">*</span>
+        </label>
+        <select [(ngModel)]="purpose" class="inputbox" id="purpose" type="text">
+          <option value=""  selected>Select</option>
+          <option value="Client Delivery">Client Delivery</option>
+          <option value="Client Pursuit">Client Pursuit</option>
+        </select>
+
+          </div>
+          </div>
+
+
+
+                  <button id="NewCl_Next" (click)="switchToTab($event, 'NewCl_Next')" class="EFbtn">Next</button>
+            </div>
+           
+        </div>
+       
+   
+        <div class="form-group" *ngIf="clientType==='isExtCl'" class="bordered">
+            <div class="existing-details">
+              <div class="dropdown-container">
+              <div class="left-dropdowns">
+                
+                <label class="input-label">Existing Clients
+                  <span class="required">*</span>
+                </label>
+                 <!-- <br> -->
+                <select class="select" id="clientID" name="clientID" (change)="OnClientChange()"></select>
+
+
+            <label class="input-label">Client Name 
+              <span class="required">*</span>
+            </label>
+            <input class="inputbox" id="clientName" type="text" [disabled]="isFieldDisabled" />
+
+            <label class="input-label">Project Name                 
+              <span class="required">*</span>
+            </label>
+            <input class="inputbox" id="pjtName" type="text" [disabled]="isFieldDisabled"/>
+
+            <label class="input-label">Project Description
+              <span class="required">*</span>
+          </label>
+          <input class="inputbox" id="projectDescription" type="text"[disabled]="isFieldDisabled"/>
+          
+          <label class="input-label">Country
+            <span class="required">*</span>
+            
+            <!-- <button (click)="accessSelectedCountry()">Access Selected Country</button> -->
+        </label>
+        <select id="country"  class="select" name="country" (change)="onSelect($event)" [disabled]="isFieldDisabled">
+          <option *ngFor="let country of countries" [value]="country.code">{{ country.name }}</option>
+        </select>
+        
+
+        <label class="input-label">Project Partner
+          <span class="required">*</span>
+      </label>
+      <input class="inputbox" id="projectPartner" type="text"[disabled]="isFieldDisabled"/>
+     
+
+          </div>
+          <!-- </div>
+          <div class="existing-details"> -->
+             
+
+            <div class="right-dropdowns">
+                <label class="input-label">Function
+                  <span class="required">*</span>
+              </label>
+              <input class="inputbox" id="function" type="text"[disabled]="isFieldDisabled"/>
+              
+              <label class="input-label">Service Line
+                  <span class="required">*</span>
+              </label>
+              <input class="inputbox"  id="serviceLine" type="text"[disabled]="isFieldDisabled"/>
+
+              
+              
+                 
+              <label class="input-label">Start Date
+                  <span class="required">*</span>
+              </label>
+              <input class="inputbox" id="startDate" placeholder="" type="date"[disabled]="isFieldDisabled"/>
+
+              
+              <label class="input-label">End Date
+                  <span class="required">*</span>
+              </label>
+              <input class="inputbox" id="endDate" type="date"[disabled]="isFieldDisabled"/>
+              
+               
+              <label class="input-label">SDM of Project
+                  <span class="required">*</span>
+              </label>
+              <input class="inputbox" id="SDM" type="text"[disabled]="isFieldDisabled"/>
+              
+              <label class="input-label">Purpose
+                  <span class="required">*</span>
+              </label>
+              <select [(ngModel)]="purpose" class="inputbox" id="purpose" type="text"[disabled]="isFieldDisabled">
+                <option value="Client Delivery">Client Delivery</option>
+                <option value="Client Pursuit">Client Pursuit</option>
+              </select>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <br>
+
+                 <div class="button-container">
+                  <button (click)="toggleField()" class="EFbtn">Edit</button>
+                    <div *ngIf="next" >
+                      <button id="ExtCl_Next" (click)="switchToTab($event, 'ExtCl_Next')" class="EFbtn">Next</button>
+                      </div>
+                      <div *ngIf="!next" >
+                      <button id="ExtCl_Update" (click)="toggleField()" class="EFbtn">Update</button>
+                      </div>
+                  
+              </div>
+              </div>
+                <!-- <div class="button-container">
+                  <button (click)="toggleField()" class="EFbtn">Edit</button>
+                  <button (click)="switchToTab($event)" class="EFbtn">Update/Next</button>
+              </div> -->
+            </div>
+            </div>
+           </div>
+           </div>
+      
+           
+        <!-- <div class="right-cover">
+        <div class="gen-image">
+         
+      </div>
+      <label class="Email">
+        Contact us : <a href="mailto:inconetpsapopt@deloitte.com">inconetpsapopt&#64;deloitte.com</a>
+    </label>
+  
+       </div> -->
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+          </div>
+  
+   
+     </div>
+     
+    </mat-tab>
+   
+    <mat-tab label="ABAP">
+     
+      <!-- <div class="steps">
+        <button class="step-button" id="NewCl_Next" (click)="switchToTab($event)" class="btn">
+          <img src="/assets/images/Clip_w.png" alt="Step 1"  id="NewCl_Next" (click)="switchToTab($event)">
+          Step 1
+        </button>
+
+        <hr class="step-divider">
+
+        <button class="step-button" id="NewCl_Next" (click)="switchToTab($event)" class="btn">
+          <img src="/assets/images/Clip_w.png" alt="Step 2"  id="NewCl_Next" (click)="switchToTab($event)">
+          Step 2
+        </button>
+
+        <hr class="step-divider">
+
+        <button class="step-button" id="NewCl_Next" (click)="switchToTab($event)" class="btn">
+          <img src="/assets/images/Clip_w.png" alt="Step 3"  id="NewCl_Next" (click)="switchToTab($event)">
+          Step 3
+        </button>
+        
+        <hr class="step-divider">
+
+    
+
+        
+      </div> -->
+
+
+
+     
+      <div class="Abapdiv" >
+        <label  style="margin-left: 110px; display: none;">Information
+   
+        
+        <select class="sel"  id="req"  style="margin-left: 26px;" [(ngModel)]="requestType" (change)="onDropdownChange($event)">
+          <option>Basic</option>
+          <option>Effort</option>
+     
+   
+        </select>
+        </label>
+   
+  
+  
+        <div class="bordered-div" *ngIf="requestType === 'Basic'">
+          <!-- <div class="space">
+            <table class="width1 center-content">
+              <tr>
+                <th>SAP Standardization Ratio</th>
+                <th>Cross System Integrations</th>
+                <th>IT Best Practices Level</th>
+                <th>System Maturity</th>
+              </tr>
+              <tr>
+                <th>
+                  <select id="SAPStandardRatio" name="SAPStandardRatio">
+                    <option value="90+ %">90+ %</option>
+                    <option value="75 - 90 %">75 - 90 %</option>
+                    <option value="60 - 75 %">60 - 75 %</option>
+                    <option value="0 - 60 %">0 - 60 %</option>
+                  </select>
+                </th>
+                <th>
+                  <select id="CrossSysInt" name="CrossSysInt">
+                    <option value="0 - 2">0 - 2</option>
+                    <option value="3 - 5">3 - 5</option>
+                    <option value="6 - 10">6 - 10</option>
+                    <option value="10 +">10 +</option>
+                  </select>
+                </th>
+                <th>
+                  <select id="FITBestPractices" name="FITBestPractices">
+                    <option value="Basic">Basic</option>
+                    <option value="Moderate">Moderate</option>
+                    <option value="Mature">Mature</option>
+                  </select>
+                </th>
+                <th>
+                  <select id="SystemMaturity" name="SystemMaturity">
+                    <option value="> 10 Year">> 10 Year</option>
+                    <option value="5-10 Year">5-10 Year</option>
+                    <option value="2-5 Year">2-5 Year</option>
+                    <option value="0-2 Year">0-2 Year</option>
+                  </select>
+                </th>
+              </tr>
+              </table>
+             
+              <table class="width1 center-content">
+                <tr>
+                  <th>Regression Qualification</th>
+                  <th>IT Releases per year</th>
+                  <th>QAS Testing</th>
+                  <th>Regression Testing</th>
+                </tr>
+                <tr>
+                  <th>
+                    <select id="regressionQual" name="regressionQual">
+                      <option value="1 - 15">1 - 15</option>
+                    </select>
+                  </th>
+                  <th>
+                    <select id="ITReleases" name="ITReleases">
+                      <option value="3M">3M</option>
+                    </select>
+                  </th>
+                  <th>
+                    <select id="QASTesting" name="QASTesting">
+                      <option value="true">True</option>
+                      <option value="false">False</option>
+                    </select>
+                  </th>
+                  <th>
+                    <select id="RegressionTesting" name="RegressionTesting">
+                      <option value="true">True</option>
+                      <option value="false">False</option>
+                    </select>
+                  </th>
+                </tr>
+            </table>
+       
+            <div style="margin-top: 40px;">
+              <button (click)="nextClicked()" class="EFbtn" ><i class="fa-solid fa-arrow-right"></i>Next </button>
+             
+            </div>
+          </div> -->
+  
+  
+  
+          <div class="steps">
+            <button disabled id="NewCl_Next" (click)="switchToTab_stepper($event, 'firstPage_Cl')" class="btn">
+              <img src="/assets/images/Gen_w.png" alt="General Information"  id="NewCl_Next" (click)="switchToTab_stepper($event, 'firstPage_Cl')">
+              General Information
+            </button>
+    
+            <hr class="step-divider">
+    
+            <button disabled id="NewCl_Next" (click)="switchToTab_stepper($event,'step2')" class="btn">
+              <img src="/assets/images/Pre_b.png" alt="Pre-requisites"  id="NewCl_Next" (click)="switchToTab_stepper($event,'step2')">
+              Pre-requisites
+            </button>
+    
+            <hr class="step-divider">
+    
+            <button disabled id="NewCl_Next" (click)="switchToTab_stepper($event,'step3')" class="btn">
+              <img src="/assets/images/Eff_w.png" alt="Efforts"  id="NewCl_Next" (click)="switchToTab_stepper($event,'step3')">
+              Efforts
+            </button>
+            
+          </div>
+  
+  
+          <div class="left-client-ratio"> 
+            <label class="prereq">ABAP Estimation Pre-requisites</label>
+          <div class="all-drop">
+              <label>
+                SAP Standardization Ratio
+                <span class="required">*</span>
+
+              </label>
+              <select id="SAPStandardRatio" name="SAPStandardRatio">
+                <option value="" selected>Select</option>
+                <option value="90+ %">90+ %</option>
+                <option value="75 - 90 %">75 - 90 %</option>
+                <option value="60 - 75 %">60 - 75 %</option>
+                <option value="0 - 60 %">0 - 60 %</option>
+              </select>
+  
+              <label>
+                Cross System Integrations
+                <span class="required">*</span>
+
+              </label>
+              <select id="CrossSysInt" name="CrossSysInt">
+                <option value="" selected>Select</option>
+                <option value="0 - 2">0 - 2</option>
+                <option value="3 - 5">3 - 5</option>
+                <option value="6 - 10">6 - 10</option>
+                <option value="10 +">10 +</option>
+              </select>
+  
+              <label>
+                IT Best Practices Level
+                <span class="required">*</span>
+
+              </label>
+              <select id="FITBestPractices" name="FITBestPractices">
+                <option value="" selected>Select</option>
+                <option value="Basic">Basic</option>
+                <option value="Moderate">Moderate</option>
+                <option value="Mature">Mature</option>
+              </select>
+  
+  
+              <label>
+                System Maturity
+                <span class="required">*</span>
+
+              </label>
+              <select id="SystemMaturity" name="SystemMaturity">
+                <option value="" selected>Select</option>
+                <option value="> 10 Year">> 10 Year</option>
+                <option value="5-10 Year">5-10 Year</option>
+                <option value="2-5 Year">2-5 Year</option>
+                <option value="0-2 Year">0-2 Year</option>
+              </select>
+  
+              <label>
+                Regression Qualification
+                <span class="required">*</span>
+
+              </label>
+              <select id="regressionQual" name="regressionQual">
+                <option value="" selected>Select</option>
+                <option value="1 - 15">1 - 15</option>
+              </select>
+  
+              <label>
+                IT Releases per year
+                <span class="required">*</span>
+
+              </label>
+              <select id="ITReleases" name="ITReleases">
+                <option value="" selected>Select</option>
+                <option value="3M">3M</option>
+              </select>
+  
+              <label>
+                QAS Testing
+                <span class="required">*</span>
+
+              </label>
+              <select id="QASTesting" name="QASTesting">
+                <option value="" selected>Select</option>
+                <option value="true">True</option>
+                <option value="false">False</option>
+              </select>
+  
+              <label>
+                Regression Testing
+                <span class="required">*</span>
+
+              </label>
+              <select id="RegressionTesting" name="RegressionTesting">
+                <option value="" selected>Select</option>
+                <option value="true">True</option>
+                <option value="false">False</option>
+              </select>
+  
+
+
+
+
+
+
+
+
+              <div  class="abapNext">
+                <button (click)="previous_Step()" class="EFbtn" >Back </button>
+                <!-- <button (click)="nextClicked()" class="EFbtn" ><i class="fa-solid fa-arrow-right"></i>Next </button> -->
+                <button (click)="nextClicked()" class="EFbtn" >Next </button>
+              </div>
+            </div>
+            </div>
+  
+  
+            <!-- <div class="right-client">
+              <div class="gradient-img" >
+  
+              </div>
+              <div class="gen-image">
+  
+       
+              </div>
+              <label class="Email">
+                Contact us : <a href="mailto:inconetpsapopt@deloitte.com">inconetpsapopt&#64;deloitte.com</a>
+            </label>
+  
+            
+  
+  
+            <img src="../assets/images/web.png" alt="image">
+  
+  
+  
+  
+  
+          </div> -->
+  
+          
+            
+        </div>
+       
+   
+     
+      <!-- <div class="spacer"> -->
+        <div class="bordered-div" *ngIf="requestType === 'Effort'">
+          <!-- <div class="space">
+            <table class="width center-content">
+              <tr>
+               // <th>Technology</th>
+                <th>Type</th>
+                <th>Object Complexity</th>
+                <th>Functional Effort</th>
+                <th>Technical Effort</th>
+                <th>Testing Effort</th>
+                <th>Automation Effort</th>
+              </tr>
+              <tr>
+                <th>
+                  <select id="type" [(ngModel)]="selectedType" (ngModelChange)="onTypeChange()">
+                  //  <option value="sel" [selected]="selectedType === 'select'">select</option>
+                    <option value="Report">Report</option>
+                    <option value="Dialogs / Infotypes">Dialogs / Infotypes</option>
+                    <option value="Data Conversion">Data Conversion</option>
+                    <option value="Enhancement / User Exits">Enhancement / User Exits</option>
+                    <option value="Interface">Interface</option>
+                    <option value="Incident">Incident</option>
+                    <option value="Smart Form">Smart Form</option>
+                    <option value="Workflow">Workflow</option>
+                    <option value="Webdynpro">Webdynpro</option>
+                  </select>
+                </th>
+                <th *ngIf="selectedType !== 'Incident'">
+                  <select id="objcomp" [(ngModel)]="selectedObjectComplexity" (ngModelChange)="onTypeChange()">
+                  //  <option value="sel" [selected]="selectedType === 'select'">select</option>
+                    <option value="Low">Low</option>
+                    <option value="Medium">Medium</option>
+                    <option value="High">High</option>
+                  </select>
+                </th>
+                <th *ngIf="selectedType === 'Incident'">
+                  <select id="objcomp" [(ngModel)]="selectedObjectComplexity" (ngModelChange)="onTypeChange()">
+                  //  <option value="sel" [selected]="selectedType === 'select'">select</option>
+                   
+                    <option value="L0">L0</option>
+                    <option value="L1">L1</option>
+                    <option value="L2">L2</option>
+                    <option value="L3">L3</option>
+   
+                  </select>
+                </th>
+             ////   <th>
+                  <select id="objcomp">
+                    <option value="Low">Low</option>
+                    <option value="Medium">Medium</option>
+                    <option value="High">High</option>
+                    <option value="L0">L0</option>
+                    <option value="L1">L1</option>
+                    <option value="L2">L2</option>
+                    <option value="L3">L3</option>
+                  </select>
+                </th> ////
+                <th><input type="number" id="funcEff" [(ngModel)]="functionalEffort" style="width: 70px;"></th>
+                <th><input type="number" id="techEff" [(ngModel)]="technicalEffort" style="width: 70px;"></th>
+                <th><input type="number" id="testEff" [(ngModel)]="testingEffort" style="width: 70px;"></th>
+                <th><input type="number" id="autoEff" [(ngModel)]="automationEffort" style="width: 70px;"></th>
+              </tr>
+            </table>
+            <div style="margin-left: 10px;">
+              <a style="font-weight: bold;">Effort Breakup :</a>
+          </div>
+            <table class="width center-content">
+              <tr>
+                // <th>Technology</th>
+                <th>Object Category</th>
+                <th>Object Type</th>
+                <th>Object Name</th>  
+                <th>Object Effort</th>
+              </tr>
+              <tr>
+                <th>
+                  <select id="mainSelect" [(ngModel)]="selectedMainOption" (change)="onMainSelectChange()">
+                    <option *ngFor="let option of mainOptions" [value]="option.label">{{ option.label }}</option>
+                  </select>
+                </th>
+                <th>
+                //  <div *ngIf="dependentOptions.length > 0">
+                  <label for="dependentSelect"></label>
+                  <select id="dependentSelect" [(ngModel)]="selectedDependentOption" (change)="onDependentSelectChange()">
+                    <option *ngFor="let option of dependentOptions" [value]="option.label">{{ option.label }}</option>
+                  </select>
+                //  </div>
+                </th>
+                <th>
+                 // <div *ngIf="thirdLevelOptions.length > 0">
+                  <label for="thirdLevelSelect"></label>
+                  <select id="thirdLevelSelect" [(ngModel)]="selectedThirdLevelOption" >
+                    <option *ngFor="let option of thirdLevelOptions" [value]="option.label">{{ option.label }}</option>
+                  </select>
+                //  </div>
+                </th>
+               
+                <th><input type="number" id="objEff" [(ngModel)]="objectEffort" style="width: 70px;"></th>
+   
+              </tr>
+            </table>
+          </div>
+          <div style="margin-top: 40px; display: flex; justify-content: right;">
+            <button (click)="previousClicked()" class="EFbtn"><i class="fa-solid fa-arrow-left"></i>Back</button>
+            <button (click)="createQual()" class="EFbtn"><i class="fa-sharp fa-solid fa-floppy-disk"></i> Save</button>
+        </div> -->
+  
+  
+        <div class="steps">
+          <button disabled id="NewCl_Next" (click)="switchToTab_stepper($event, 'firstPage_Cl')" class="btn">
+            <img src="/assets/images/Gen_w.png" alt="General Information"  id="NewCl_Next" (click)="switchToTab_stepper($event, 'firstPage_Cl')">
+            General Information
+          </button>
+  
+          <hr class="step-divider">
+  
+          <button disabled id="NewCl_Next" (click)="switchToTab_stepper($event,'step2')" class="btn">
+            <img src="/assets/images/Pre_w.png" alt="Pre-requisites"  id="NewCl_Next" (click)="switchToTab_stepper($event,'step2')">
+            Pre-requisites
+          </button>
+  
+          <hr class="step-divider">
+  
+          <button disabled id="NewCl_Next" (click)="switchToTab_stepper($event,'step3')" class="btn">
+            <img src="/assets/images/Eff_b.png" alt="Efforts"  id="NewCl_Next" (click)="switchToTab_stepper($event,'step3')">
+            Efforts
+          </button>
+          
+        </div>
+  
+  
+  
+  
+        <div class="left-client"> 
+        <div class="all-drop">
+          <div class="all-Eff">
+          <div class="Total-Eff">
+            <div class="head" >
+              <label > Total Efforts</label>
+            </div>
+           <br>
+          <label>
+            Type
+            <span class="required">*</span>
+
+          </label>
+          <select id="type" [(ngModel)]="selectedType" (ngModelChange)="onTypeChange()">
+              <!-- <option value="sel" [selected]="selectedType === 'select'">select</option> -->
+              <option value="" selected>Select</option>
+              <option value="Report">Report</option>
+              <option value="Dialogs / Infotypes">Dialogs / Infotypes</option>
+              <option value="Data Conversion">Data Conversion</option>
+              <option value="Enhancement / User Exits">Enhancement / User Exits</option>
+              <option value="Interface">Interface</option>
+              <option value="Incident">Incident</option>
+              <option value="Smart Form">Smart Form</option>
+              <option value="Workflow">Workflow</option>
+              <option value="Webdynpro">Webdynpro</option>
+            </select>
+  
+          <label>
+            Object Complexity
+            <span class="required">*</span>
+
+          </label>
+          <div *ngIf="selectedType !== 'Incident'">
+            <select id="objcomp" [(ngModel)]="selectedObjectComplexity" (ngModelChange)="onTypeChange()">
+            <!-- //  <option value="sel" [selected]="selectedType === 'select'">select</option> -->
+              <option value="" selected>Select</option>
+              <option value="Low">Low</option>
+              <option value="Medium">Medium</option>
+              <option value="High">High</option>
+            </select>
+          </div>
+          <div *ngIf="selectedType === 'Incident'">
+            <select id="objcomp" [(ngModel)]="selectedObjectComplexity" (ngModelChange)="onTypeChange()">
+            <!-- //  <option value="sel" [selected]="selectedType === 'select'">select</option> -->
+              <option value="" selected>Select</option>
+              <option value="L0">L0</option>
+              <option value="L1">L1</option>
+              <option value="L2">L2</option>
+              <option value="L3">L3</option>
+  
+            </select>
+          </div>
+       <!-- ////   <th> -->
+            <!-- <select id="objcomp">
+              <option value="Low">Low</option>
+              <option value="Medium">Medium</option>
+              <option value="High">High</option>
+              <option value="L0">L0</option>
+              <option value="L1">L1</option>
+              <option value="L2">L2</option>
+              <option value="L3">L3</option>
+            </select> -->
+  
+  
+  
+  
+          <label>
+            Functional Effort
+            <span class="required">*</span>
+
+          </label>
+          <!-- <input type="number" id="funcEff" [(ngModel)]="functionalEffort" style="width: 70px;"> -->
+          <input  class="input-Total-Eff" type="number" id="funcEff" [(ngModel)]="functionalEffort" >
+  
+  
+          <label>
+            Technical Effort
+            <span class="required">*</span>
+
+          </label>
+          <!-- <input type="number" id="techEff" [(ngModel)]="technicalEffort" style="width: 70px;"> -->
+          <input  class="input-Total-Eff" type="number" id="techEff" [(ngModel)]="technicalEffort" >
+  
+          <label>
+            Testing Effort
+            <span class="required">*</span>
+
+          </label>
+          <!-- <input type="number" id="testEff" [(ngModel)]="testingEffort" style="width: 70px;"> -->
+          <input  class="input-Total-Eff" type="number" id="testEff" [(ngModel)]="testingEffort" >
+        
+  
+          <label>
+            Automation Effort
+            <span class="required">*</span>
+
+          </label>
+          <!-- <input type="number" id="autoEff" [(ngModel)]="automationEffort" style="width: 70px;"> -->
+          <input class="input-Total-Eff" type="number" id="autoEff" [(ngModel)]="automationEffort" >
+  
+        </div>
+  
+  
+  
+  
+        <div class="Effort-Brk">
+          <div class="head">
+            <label> Effort Breakup</label>
+          </div>
+          <br>
+          
+
+          <label>
+            Object
+            <span class="required">*</span>
+
+          </label>
+          <select id="firstSelect" [(ngModel)]="selectedFirstOption" (change)="onFirstSelectChange()">
+            <option value="" selected>Select</option>
+            <option *ngFor="let option of firstOption" [value]="option.label">{{ option.label }}</option>
+          </select>
+
+
+
+          <label>
+            Object Category
+            <span class="required">*</span>
+
+          </label>
+          <select id="mainSelect" [(ngModel)]="selectedMainOption" (change)="onMainSelectChange()">
+            <option value="" selected>Select</option>
+            <option *ngFor="let option of mainOptions" [value]="option.label">{{ option.label }}</option>
+          </select>
+  
+          <label>
+            Object Type
+            <span class="required">*</span>
+
+          </label>
+          <label for="dependentSelect"></label>
+          <select id="dependentSelect" [(ngModel)]="selectedDependentOption" (change)="onDependentSelectChange()">
+            <option value="" selected>Select</option>
+            <option *ngFor="let option of dependentOptions" [value]="option.label">{{ option.label }}</option>
+          </select>
+  
+  
+          <label>
+            Object Name
+            <span class="required">*</span>
+
+          </label>
+          <label for="thirdLevelSelect"></label>
+          <select id="thirdLevelSelect" [(ngModel)]="selectedThirdLevelOption" (change)="objeff()" >
+            <option value="" selected>Select</option>
+            <option *ngFor="let option of thirdLevelOptions"  [value]="option.label">{{ option.label }}</option>
+          </select>
+  
+  
+          <label>
+            Object Effort
+            <span class="required">*</span>
+
+          </label>
+          <!-- <input type="number" id="objEff" [(ngModel)]="objectEffort" style="width: 70px;"> -->
+          <input  class="input-Total-Eff" type="number" id="objEff" [value]="objectEffort">
+  
+  
+          <div  class="client-save" >
+            <!-- <button (click)="previousClicked()" class="EFbtn"><i class="fa-solid fa-arrow-left"></i>Back</button> -->
+            <button (click)="previousClicked()" class="EFbtn">Back</button>
+            <!-- <button (click)="createQual()" class="EFbtn"><i class="fa-sharp fa-solid fa-floppy-disk"></i> Save</button> -->
+            <button (click)="createQual()" class="EFbtn">Save</button>
+        </div>
+        </div>
+      </div>
+      
+  </div>
+  
+        </div>
+  
+        <!-- <div class="right-client">
+  
+          <div class="gen-image">
+  
+   
+          </div>
+          <label class="Email">
+            Contact us : <a href="mailto:inconetpsapopt@deloitte.com">inconetpsapopt&#64;deloitte.com</a>
+        </label>
+      </div> -->
+  
+  
+  
+  
+        </div> 
+       
+  
+  
+  
+  
+  
+  
+  
+  
+  
+      <!-- </div> -->
+      </div>
+      <!-- </mat-sidenav-content>
+          </mat-sidenav-container> -->
+    </mat-tab>
+   
+    <!-- <mat-tab   label="PI/PO/CPI">
+     
+      <div class="Dev">
+       
+   
+       // </mat-tab>
+       // <mat-tab label="Effort Estimation PI Changes">
+          <div class="center">
+        <div class="IS1">
+          <label>Integration Stack:
+            <span class="required">*</span>
+          </label>
+          <select class="sel" style="margin-left: 2.35%;" [(ngModel)]="requestType" (change)="loadCRINCInfo()">
+            <option value="PI" value="" selected>PI Dual Stack</option>
+            <option value="PO">PO</option>
+            <option value="CPI">CPI</option>
+          </select><br>
+          <label>Effort Estimation:
+            <span class="required">*</span>
+          </label>
+          <select class="sel" style="margin-left: 2.35%;" [(ngModel)]="requestType" (change)="loadCRINCInfo()">
+            <option value="PI Development" value="" selected>Create New Development</option>
+            <option value="PI Changes">Changes Existing Development</option>
+          </select><br><br>
+   
+          // Development Section
+          <div *ngIf="requestType === 'PI Development'">
+            <label>Development</label>
+            <div class="scrollable-input-container">
+            //  ... (content for PI Development) ...
+             
+              <label style="margin-left: 15px">Simple</label>
+              <input style="margin-left: 54px" type="text" /><br>
+              <label style="margin-left: 15px">Medium</label>
+              <input style="margin-left: 45px" type="text" /><br>
+              <label style="margin-left: 15px">Complex</label>
+              <input style="margin-left: 43px" type="text" /><br>
+              <label style="margin-left: 15px">Very Complex</label>
+              <input style="margin-left: 13px" type="text" />
+            </div>
+   
+            <div class="devbtn" style="margin-top: 10px">
+              <button class="EFbtn" style="margin-left: 324px">Back</button>
+              <button class="EFbtn">Submit</button>
+            </div>
+          </div>
+   
+         // Changes Section
+          <div *ngIf="requestType === 'PI Changes'" class="scrollable-input-container1">
+            <div> <label>Changes</label></div>
+            // ... (content for PI Changes) ...
+           
+            <label style="margin-left: 15px">Simple</label>
+            <input style="margin-left: 54px" type="text" /><br>
+            <label style="margin-left: 15px">Medium</label>
+            <input style="margin-left: 45px" type="text" /><br>
+            <label style="margin-left: 15px">Complex</label>
+            <input style="margin-left: 43px" type="text" /><br>
+            <label style="margin-left: 15px">Very Complex</label>
+            <input style="margin-left: 13px" type="text" />
+   
+            <div class="changesbtn" style="margin-top: 43px">
+              <button class="EFbtn" >Back</button>
+              <button class="EFbtn">Submit</button>
+            </div>
+          </div>
+        </div>
+  </div>
+      </div>
+   
+   
+      // </div>
+   
+    </mat-tab>
+    <mat-tab label="BASIS">
+   
+    </mat-tab> -->
+  </mat-tab-group>
+  </div>

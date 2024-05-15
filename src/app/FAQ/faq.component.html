@@ -1,0 +1,38 @@
+  <!-- Wrap the Frequently Asked Questions in a scrollable container -->
+
+  <title>FAQ</title>
+<div class="loader-container" *ngIf="loading">
+  <div>
+    <span class="letter">D</span>
+    <span class="dot"></span>
+  </div>
+</div>
+
+<div class="content" *ngIf="!loading">
+  <div class="section-container">
+      <div class="title-info">
+        Frequently Asked Questions
+      </div>
+      <div class="faq-container">
+        <div *ngFor="let faq of faqs; let i = index" class="faqborder" (click)="toggleAnswer(i)">
+          {{ faq.showAnswer ? '' : '' }}
+          <div class="faqName">
+            <label style="font-weight: bold;" class="ques">{{ faq.questions }}</label>
+          </div>
+        
+          <!-- <button class="toggleIcon" (click)="toggleAnswer(i)">
+                {{ faq.showAnswer ? '-' : '+' }}
+            </button> -->
+            <hr class="faq-divider" />
+          <div class="faqDetails" [class.open]="faq.showAnswer">
+              
+            <label class="ans">{{ faq.ans }}</label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <app-footer></app-footer>
+    </div>
+    <!-- Other contents go here -->
+    
+    

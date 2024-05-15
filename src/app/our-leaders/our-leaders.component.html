@@ -1,0 +1,18 @@
+
+
+<div>
+    <div class="heading">
+        Our Leaders
+    </div>
+    <div class="leaders">
+        <div class="leaderborder" *ngFor="let leader of leaders">
+            <div class="leader">
+                <img [src]="leader.imageSrc">
+                <div class="leaderName">{{ leader.name }}</div>
+                <div class="leaderRole">{{ leader.role }}</div>
+                <div class="leaderEmail">{{ leader.email }}</div>
+            </div>
+        </div>
+    </div>
+    </div>
+    

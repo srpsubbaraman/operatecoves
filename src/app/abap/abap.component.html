@@ -1,0 +1,219 @@
+<div class = "Estimation" style="text-align: center;">
+    <h1 style="font-size: 24px;">ABAP - Estimation</h1>
+  </div>
+  <div class="container">
+    <div class="middleRight">
+
+  
+   
+      <!-- Your title info content goes here -->
+   
+  <fieldset class="box1">
+      <div class="maindiv">
+         
+          <div class="form-group">
+              <label>Request Type:
+                  <span class="required">*</span>
+              </label>
+              <select class="select" [(ngModel)]="requestType" (change)="loadCRINCInfo()">
+                  <option value="Select" disabled>Select</option>
+                  <option>CR</option>
+                  <option>Incident</option>
+              </select>
+          </div>
+         
+      </div>
+     
+   
+      <div class="form-group">
+          <label>Client Qualification:
+              <span class="required">*</span>
+          </label>
+          <select class="select" id="clientID" name="clientID" (change)="OnClientChange()">
+          </select>
+      </div>
+     
+      <div class="form-group">
+          <label>Client Name:
+              <span class="required">*</span>
+          </label>
+          <input disabled class="inputbox" id="clientName" name="clientName" size=30 type="text" />
+      </div>
+     
+      <div class="form-group">
+          <label>Project Name:
+              <span class="required">*</span>
+          </label>
+          <input disabled class="inputbox" id="projectName" name="projectName" size=30 type="text" />
+      </div>
+     
+      <!-- CR -->
+                  <div *ngIf="showCRFields" class="form-group" id="crtQuote">
+     
+                      <label> Object Type:
+                          <span class="required">*</span></label>
+                      <select  class="select" id="objectType" name="objectType">
+                          <option value="Select" disabled selected>Select</option>
+                          <option>Report</option>
+                          <option>Interface</option>
+                          <option>Data Conversion</option>
+                          <option>Enhancement / User Exits</option>
+                          <option>Smart Form</option>
+                          <option>Workflow</option>
+                          <option>Webdynpro</option>
+                          <option>Dialogs / Infotypes</option>
+                      </select>
+                      <label> Object Complexity:
+                          <span class="required">*</span></label>
+                      <select class="select" id="objectComplexity" name="objectComplexity">
+                          <option value="Select" disabled selected>Select</option>
+                          <option>Low</option>
+                          <option>Medium</option>
+                          <option>High</option>
+                      </select><label> Development Category:
+                          <span class="required">*</span></label>
+                      <select class="select"  id="objectDevCategory" name="objectDevCategory ">
+                          <option value="Select" disabled selected>Select</option>
+                          <option>New</option>
+                          <option>Existing</option>
+                         
+                      </select>
+                     
+                      <label> Configuration Involved:
+                          <span class="required">*</span></label>
+                      <select class="select" id="objectDevConfig" name="objectDevConfig">
+                          <option value="Select" disabled selected>Select</option>
+                          <option>Yes</option>
+                          <option>No</option>
+                      </select>
+                      <label> Testing Type:
+                          <span class="required">*</span></label>
+                      <select  class="select" id="objectTestType" name="objectTestType">
+                          <option value="Select" disabled selected>Select</option>
+                          <option>Manual</option>
+                          <option>Automated</option>
+                      </select>  <label> QA Test Required:
+                          <span class="required">*</span></label>
+                      <select class="select" id="objectQa" name="objectQa">
+                          <option value="Select" disabled selected>Select</option>
+                          <option>Yes</option>
+                          <option>No</option>
+                      </select><label> Regression Test Required:
+                          <span class="required">*</span></label>
+                      <select class="select"  id="objectRt" name="objectRt">
+                          <option value="Select" disabled selected>Select</option>
+                          <option>Yes</option>
+                          <option>No</option>
+                      </select>
+                     
+                      <label> Regression Qualification:
+                          <span class="required">*</span></label>
+                      <select class="select"  id="objectRtQual" name="objectRtQual">
+                          <option value="Select" disabled selected>Select</option>
+                          <option>1-15</option>
+                          <option>15-30</option>
+                          <option>30+</option>
+                      </select>
+     
+                      <br>
+                      <div class="addcartdiv">
+                        <button class="button" id="addToCart" name="addToCart" (click)="addToCart()"><i class="fa-solid fa-cart-plus" style="margin-right: 5px;"></i>Add To Cart</button>
+                      </div>
+                      <br>
+                   
+     
+      </div>
+                     
+     
+     
+     
+      <!-- Incident -->
+     
+                  <div *ngIf="showIncidentFields" class="form-group" id="incidentFields">
+     
+                      <label > Defect Category:
+                          <span class="required">*</span></label>
+                      <select  class="select" id="defectCategory" name="defectCategory">
+                          <option value="Select" disabled selected>Select</option>
+                          <option>L0</option>
+                          <option>L1</option>
+                          <option>L2</option>
+                          <option>L3</option>
+     
+                      </select>
+                     
+     
+                      <label > Dev. Required:
+                          <span class="required">*</span></label>
+                      <select class="select" style="margin-left:2px" id="devRequired" name="devRequired">
+                          <option value="Select" disabled selected>Select</option>
+                          <option>Low</option>
+                          <option>Medium</option>
+                          <option>High</option>
+                      </select>
+                      <label > Priority:
+                        <span class="required">*</span></label>
+                    <select class="select" style="margin-left:2px;" id="Priorty" name="Priorty ">
+                        <option value="Select" disabled selected>Select</option>
+                        <option>P1</option>
+                        <option>P2</option>
+                        <option>P3</option>
+                        <option>P4</option>
+                    </select>
+                     
+                     
+                      <label  > Testing Type:
+                          <span class="required">*</span></label>
+                      <select  class="select" id="objectTestType1" name="objectTestType1">
+                          <option value="Select" disabled selected>Select</option>
+                          <option>Manual</option>
+                          <option>Automated</option>
+                      </select>
+                     
+                      <label> Regression Test Required:
+                        <span class="required">*</span></label>
+                    <select class="select"  id="objectRt1" name="objectRt1">
+                        <option value="Select" disabled selected>Select</option>
+                        <option>Yes</option>
+                        <option>No</option>
+                    </select>
+                      <label> QA Test Required:
+                          <span class="required">*</span></label>
+                      <select class="select" id="objectQa1" name="objectQa1">
+                          <option value="Select" disabled selected>Select</option>
+                          <option>Yes</option>
+                          <option>No</option>
+                      </select>
+     
+                     
+                      <label> Regression TC Qualification:
+                          <span class="required">*</span></label>
+                      <select class="select"  id="objectRtQual1" name="objectRtQual1">
+                          <option value="Select" disabled selected>Select</option>
+                          <option>1-15</option>
+                          <option>15-30</option>
+                          <option>30+</option>
+                      </select> <BR><BR>
+                      <button class="button" id="addToCart1" name="addToCart" (click)="addToCart1()"><i class="fa-solid fa-cart-plus"style="margin-right: 5px;"></i>Add To Cart</button>
+                       
+                      <BR><BR>
+     
+                         
+     
+     
+     
+     
+      </div> 
+     
+     
+              </fieldset>
+              </div>
+
+              <div class="right-image">
+                
+                <!-- Your image goes here -->
+                <img src="../assets/images/Reports.png" alt="Image" style="width: 60%;">
+        
+               <label class="Email">Contact us : <a href="mailto:inconetpsapopt@deloitte.com">inconetpsapopt&#64;deloitte.com</a> </label>
+            </div>
+          </div>

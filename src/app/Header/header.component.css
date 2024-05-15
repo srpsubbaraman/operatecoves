@@ -1,0 +1,483 @@
+/* header.component.css */
+
+.brand {
+  float: left;
+  width: 40%;
+  height: 20px;
+  margin-top: 8px;
+}
+
+.brand img {
+  position: relative;
+  width: 78px;
+  bottom: 0.2rem;
+  left: 2.7rem;
+}
+
+.logoicon {
+  display: none;
+  height: 300px;
+  width: 300px;
+}
+
+.logo {
+  position: relative;
+  font-family: "Open Sans";
+  font-size: 16px;
+  color: #ffffff;
+  bottom: 0.2rem;
+  left: 2.9rem;
+}
+
+.logo sup {
+  font-size: 8px;
+  vertical-align: text-top;
+  line-height: 1;
+}
+
+@media (max-width: 615px) {
+  .logofull {
+    position: relative;
+    width: 50px;
+    display: none;
+  }
+  .logoicon {
+    position: relative;
+    max-width: 100%;
+    max-height: 100%;
+   
+    left: 0.35rem;
+    display: inline-block;
+  }
+  .logo {
+    position: relative;
+    font-size: 12px;
+  }
+  .logo sup {
+    font-size: 5px;
+    color: black;
+  }
+}
+
+/* menu.component.css */
+body {
+  margin-top: 20%;
+  /* font-family: Arial, sans-serif; */
+  padding-top: 600px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #000000;
+  padding: 10px;
+  color: white;
+  height: 50px;
+  position: fixed;
+  top: 0;
+  width: 99.05%;
+  z-index: 1000;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  margin-left: 10px;
+  font-size: 16px;
+  line-height: 24px;
+  white-space: nowrap;
+}
+
+.home{
+  left: 38rem;
+  position:relative;
+  display: flex;
+  align-items: center;
+}
+
+.about{
+  left: 39rem;
+  position:relative;
+}
+
+.faq{
+  left: 40rem;
+  position:relative; 
+}
+
+.service{
+  left: 41rem;
+  position:relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer; 
+}
+
+
+.user{
+  left: 42rem;
+  position:relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer; 
+}
+
+.menu-items {
+  display: flex;
+  padding-bottom: 0.4rem;
+  gap: 1.5rem;
+  position: relative;
+  left: 110%;
+}
+
+
+.menu-items1 a {
+  display: none;
+}
+
+.menu-items1.open a {
+  display: block;
+}
+
+
+
+/* Style for the hamburger button */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  font-size: 20px;
+  background: none;
+  border: none;
+  color: white;
+  position: relative;
+}
+
+
+@keyframes slideDown {
+  from {
+    max-height: 0;
+    opacity: 0;
+  }
+  to {
+    max-height: 70vh;
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    max-height: 70vh;
+    opacity: 1;
+  }
+  to {
+    max-height: 0;
+    opacity: 0;
+  }
+}
+
+.menu-items1 {
+  display: none;
+  /* Hide menu-items1 by default */
+  height: 0; /* Set initial height to 0 */
+  overflow: hidden; /* Hide overflow content */
+  transition: height 0.5s ease, opacity 0.5s ease; /* Added transition for height and opacity */
+}
+
+
+
+
+
+.home-items {
+  display: none;
+  /* Hide menu items by default */
+  flex-direction:row;
+  justify-content: space-evenly;
+  position: absolute;
+  top: 50px;
+  /* Adjust the top position as needed */
+  right: 0;
+  background-color: rgb(0 0 0 / 60%);
+  width: 100%;
+  z-index: 999;
+  padding: 55px;
+  padding-left: 100px;
+  overflow: hidden; /* Hide overflow content */
+  transition: height 0.5s ease, opacity 0.5s ease; /*Added transition for height and opacity */
+}
+
+.home-items.show {
+  display: flex;
+  /* Show home items when the class is added */
+
+ /* Set the final height when the class is added */
+  animation: slideDown 1s ease;
+}
+
+.home-items.hide {
+  height: 0; /* Set the final height when the class is added */
+  animation: slideUp 1s ease;
+  overflow: hidden; /* Hide overflow content */
+}
+
+.home-items p {
+  position: relative;
+  color: white;
+  text-decoration: none;
+  margin-left: 10px;
+  overflow: hidden;
+}
+ 
+.home-items p::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 0.5px;
+  background-color: #00ff00;
+  transition: width 0.5s ease;
+}
+ 
+.home-items p:hover::before {
+  width: 100%;
+}
+
+
+
+.service-items {
+  display: none;
+  /* Hide menu items by default */
+  flex-direction: row;
+  justify-content:space-evenly;
+  position: absolute;
+  top: 50px;
+  /* Adjust the top position as needed */
+  right: 0;
+  background-color:rgb(0 0 0 / 60%);
+  width: 100%;
+  z-index: 999;
+  padding: 55px;
+  padding-left: 100px;
+  overflow: hidden; /* Hide overflow content */
+  transition: height 0.5s ease, opacity 0.5s ease; /* Added transition for height and opacity */
+}
+
+.service-items.show {
+  display: flex;
+  /* Show home items when the class is added */
+  /* height: 70vh; Set the final height when the class is added */
+  animation: slideDown 1s ease;
+}
+
+.service-items.hide {
+  height: 0; /* Set the final height when the class is added */
+  animation: slideUp 1s ease;
+  overflow: hidden; /* Hide overflow content */
+}
+
+.service-items p {
+  position: relative;
+  color: white;
+  text-decoration: none;
+  margin-left: 10px;
+  overflow: hidden;
+}
+ 
+.service-items p::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 0.5px;
+  background-color: #00ff00;
+  transition: width 0.5s ease;
+}
+ 
+.service-items p:hover::before {
+  width: 100%;
+}
+
+
+
+.profile-items {
+  display: none;
+  /* Hide menu items by default */
+  flex-direction: column;
+  position: absolute;
+  top: 50px;
+  /* Adjust the top position as needed */
+  right: 0;
+  background-color: rgb(0 0 0 / 60%);
+  width: 100%;
+  z-index: 999;
+  padding: 70px;
+  padding-left: 100px;
+  overflow: hidden; /* Hide overflow content */
+  transition: height 0.5s ease, opacity 0.5s ease; /* Added transition for height and opacity */
+}
+
+.profile-items.show {
+  display: flex;
+  /* Show home items when the class is added */
+  /* height: 70vh; */
+  animation: slideDown 0.5s ease;
+}
+
+.profile-items.hide {
+  height: 0; /* Set the final height when the class is added */
+  animation: slideUp 0.5s ease;
+  overflow: hidden; /* Hide overflow content */
+}
+
+.profile-items p {
+  position: relative;
+  color: white;
+  text-decoration: none;
+  margin-left: 10px;
+  overflow: hidden;
+}
+ 
+.profile-items p::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 0.5px;
+  background-color: #00ff00;
+  transition: width 0.5s ease;
+}
+ 
+.profile-items p:hover::before {
+  width: 8%;
+}
+
+.font {
+  /* font-family: Calibri; */
+  font-size: 16px;
+  line-height: 24px;
+  /* color: #d0d0ce; */
+}
+
+.menu-items a {
+  /* margin-left: 10px; */
+  color: white;
+  text-decoration: none;
+  width: max-content;
+  position:relative;
+  display: flex;
+  align-items: center;
+  z-index: 999;
+  
+}
+.menu-items a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 0.2px;
+  background-color: #00ff00;
+  transition: width 0.5s ease;
+}
+  .menu-items a:hover::before {
+    width: 100%;
+  }
+
+@media screen and (max-width: 1029.33px) {
+  /* Adjust styles for smaller screens */
+  .menu-items1 {
+    display: none;
+    /* Hide menu items by default */
+    flex-direction: column;
+    position: absolute;
+    top: 50px;
+    /* Adjust the top position as needed */
+    right: 0;
+    background-color: #000000;
+    width: 30%;
+    align-items: center;
+    height: 100vh;
+    z-index: 999;
+  }
+ 
+  .menu-items1.show {
+    display: flex;
+    /* Show menu items1 when the class is added */
+    height: 100vh; /* Set the final height when the class is added */
+   
+  }
+  .hamburger {
+    display: block;
+    position: absolute;
+    right: 10px;
+    /* Show the hamburger button on smaller screens */
+  }
+  
+  .menu-items1.show a {
+    display: block;
+    padding: 4%;
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .menu-items{
+    display: none;
+  }
+  
+  .menu-items1 a:nth-child(1):hover,.menu-items1 a:nth-child(7):hover,.menu-items1 a:nth-child(6):hover,.menu-items1 a:nth-child(5):hover,.menu-items1 a:nth-child(4):hover ,.menu-items1 a:nth-child(2):hover,.menu-items1 a:nth-child(3):hover {
+  color: #00ff00
+  }
+
+
+.menu-items .highlighter{
+  animation: blink 2s infinite;
+}
+ 
+@keyframes blink {
+  0% {
+    color:#86bc25;
+  }
+  50% {
+    color: white;
+  }
+  100% {
+    color:#86bc25;
+  }
+}
+
+
+
+.typewriter  {
+  /* color: #000000; */
+  /* font-family: monospace; */
+  overflow: hidden;
+  /* border-right: .15em solid  #86BC25; */
+  white-space: nowrap; 
+  margin: 0 auto; 
+  /* letter-spacing: .1em;  */
+  animation: 
+    typing 10s steps(56, end),
+    blink-caret .5s step-end infinite;
+  width: 100%;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color:  #86BC25 }
+}
+
+
+.wide{
+  width: fit-content;
+}

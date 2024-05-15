@@ -1,0 +1,304 @@
+
+
+<div class="msgarea">
+    <div class="middleLeft split">
+        <div class="menuContainer">
+            <br>
+
+            <A routerLink="/CreateQuoteComponent"><button class="button1" href="">Quote&nbsp;</button></A>
+
+
+            <a routerLink="/GetQuoteComponent" title="GetQuote"><button class="button1" href="">Get Quote</button></a>
+
+        </div>
+
+    </div>
+
+    <div class="middleRight">
+        <div class="title-info">
+            Create Estimate</div>
+        <!-- </div> -->
+        <fieldset class="box1">
+            <div class="maindiv">
+
+                <label style="margin-left:1%;"> Client Qualification:
+                    <span class="required">*</span>
+                </label>
+                <select class="select" id="clientID" name="clientID" style="margin-left: -0.15%;">
+                </select>
+                <label style="margin-left:2.5%;">Client Name:
+                    <span class="required">*</span>
+                </label>
+                <input disabled class="inputbox" id="clientName" name="clientName" size=12 type="text" /><label>Project
+                    Name:
+                    <span class="required">*</span>
+                </label>
+                <input disabled class="inputbox" id="projectName" name="projectName" size=23.5 type="text" />
+
+                <hr>
+                <BR>
+
+                <label>Request Type:
+                    <span class="required">*</span>
+                </label>
+                <select class="select" style="margin-left: 2.35%;" [(ngModel)]="requestType" (change)="loadCRINCInfo()">
+                    <option value="Select" disabled>Select</option>
+                    <option>CR</option>
+                    <option>Incident</option>
+                </select>
+            </div>
+
+
+
+<!-- CR -->
+            <div *ngIf="showCRFields" class="crtQuote" id="crtQuote">
+
+                <label> Object Type:
+                    <span class="required">*</span></label>
+                <select style="margin-left: 2.75%;" class="select" id="objectType" name="objectType">
+                    <option value="Select" disabled selected>Select</option>
+                    <option>Report</option>
+                    <option>Interface</option>
+                    <option>Data Conversion</option>
+                    <option>Enhancement / User Exits</option>
+                    <option>Smart Form</option>
+                    <option>Workflow</option>
+                    <option>Webdynpro</option>
+                    <option>Dialogs / Infotypes</option>
+                </select>
+                <label> Object Complexity:
+                    <span class="required">*</span></label>
+                <select class="select" id="objectComplexity" name="objectComplexity">
+                    <option value="Select" disabled selected>Select</option>
+                    <option>Low</option>
+                    <option>Medium</option>
+                    <option>High</option>
+                </select><label> Development Category:
+                    <span class="required">*</span></label>&nbsp;
+                <select class="select" style="margin-left:0.2%;" id="objectDevCategory" name="objectDevCategory ">
+                    <option value="Select" disabled selected>Select</option>
+                    <option>New</option>
+                    <option>Existing</option>
+                </select><label> Configuration Involved:
+                    <span class="required">*</span></label>
+                <select class="select" id="objectDevConfig" name="objectDevConfig">
+                    <option value="Select" disabled selected>Select</option>
+                    <option>Yes</option>
+                    <option>No</option>
+                </select><BR>
+                <label> Testing Type:
+                    <span class="required">*</span></label>
+                <select style="margin-left:2.55%;" class="select" id="objectTestType" name="objectTestType">
+                    <option value="Select" disabled selected>Select</option>
+                    <option>Manual</option>
+                    <option>Automated</option>
+                </select> <label> QA Test Required:
+                    <span class="required">*</span></label>
+                <select class="select" style="margin-left:0.3%;" id="objectQa" name="objectQa">
+                    <option value="Select" disabled selected>Select</option>
+                    <option>Yes</option>
+                    <option>No</option>
+                </select><label> Regression Test Required:
+                    <span class="required">*</span></label>&nbsp;
+                <select class="select" style="margin-left:-0.75%" id="objectRt" name="objectRt">
+                    <option value="Select" disabled selected>Select</option>
+                    <option>Yes</option>
+                    <option>No</option>
+                </select>
+                <label> Regression Qualification:
+                    <span class="required">*</span></label>
+                <select class="select" style="margin-left:-0.5%;" id="objectRtQual" name="objectRtQual">
+                    <option value="Select" disabled selected>Select</option>
+                    <option>1-15</option>
+                    <option>15-30</option>
+                    <option>30+</option>
+                </select>
+
+                <br>
+
+                <button class="button" id="addToCart" name="addToCart" (click)="addToCart()">Add To Cart</button>
+                <br>
+                <!-- <hr> -->
+
+
+                <button id="viewCart" class="button" *ngIf="viewCartButtonVisible" (click)="viewCart()">View
+                    Cart</button>
+
+
+                <div class="shoppingCartInfo" id="shoppingcartid" *ngIf="showCRTable">
+                    <table id="lineItems" name="lineItems">
+                        <tr>
+                            <th class="crTitle" colspan="11">CR Details</th>
+                        </tr>
+                        <tr id="crDetailsContainer">
+                            <th class="crTh">Delete Row</th>
+                            <th class="crTh">Client ID</th>
+                            <th class="crTh">Request Type</th>
+                            <th class="crTh">Object Type</th>
+                            <th class="crTh">Object Complexity</th>
+                            <th class="crTh">Development Category</th>
+                            <th class="crTh">Is Configuration Involved</th>
+                            <th class="crTh">Testing Type</th>
+                            <th class="crTh">QA Test Required</th>
+                            <th class="crTh">Regression Test Required</th>
+                            <th class="crTh">Regression TC Qualification</th>
+                        </tr>
+                        <tr *ngFor="let crDetail of crDetails">
+                            <td>
+                                
+                                    <i class="fas fa-trash-alt" [style.border]="0" (click)="removeCRDetail(crDetail)"></i>
+                            </td>
+                            <td>{{ crDetail.clientID }}</td>
+                            <td>{{ crDetail.requestType }}</td>
+                            <td>{{ crDetail.objectType }}</td>
+                            <td>{{ crDetail.objectComplexity }}</td>
+                            <td>{{ crDetail.objectDevCategory }}</td>
+                            <td>{{ crDetail.objectDevConfig }}</td>
+                            <td>{{ crDetail.objectTestType }}</td>
+                            <td>{{ crDetail.objectQa }}</td>
+                            <td>{{ crDetail.objectRt }}</td>
+                            <td>{{ crDetail.objectRtQual }}</td>
+                        </tr>
+                    </table>
+                </div>
+                <br>
+
+                <button class="button" id="reqQuote" name="reqQuote" *ngIf="reqQuote">Request Quote</button>
+
+            </div>
+
+
+
+
+<!-- Incident -->
+
+            <div *ngIf="showIncidentFields" class="incidentFields" id="incidentFields">
+
+                <label> Defect Category:
+                    <span class="required">*</span></label>
+                <select style="margin-left: 1.1%;" class="select" id="defectCategory" name="defectCategory">
+                    <option value="Select" disabled selected>Select</option>
+                    <option>L0</option>
+                    <option>L1</option>
+                    <option>L2</option>
+                    <option>L3</option>
+
+                </select>
+
+                <label style="margin-left:2.6%"> Dev. Required:
+                    <span class="required">*</span></label>
+                <select class="select" style="margin-left:-0.7%" id="devRequired" name="devRequired">
+                    <option value="Select" disabled selected>Select</option>
+                    <option>Low</option>
+                    <option>Medium</option>
+                    <option>High</option>
+                </select>
+                <label> Regression Test Required:
+                    <span class="required">*</span></label>
+                <select class="select" style="margin-left:0.8%" id="objectRt1" name="objectRt1">
+                    <option value="Select" disabled selected>Select</option>
+                    <option>Yes</option>
+                    <option>No</option>
+                </select>
+                <label style="margin-left:3%;"> Testing Type:
+                    <span class="required">*</span></label>
+                <select style="margin-left:1.5%;" class="select" id="objectTestType1" name="objectTestType1">
+                    <option value="Select" disabled selected>Select</option>
+                    <option>Manual</option>
+                    <option>Automated</option>
+                </select><BR>
+                <label> QA Test Required:
+                    <span class="required">*</span></label>
+                <select class="select" style="margin-left: 0.4%;" id="objectQa1" name="objectQa1">
+                    <option value="Select" disabled selected>Select</option>
+                    <option>Yes</option>
+                    <option>No</option>
+                </select>
+
+                <label style="margin-left:2.7%;"> Priority:
+                    <span class="required">*</span></label>
+                <select class="select" style="margin-left:1.9%;" id="Priorty" name="Priorty ">
+                    <option value="Select" disabled selected>Select</option>
+                    <option>P1</option>
+                    <option>P2</option>
+                    <option>P3</option>
+                    <option>P4</option>
+                </select>
+                <label> Regression TC Qualification:
+                    <span class="required">*</span></label>
+                <select class="select" style="margin-left:-0.5%;" id="objectRtQual1" name="objectRtQual1">
+                    <option value="Select" disabled selected>Select</option>
+                    <option>1-15</option>
+                    <option>15-30</option>
+                    <option>30+</option>
+                </select> <BR>
+                <button class="button" id="addToCart" name="addToCart" (click)="addToCart1()">Add To
+                    Cart</button>
+                <BR>
+
+
+
+
+                <button id="viewCart1" class="button" *ngIf="viewCartButtonVisible1" (click)="viewCart1()">View
+                    Cart</button>
+
+                <div class="shoppingCartInfo1" id="shoppingcartid1" *ngIf="showCRTable1">
+
+                    <table id="incLineItems" name="incLineItems">
+                        <tr>
+                            <th class="incTitle" colspan="10">Incident Details</th>
+                        </tr>
+                        <tr id="incDetailsContainer1">
+
+                            <th class="incTh">Delete Row</th>
+                            <th class="incTh">Client ID</th>
+                            <th class="incTh">Request Type</th>
+                            <th class="incTh">Defect Category</th>
+                            <th class="incTh">Dev. Required</th>
+                            <th class="incTh">Priority</th>
+                            <th class="incTh">Testing Type</th>
+                            <th class="incTh">QA Test Required</th>
+                            <th class="incTh">Regression Test Required</th>
+                            <th class="incTh">Regression TC Qualification</th>
+                        </tr>
+
+                        <tr *ngFor="let incDetail of incDetails">
+                            <!-- Add this button in the table row where you display CR details -->
+                            <!-- Add this button in the table row where you display CR details -->
+                            <td>
+                                
+                                    <i class="fas fa-trash-alt" [style.border]="0"  (click)="removeINCDetail(incDetail)"></i>
+                                
+                            </td>
+                            <td>{{ incDetail.clientID }}</td>
+                            <td>{{ incDetail.requestType }}</td>
+                            <td>{{ incDetail.defectCategory }}</td>
+                            <td>{{ incDetail.devRequired }}</td>
+                            <td>{{ incDetail.Priorty }}</td>
+                            <td>{{ incDetail.objectTestType1 }}</td>
+                            <td>{{ incDetail.objectQa1 }}</td>
+                            <td>{{ incDetail.objectRt1 }}</td>
+                            <td>{{ incDetail.objectRtQual1 }}</td>
+                        </tr>
+                        
+
+                    </table>
+                </div>
+
+                <BR>
+
+                <button class="button" id="reqQuote1" name="reqQuote" *ngIf="reqQuote1">Request Quote</button>
+
+
+            </div>
+
+
+
+
+
+
+        </fieldset>
+    </div>
+
+
+</div>

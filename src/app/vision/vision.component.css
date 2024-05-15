@@ -1,0 +1,161 @@
+/* .container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 50px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+  }
+  
+  h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    animation: slideInLeft 1s ease-out;
+  }
+  
+  p {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 30px;
+    animation: slideInRight 1s ease-out;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  li {
+    margin-bottom: 10px;
+    animation: fadeInUp 1s ease-out;
+  }
+  
+  h3 {
+    font-size: 24px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    animation: slideInLeft 1s ease-out;
+  }
+  
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+   */
+
+
+
+   .container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 5% 7.5%;
+    background-color: #000000;
+    text-align: left;
+    display: flex   ;
+    position: relative;
+  }
+  .contain{
+    padding: 2%;
+    margin-bottom: 2%;
+    background-color: #FFFFFF;
+    border-radius: 1rem;
+
+  }
+
+  .right {
+    width: 50%;
+  }
+  
+  .left {
+    width: 50%;
+  }
+  
+  h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    /* color: #FFFFFF; */
+    text-align: left;
+    animation: fadeInUp 1s ease-out;
+  }
+  
+  p, li {
+    font-size: 14px;
+    line-height: 24px;
+    /* color: #FFFFFF; */
+    /* margin-bottom: 30px; */
+    animation: fadeInUp 1s ease-out;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  h3 {
+    font-size: 24px;
+    line-height: 36px;
+    /* color: #FFFFFF; */
+    /* margin-top: 40px; */
+    margin-bottom: 20px;
+    animation: fadeInUp 1s ease-out;
+  }
+  
+  .video {
+    width: 90%;
+    float: inline-end;  
+    height: auto;
+    object-fit: cover;
+    animation: animatebg 5s linear infinite;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes animatebg {
+    0% {
+      transform: scale(1.1);
+    }
+    50% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.1);
+    }
+  }
+  

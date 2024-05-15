@@ -1,0 +1,311 @@
+
+    <!-- <mat-tab label="Client Qualification" (click)="showBasic()">
+      <mat-sidenav-container class="sidenav-container">
+        <mat-sidenav #sidenav mode="side" opened>
+          <mat-nav-list>
+            <a mat-list-item (click)="showBasic()" class="general">General</a>
+            <a mat-list-item (click)="showEffort()" class="general"
+              >Development & Change</a
+            >
+          </mat-nav-list>
+        </mat-sidenav>
+        <mat-sidenav-content>
+          
+          <div *ngIf="isBasic" class="bordereddiv">
+              
+            <label style="margin-left: 1px">Account Name</label>
+            <input type="text" />
+  
+            <label style="margin-left: 110px">Project Name</label>
+            <input type="text" />
+              
+            <div class="space_">
+              
+                <label  style="margin-left: 1px;">Integration Stack:
+                  
+              </label>
+              <select class="select" style="margin-left: 26px;" [(ngModel)]="requestType" (change)="loadCRINCInfo()">
+                  <option value="Select" disabled>Select</option>
+                  <option>Option 1</option>
+                  <option>Option 2</option>
+                  <option>Option 3</option>
+  
+              </select>
+            </div>
+            <div>
+              <label style="margin-left: 1px">No of Interfaces</label>
+              <input style="margin-left: 39px" type="text" />
+            </div>
+            <div>
+              <label style="margin-left: 1px">No of Business Systems</label>
+              <input type="text" />
+            </div>
+            <div style="margin-top: 40px">
+              <button class="EFbtn" style="margin-left: 650px">Next</button>
+            </div>
+          </div>
+          <div *ngIf="isEffort"> 
+              <mat-tab-group  [(selectedIndex)]="selectedTabIndex" (selectedTabChange)="onTabChanged($event)">
+                  <mat-tab  label="Effort Estimation PI Development">
+                      <div *ngIf="!showEffortTable"  class="bordered-div5">
+           
+                          <div class="scrollable-input-container">
+                            <label for="complexity">Complexity</label>
+                            <div class="input-wrapper">
+                              <input
+                                type="text"
+                                id="complexity"
+                                (focus)="showOptions = true"
+                                (blur)="showOptions = false"
+                                [(ngModel)]="selectedOption"
+                              />
+                              <div class="options" *ngIf="showOptions">
+                                <div
+                                  *ngFor="let option of complexityOptions"
+                                  (click)="selectOption(option)"
+                                >
+                                  {{ option.label }}
+                                </div>
+                              </div>
+                            </div>
+                            <label style="margin-left: 110px">Interfaces :</label>
+                            <i
+                              class="fas fa-pen"
+                              style="
+                                cursor: pointer;
+                                margin-left: 270px;
+                                vertical-align: middle;
+                              "
+                              title="Edit"
+                            ></i>
+                            <br /><br />
+                            <label style="margin-left: 395px">Simple</label>
+                            <input style="margin-left: 54px" type="text" />
+                            <label style="margin-left: 395px">Medium</label>
+                            <input style="margin-left: 45px" type="text" />
+                            <label style="margin-left: 395px">Complex</label>
+                            <input style="margin-left: 43px" type="text" />
+                            <label style="margin-left: 395px">Very Complex</label>
+                            <input style="margin-left: 13px" type="text" />
+                          </div>
+                
+                          <div class="space"></div>
+                          <div style="margin-top: 40px">
+                            <button class="EFbtn" style="margin-left: 518px">Back</button>
+                            <button class="EFbtn">Submit</button>
+                          </div>
+                          </div>
+                
+                  </mat-tab>
+                  <mat-tab label="Effort Estimation PI Changes">
+                      <div *ngIf="!showEffortTable"  class="bordered-div">
+           
+                          <div class="scrollable-input-container">
+                            <label for="complexity">Complexity</label>
+                            <div class="input-wrapper">
+                              <input
+                                type="text"
+                                id="complexity"
+                                (focus)="showOptions = true"
+                                (blur)="showOptions = false"
+                                [(ngModel)]="selectedOption"
+                              />
+                              <div class="options" *ngIf="showOptions">
+                                <div
+                                  *ngFor="let option of complexityOptions"
+                                  (click)="selectOption(option)"
+                                >
+                                  {{ option.label }}
+                                </div>
+                              </div>
+                            </div>
+                            <label style="margin-left: 110px">Interfaces :</label>
+                            <i
+                              class="fas fa-pen"
+                              style="
+                                cursor: pointer;
+                                margin-left: 270px;
+                                vertical-align: middle;
+                              "
+                              title="Edit"
+                            ></i>
+                            <br /><br />
+                            <label style="margin-left: 395px">Simple</label>
+                            <input style="margin-left: 54px" type="text" />
+                            <label style="margin-left: 395px">Medium</label>
+                            <input style="margin-left: 45px" type="text" />
+                            <label style="margin-left: 395px">Complex</label>
+                            <input style="margin-left: 43px" type="text" />
+                            <label style="margin-left: 395px">Very Complex</label>
+                            <input style="margin-left: 13px" type="text" />
+                          </div>
+                
+                          <div class="space"></div>
+                          <div style="margin-top: 40px">
+                            <button class="EFbtn" style="margin-left: 518px">Back</button>
+                            <button class="EFbtn">Submit</button>
+                          </div>
+                          </div>
+                  </mat-tab>
+                </mat-tab-group>
+         
+            
+          </div>
+        </mat-sidenav-content>
+      </mat-sidenav-container>
+    </mat-tab> -->
+    
+    
+      <!-- <mat-sidenav-container class="sidenav-container">
+          <mat-sidenav #sidenav mode="side" opened>
+            <mat-nav-list>
+              <a mat-list-item (click)="showCreate()" class="general">Create</a>
+              <a mat-list-item (click)="showCreate()" class="general"
+                >Change</a
+              >
+            </mat-nav-list>
+          </mat-sidenav>
+          <mat-sidenav-content> -->
+            <div class = "Estimation" style="text-align: center;">
+              <h1 style="font-size: 24px;">PI/PO & CPI - Estimation</h1>
+          </div>
+                  
+   
+<div >
+  <label class= "head" >PI Interface:
+    <span class="required">*</span>
+  </label>
+  <select class="select" style="margin-left: 2.35%;" [(ngModel)]="requestType" (change)="loadCRINCInfo()">
+    <option value="Create" selected>Create</option>
+    <option value="Change">Change</option>
+  </select><br><br>
+
+  <div class="PiInterface">
+    <div class="picontent" *ngIf="requestType === 'Create'">
+      <!-- Content for Create -->
+      <div class="bordered-div1">
+        <br>
+        <label style="margin-left: 5px; margin-bottom:5px;">Project Name</label>
+        <input style="margin-left: 10px; width: 350px" type="text" /><br><br>
+
+        <label style="margin-left: 5px">Simple</label>
+        <input style="margin-left: 49px; width: 200px" type="text" placeholder="No of Object Types" />
+        <input style="margin-left: 30px; width: 200px;margin-right: 10px" type="text" placeholder="Total Effort" /><br />
+
+        <label style="margin-left: 5px">Medium</label>
+        <input style="margin-left: 40px; width: 200px" type="text" placeholder="No of Object Types" />
+        <input style="margin-left: 30px; width: 200px" type="text" placeholder="Total Effort" /><br />
+
+        <label style="margin-left: 5px"> Complex</label>
+        <input style="margin-left: 38px; width: 200px" type="text" placeholder="No of Object Types" />
+        <input style="margin-left: 30px" type="text" placeholder="Total Effort" /><br />
+
+        <label style="margin-left: 5px">Very Complex</label>
+        <input style="margin-left: 8px; width: 200px" type="text" placeholder="No of Object Types" />
+        <input style="margin-left: 30px; width: 200px" type="text" placeholder="Total Effort" /><br><br>
+
+        <button class="EFbtn" style="margin-left: 445px;margin-bottom:5px" (click)="submitCreate()">Add To Cart</button>
+      </div>
+    </div>
+
+    <div class="picontent" *ngIf="requestType === 'Change'">
+      <!-- Content for Changes -->
+      <div class="bordered-div1">
+        <br>
+        <label style="margin-left: 5px; margin-bottom: 5px;">Project Name</label>
+        <input style="margin-left: 10px; width: 350px" type="text" /><br><br>
+
+        <label style="margin-left: 5px">Simple</label>
+        <input style="margin-left: 49px;width: 200px" type="text" placeholder="No of Object Types" />
+        <input style="margin-left: 30px;width: 200px;margin-right: 10px" type="text" placeholder="Total Effort" /><br />
+
+        <label style="margin-left: 5px">Medium</label>
+        <input style="margin-left: 40px;width: 200px" type="text" placeholder="No of Object Types" />
+        <input style="margin-left: 30px;width: 200px" type="text" placeholder="Total Effort" /><br />
+
+        <label style="margin-left: 5px"> Complex</label>
+        <input style="margin-left: 38px;width: 200px" type="text" placeholder="No of Object Types" />
+        <input style="margin-left: 30px;width: 200px" type="text" placeholder="Total Effort" /><br />
+
+        <label style="margin-left: 5px">Very Complex</label>
+        <input style="margin-left: 8px;width: 200px" type="text" placeholder="No of Object Types" />
+        <input style="margin-left: 30px;width: 200px" type="text" placeholder="Total Effort" /><br><br>
+
+        <button class="EFbtn" style="margin-left: 445px" (click)="submitChange()">Add To Cart</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+      <!-- <div *ngIf="isTable" class="bordered-div2">
+        <table border="1">
+          <tr>
+            <td>Activities</td>
+            <td>New Interfaces Estimated (p/hrs)</td>
+            <td>Change Existing Interfaces (p/hrs)</td>
+            <td>Total Before Markup & Adjustment</td>
+            <td>% Markup</td>
+            <td>User Adjustment</td>
+            <td>User Adjustment (p/hrs)</td>
+            <td>Comments</td>
+          </tr>
+          <tr>
+            <td>Functional Specification Understanding (Review)</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Technical Specification Design</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Technical Specification Design Review</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Technical Specification Design Rework</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td colspan="6">Total Estimated Hours</td>
+           
+            <td></td>
+            <td></td>
+          </tr>
+        
+        </table>
+        <button
+        class="EFbtn"
+        style="margin-left: 763px; margin-bottom: 1%"
+        (click)="submitTable()"
+      >
+        Next
+      </button>
+      </div> -->
+      
+  <!-- </mat-sidenav-content>
+  </mat-sidenav-container> -->

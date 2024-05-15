@@ -1,0 +1,150 @@
+
+
+.bottomhr hr {
+    display: flex;
+    height: 1px;
+    top: 94.8%;
+    border: 0px;
+    background-color: #86BC25;
+    margin: 1px;
+    padding: 1px;
+    position: fixed;
+    width: -webkit-fill-available;
+    opacity: 0.85;
+}
+.footer {
+    background-color: #000000;
+    color: #FFFFFF;
+    /* margin-top: 15%; */
+    padding-left: 5%;
+    height: auto;
+
+  }
+  h3.connect {
+    top: 30px;
+    position: relative;
+}
+  
+  .content-container {
+    display: flex;
+    justify-content: space-between;
+    bottom: 25px;
+    position: relative;
+  }
+  .fcont span{
+    font-size: 24px;
+    line-height: 36px;
+  }
+  .smedia {
+    display: flex;
+    flex-direction: column;
+    margin-top: 3%;
+    margin-right: 4%;
+  }
+  .icons {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .social-icon {
+    font-size: 16px;
+    margin-right: 20px;
+    text-decoration: none;
+    color: #FFFFFF;
+  }
+  .footer .fcont a {
+    display: flex;
+    position: relative;
+    font-size: 20px;
+    color: #FFFFFF;
+  }
+ 
+  .footer .fcont a::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 1px;
+    background-color: #00ff00;
+    transition: width 0.5s ease;
+  }
+ 
+  .footer .fcont a:hover::before {
+    width: 100%;
+  }
+ 
+  .fcont {
+    display:flex;
+    flex-direction: row;
+    align-items: flex-end;
+    /* margin-bottom: 40px; */
+    gap: 20px;
+  }
+
+/* .footer {
+    background-color: #000000;
+    color: #FFFFFF;
+    padding-top: 10px;
+    padding-left: 5%;
+    height: auto;
+    padding-bottom: 2%;
+    position: relative;
+    margin-top: 10%;
+} */
+
+*{
+    font-family: "Open Sans";
+ }
+
+
+.copyRight {
+    font-weight: 500;
+    width: fit-content;
+    font-size: 9px;
+    display: flex;
+    position: fixed;
+    margin-top: 0.5rem;
+    gap: 0.5rem;
+    bottom: 0.5rem;
+    left: 80%;
+}
+
+
+
+
+.bottomContact {
+    position: absolute;
+    top: 90.5%;
+    left: 70%;
+}
+
+.bottomContact ul {
+    float: right;
+}
+
+.bottomContact ul li {
+    list-style: none;
+    display: inline-block;
+    color: #000000;
+}
+
+.bottomContact ul li a {
+    background-color: transparent;
+    color: #000000;
+}
+
+.bottomContact ul li a:hover {
+    background-color: transparent;
+    color: #000000;
+}
+
+.dark-theme {
+    background-color: black;
+    color: white;
+  }
+  
+
+  a{
+    color:#86BC25; 
+  }

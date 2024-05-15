@@ -1,0 +1,26 @@
+<div>
+    <label class="Title">Team Members</label>
+    
+    </div>
+    <div class="Location" >
+    <div   *ngFor="let location of getLocations()">
+        <Label class="loclabel">{{ location }}</Label>
+        <div class="team-container">
+          <div class="team-member" *ngFor="let member of teamByLocation[location]">
+          <div class="member-card">
+            <div class="card-front">
+              <img src="{{ member.profilePicture }}" alt="{{ member.name }}">
+              <label>{{ member.name }}</label>
+              <label class="pos">{{ member.position }}</label>
+            </div>
+            <div class="card-back">
+              <ul>
+                <li *ngFor="let skill of member.skills">{{ skill }}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    
+      

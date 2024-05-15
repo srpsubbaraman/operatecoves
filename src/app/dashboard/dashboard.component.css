@@ -1,0 +1,412 @@
+.container1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 2%;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    justify-content:space-around;
+    margin-left: 5%;
+    margin-top: 30px;
+    margin-right: 50%;
+    
+    
+}
+.tile:hover {
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5); /* Adjust the glow effect */
+}
+
+.tile-head:hover {
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5); /* Adjust the glow effect */
+}
+
+.tile-head p{
+    font-size: 30px;
+    font-family: OpenSans;
+    margin-top: 20px;
+}
+
+.tile1 p{
+    font-size:  24px;
+    font-family: OpenSans;
+    margin-top: 20px;
+}
+
+.tile2 p{
+    font-size:  24px;
+    font-family: OpenSans;
+    margin-top: 20px;
+}
+.tile3 p{
+    font-size:  24px;
+    font-family: OpenSans;
+    margin-top: 20px;
+}
+
+
+
+.charts{
+    display: flex;
+    flex-direction: column;
+}
+.down-bar{
+    display: flex;
+    flex-direction: row;
+    margin-left: 1%;
+    margin-right: 50%;
+    
+}
+.pie-chart {
+    
+    margin-left: 2%;
+    margin-top: 3%;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(159, 216, 159, 0.5);
+    text-align: center;
+    margin-right: 5%;
+    
+    
+   
+}
+.tile-head{
+    background-color: #B2DDA2; /* Adjust the alpha value for transparency */
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(159, 216, 159, 0.5); /* Adjust the shadow for glow effect */
+    margin-top: 10px;
+    margin-left: -20%;
+    margin-right: 5px;
+    text-align: center;
+    width: 250px; /* Adjust the width as per your requirement */
+    height: 150px; /* Set height equal to width for square shape */
+    position: relative;
+}
+
+
+  
+
+
+.tile-head::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: calc(100% + 20px); /* Adjust the distance from the tile */
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 40px 0 40px 40px; /* Adjust the size of the arrow */
+    border-color: transparent transparent transparent #75787B; /* Adjust the color of the arrow */
+}
+
+.tile1 {
+    background-color: #004F59; /* Adjust the alpha value for transparency */
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(159, 216, 159, 0.5); /* Adjust the shadow for glow effect */
+    margin-top: 10px;
+    margin-left: 6%;
+    margin-right: 5px;
+    text-align: center;
+    width: 280px; /* Adjust the width as per your requirement */
+    height: 150px; /* Set height equal to width for square shape */
+    color: #ffffff;
+}
+
+.tile2{
+    background-color: #009A44; /* Adjust the alpha value for transparency */
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(159, 216, 159, 0.5); /* Adjust the shadow for glow effect */
+    margin-top: 10px;
+    margin-left: 6%;
+    margin-right: 5px;
+    text-align: center;
+    width: 280px; /* Adjust the width as per your requirement */
+    height: 150px; /* Set height equal to width for square shape */
+    color: #ffffff;
+
+}
+
+.tile3{
+    background-color: #007CB0; /* Adjust the alpha value for transparency */
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(159, 216, 159, 0.5); /* Adjust the shadow for glow effect */
+    margin-top: 10px;
+    margin-left: 6%;
+    margin-right: 5px;
+    text-align: center;
+    width: 270px; /* Adjust the width as per your requirement */
+    height: 150px; /* Set height equal to width for square shape */
+    color: #ffffff;
+}
+
+
+.tile1 h2{
+    margin-top: 5px;
+    font-size: 16px;
+}
+.tile2 h2{
+ 
+    font-size: 16px;
+}
+.tile3 h2{
+    
+    font-size: 16px;
+}
+h2 {
+    font-size: 12px; /* Adjust the font size as needed */
+    color: #ffff;
+}
+
+.left-layout {
+    
+     background-color: #ffffff; 
+    padding: 20px;
+    margin-left: -3%;
+    margin-top: 10px;
+    margin-right: 2%;
+ 
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    max-width: fit-content;
+}
+
+h4 {
+    font-size: 20px;
+    font-family: OpenSans;
+   text-align: left;
+    color: #86BC25;
+    margin-left: 0;
+    padding-bottom: 15px;
+}
+
+h1{
+    font-size: 20px;
+    font-family: OpenSans;
+   text-align: left;
+    color: #000;
+    margin-left: 0;
+    padding-bottom: 15px;
+}
+
+.box {
+    border: 1px solid #ccc;
+    padding: 5px;
+    margin-top: 2px;
+    border-radius: 5px;
+    display: inline-block;
+    background-color:#86BC25 ;
+ 
+
+}
+
+
+
+
+
+
+.right-layout {
+   
+    padding: 10px;
+    flex-grow: 1;
+    width: fit-content;
+    margin-left: 0;
+    
+}
+.item {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    border-bottom: 1px solid  rgba(0, 0, 0, 0.1);/* Add a solid border at the bottom of each .item */
+    padding-bottom: 5px; /* Add some padding to space out the elements */
+    margin-right: 10%;
+}
+
+h3{
+    font-size: 20px;
+   
+}
+
+/* Define blinking animation */
+@keyframes color-change {
+    
+    50% {
+      color:#86BC25 ;
+    }
+    100% {
+      color: #000;
+    }
+  }
+  
+  /* Apply blinking animation to specified elements */
+  .blinking {
+    animation: color-change 5s  linear infinite;
+  }
+
+  
+
+.growth-container {
+    display: flex;
+    flex-direction: row;
+    
+    align-items: center; /* Align items vertically */
+    margin-top: 5px;
+    
+    
+}
+
+
+.right-layout h1 {
+    margin-right: 100px; /* Add some space between h1 and datepicker */
+}
+
+.analytics {
+    margin-top: 10px; /* Remove top margin */
+    margin-bottom: 0; /* Remove bottom margin */
+    margin-left: 10%;
+}
+
+.left-layout canvas {
+    margin-top: -10%; /* Remove top margin for the canvas */
+    margin-bottom: 0; /* Remove bottom margin for the canvas */
+}
+
+
+
+.item p {
+    margin-right: 80px;
+    color: #000;
+}
+
+/* .grid-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 20px;
+}
+
+.tile {
+    background-color: whitesmoke;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(159, 216, 159, 0.5);
+    text-align: center;
+    width: 50%;
+}
+
+.tile p {
+    margin-bottom: 10px;
+}
+
+.tile h2 {
+    font-size: 24px;
+} */
+
+.big-tile {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(159, 216, 159, 0.5);
+    text-align: center;
+    flex-grow: 1; /* Fill remaining space in the right layout */
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+
+
+
+  
+.year-picker {
+    width: 100px; /* Adjust the width as needed */
+    font-size: 16px; /* Adjust the font size as needed */
+     margin-left: 60%; 
+   
+    
+   
+    
+  }
+
+ .recent-activity{
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(159, 216, 159, 0.5);
+    text-align: center;
+    flex-grow: 1; /* Fill remaining space in the right layout */
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+ }
+
+ .activity-item {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    
+
+  }
+  
+  .activity-field1 {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px; /* Set the width and height to control the size of the circle */
+    height: 150px;
+    border-radius: 50%; /* Makes the div a circle */
+    background-color:  #00Abab; /* Set the background color */
+    /* box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.2); */
+    color: #000; /* Set the text color */
+    text-align: center;
+    margin-right: 10px; /* Adds spacing between circles */
+}
+
+.activity-field2 {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px; /* Set the width and height to control the size of the circle */
+    height: 150px;
+    border-radius: 50%; /* Makes the div a circle */
+    background-color:  #ed8b00; /* Set the background color */
+    /* box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.2); */
+    color: #000; /* Set the text color */
+    text-align: center;
+    margin-right: 10px; /* Adds spacing between circles */
+}
+
+.activity-field3 {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px; /* Set the width and height to control the size of the circle */
+    height: 150px;
+    border-radius: 50%; /* Makes the div a circle */
+    background-color:  #9DD4CF; /* Set the background color */
+    /* box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.2); */
+    color: #000; /* Set the text color */
+    text-align: center;
+    margin-right: 10px; /* Adds spacing between circles */
+}
+
+
+.content {
+    max-width: 80%; /* Limit the width of the content to fit within the circle */
+    word-wrap: break-word; /* Allow long text to wrap within the circle */
+    
+}
+
+  
+  .activity-field strong {
+    margin-right: 5px;
+    
+  }

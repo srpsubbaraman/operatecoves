@@ -1,0 +1,75 @@
+<!-- <div class="msgarea">
+  
+        <form (submit)="login()" style="margin-top: -1rem;">
+            <div class="email">
+            <label for="email" class="mail">Email:<br>
+                <input type="text" id="email" name="email" [(ngModel)]="formData.email" placeholder="Enter your email" required>
+            </label>
+            </div>
+            <div class="username">
+            <label for="username" class="name">Username:<br>
+                <input type="text" id="username" name="username" [(ngModel)]="formData.username" placeholder="Enter your username" required>
+            </label>
+            </div>
+            <div class="password">
+            <label for="password" class="pass">Password:<br>
+                <input type="password" id="password" name="password" [(ngModel)]="formData.password" (ngModelChange)="checkPasswordStrength()" placeholder="Enter your password" required>
+                <div style="font-size: 14px; margin-top: 0.5rem;" [ngClass]="passwordStrengthColorClass">{{ passwordStrength }}</div>
+            </label>
+            </div>
+            <button type="submit" class="submit">Login</button>
+            <button type="button" class="submit"><a [routerLink]="['./Registration']" style="color: #000000; text-decoration: none;">Register</a></button>
+        </form>
+  
+
+        </section>
+      </div>
+    </div>
+    <div class="msgright">
+      <div class="rightimg">
+        <img src="assets/images/Login.png" alt="Login Image" />
+      </div>
+      <div>
+        <label class="dis">
+            Deloitte refers to one or more of Deloitte Touche Tohmatsu Limited, a UK private company limited by guarantee ("DTTL"), its network of member firms, and their related entities. DTTL and each of its member firms are legally separate and independent entities. DTTL (also referred to as "Deloitte Global") does not provide services to users. This tool is called Estimation tool for external use by Deloitte members developed and exclusively owned by Deloitte Shared Services India LLP (DSSILLP). The tool can be used by the associates and the clients to get an effort overview of the proposed work. The user shall not copy, reproduce, modify, distribute, or disseminate the tool, nor will the user reverse engineer, decompile, dismantle, or obtain access to the underlying formulae of the tool. © 2023 Deloitte Touche Tohmatsu India LLP.
+
+        </label>
+      </div>
+    </div>
+  </div>
+   -->
+
+
+   <!-- <title>Login</title>
+<div class="loginPage">
+    <video class="video" autoplay muted loop>
+        <source src="/assets/videos/profitring.webm" type="video/webm">
+    </video>
+    <div class="form-container">
+       // <input type="text" placeholder="Username" class="form-input">
+      //  <input type="password" placeholder="Password" class="form-input">
+        <a class="form-welcome">Welcome to OperateCOvE</a>
+        <input type="submit" value="LOG IN WITH SSO" [routerLink]="['/Home']" class="form-submit">
+        <a class="form-text1">Don't have an account?</a>
+          <a href="mailto:inconetpsapopt@deloitte.com?subject=Regarding%20Login%20Access&body=Please%20provide%20me%20with%20login%20access%20credentials." class="form-text2">Request access from admin</a>
+    </div>
+</div> -->
+
+
+
+
+<title>Login</title>
+<div class="loginPage">
+  <video class="video" autoplay loop preload="true" onloadedmetadata="this.muted = true">
+      <source src="/assets/videos/profitring.mp4" type="video/mp4">
+  </video>
+  <div class="form-container">
+      <a class="form-welcome">Welcome to OperateCOvE</a>
+
+      <input type="text" placeholder="Email" class="form-input" id="email">
+      <input type="password" placeholder="Password" class="form-input" id="password">
+      <input type="submit" value="LOGIN" (click)="login()" class="form-submit">
+      <a class="form-text1">Don't have an account?</a>
+      <a href="mailto:inconetpsapopt@deloitte.com?subject=Regarding%20Login%20Access&body=Please%20provide%20me%20with%20login%20access%20credentials." class="form-text2">Request access from admin</a>
+  </div>
+</div>

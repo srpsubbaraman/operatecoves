@@ -1,0 +1,95 @@
+<!-- <title>Team Profile<title> -->
+  <div class="projects-container">
+    <div class="grp">
+      <div class="heading">
+        {{ locations[0] }}
+      </div>
+      <!-- <label>Group by:-</label> -->
+      <div class="filter">
+        <mat-form-field>
+          <mat-label>Group by</mat-label>
+          <mat-select [(ngModel)]="selectedValue" name="grp">
+            <mat-option (click)="showProj()" value="projects">Project</mat-option>
+            <mat-option (click)="showSkills()" value="skills">Skills</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <!-- <button (click)="clearFilter()" class="clear">✕</button> -->
+      </div>
+    </div>
+    <div class="content">
+      <div class="names" *ngIf="isProj">
+        <mat-tab-group>
+          <mat-tab *ngFor="let project of locProjects" label="{{ project }}">
+            <!-- <div class="title-container" (click)="toggleTeamMembers(project)">
+              <label class="Title">{{ project }}</label>
+              <span class="toggle-icon">{{ expandedProject === project ? '-' : '+' }}</span>
+            </div>
+            <div class="team-container" *ngIf="expandedProject === project"> -->
+              <div class="team-container" >
+
+              <div class="team-member" *ngFor="let member of getMembersForProject(project)">
+                <div class="member-card">
+                  <div class="card-front">
+                    <img [src]="member.profilePicture" alt="{{ member.name }}">
+                    <div class="memDetails">
+                      <label>{{ member.name }}</label>
+                      <label >{{ member.email }}</label>
+                      <label>{{ member.position }}</label>
+                    </div>
+                  </div>
+                  <div class="card-back">
+                    <ul>
+                      <li *ngFor="let skill of member.skills">{{ skill }}</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </mat-tab>
+        </mat-tab-group>
+      </div>
+      <div class="skills" *ngIf="isSkills">
+        <div>
+          <div class="header">
+            <label class="Title">Team Skills</label>
+          </div>
+          <div class="skills-container">
+            <mat-tab-group>
+              <mat-tab *ngFor="let skill of skills" label="{{ skill }}">
+                <!-- <div class="skill-box" (click)="filterBySkill(skill)">
+                  <label>{{ skill }}</label>
+                </div> -->
+                <div class="names1">
+                  <div class="team-container">
+                    <!-- Loop through filteredMembers to display team members -->
+                    <div class="team-member" *ngFor="let member of filterBySkill(skill)">
+                      <div class="member-card">
+                        <div class="card-front">
+                          <img [src]="member.profilePicture" alt="{{ member.name }}">
+                          <div class="memDetails">
+                            <label>{{ member.name }}</label>
+                            <label>{{ member.email }}</label>
+                            <label>{{ member.position }}</label>
+                          </div>
+                     
+                        </div>
+                        <div class="card-back">
+                          <ul>
+                            <li *ngFor="let skill of member.skills">{{ skill }}</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </mat-tab>
+            </mat-tab-group>
+          </div>
+        </div>
+        
+        <!-- <button (click)="clearFilter()" class="clear">Clear</button> -->
+      </div>
+    </div>
+  </div>
+  

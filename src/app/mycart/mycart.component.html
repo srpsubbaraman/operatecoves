@@ -1,0 +1,249 @@
+<div class="main">
+ 
+    <div class="headback" >
+        <div>
+        <i class="fa fa-arrow-left" aria-hidden="true" id="back" routerLink="/EstimationPortal" routerLinkActive="router-link-active">  </i>   
+        <label class="heading" id="back" routerLink="/EstimationPortal" routerLinkActive="router-link-active">
+            My Cart
+        </label>
+       
+        </div>
+        
+        <!-- <div>
+            <i class="fas fa-archive" title="My Quote" routerLink="/Myquote" routerLinkActive="router-link-active"></i>
+        </div> -->
+    </div>
+     
+     
+     
+    <mat-sidenav-container class="sidenav-container" style="width: 100%;">
+     
+        <mat-sidenav #sidenav mode="side" opened>
+          <mat-nav-list>
+            <a mat-list-item (click)="showAbap()" [class.selected-tab]="isAbap">ABAP</a>
+            <!-- <a mat-list-item (click)="showPipo()" [class.selected-tab]="isPipo">PIPO</a> -->
+            <!-- <a mat-list-item (click)="showBasis()" [class.selected-tab]="isBasis">Basis</a> -->
+          </mat-nav-list>
+        </mat-sidenav>
+     
+        <mat-sidenav-content class="main-container">
+          <div *ngIf="this.isAbap">
+            <!-- <mat-tab class="tab" label="ABAP"> -->
+                <mat-sidenav-container class="sidenav-container">
+                 
+                      <mat-tab-group  flex="1" vertical (selectedTabChange)="tabChange($event)">
+                        <mat-tab class="tab" label="Change Request">
+                      <!-- <a mat-list-item (click)="showChangeRequest()"  [class.selected-tab]="isChangeRequest" class="basic">Change request</a> -->
+                      <div class="space">
+                   
+                        <div class="shoppingCartInfo" id="shoppingcartid">
+                            <table id="lineItems" name="lineItems">
+                            <tbody>
+                                <tr>
+                                    <th class="crTitle" colspan="11">Change Request Details</th>
+                                </tr>
+                                <tr id="crDetailsContainer">
+                                    <th class="crTh">Delete Row</th>
+                                    <th class="crTh">Client ID</th>
+                                    <th class="crTh">Request Type</th>
+                                    <th class="crTh">Object Type</th>
+                                    <th class="crTh">Object Complexity</th>
+                                    <th class="crTh">Development Category</th>
+                                    <th class="crTh">Is Configuration Involved</th>
+                                    <th class="crTh">Testing Type</th>
+                                    <th class="crTh">QA Test Required</th>
+                                    <th class="crTh">Regression Test Required</th>          
+                                    <th class="crTh">Regression TC Qualification</th>
+                                </tr>      
+                            </tbody>
+                            </table>
+                            </div>
+       
+                            <button class="button" id="reqQuoteCR" name="reqQuote" (click)="reqQuote()">Request Quote</button>
+       
+       
+       
+                            
+                       
+                    </div>
+                      </mat-tab>
+                      <mat-tab class="tab" label="Incident" onclick="resetVisibility()">
+                      <!-- <a mat-list-item (click)="showIncident()"  [class.selected-tab]="isIncident" class="basic">Incident</a> -->
+                      <div class="space">
+               
+                           
+                        <div class="shoppingCartInfo1" id="shoppingcartid1" >
+                           
+                            <table id="incLineItems" name="incLineItems">
+                                <tbody>
+                            <tr>
+                                <th class="incTitle" colspan="10">Incident Details</th>
+                            </tr>
+                                <tr id="incDetailsContainer1">
+               
+                                    <th class="incTh">Delete Row</th>
+                                    <th class="incTh">Client ID</th>
+                                    <th class="incTh">Request Type</th>
+                                    <th class="incTh">Defect Category</th>
+                                    <th class="incTh">Dev. Required</th>
+                                    <th class="incTh">Priority</th>
+                                    <th class="incTh">Testing Type</th>
+                                    <th class="incTh">QA Test Required</th>
+                                    <th class="incTh">Regression Test Required</th>
+                                    <th class="incTh">Regression TC Qualification</th>
+                                </tr>
+       
+                            </tbody>
+               
+                            </table>
+                        </div>
+       
+                        <button class="button" id="reqQuoteInc" name="reqQuote" (click)="reqQuote_inc()">Request Quote</button>
+       
+                        </div>
+     
+                      </mat-tab>  
+                     </mat-tab-group>
+                     
+           
+                  <!-- <mat-sidenav-content> -->
+                    <!-- <div *ngIf="this.isChangeRequest"  class="bordered-div">                
+                         <div class="space">
+                   
+                        <div class="shoppingCartInfo" id="shoppingcartid">
+                            <table id="lineItems" name="lineItems">
+                            <tbody>
+                                <tr>
+                                    <th class="crTitle" colspan="11">Change Request Details</th>
+                                </tr>
+                                <tr id="crDetailsContainer">
+                                    <th class="crTh">Delete Row</th>
+                                    <th class="crTh">Client ID</th>
+                                    <th class="crTh">Request Type</th>
+                                    <th class="crTh">Object Type</th>
+                                    <th class="crTh">Object Complexity</th>
+                                    <th class="crTh">Development Category</th>
+                                    <th class="crTh">Is Configuration Involved</th>
+                                    <th class="crTh">Testing Type</th>
+                                    <th class="crTh">QA Test Required</th>
+                                    <th class="crTh">Regression Test Required</th>          
+                                    <th class="crTh">Regression TC Qualification</th>
+                                </tr>        
+                            </tbody>
+                            </table>
+                            </div>
+       
+                            <button class="button" id="reqQuoteCR" name="reqQuote" onclick="reqQuote()">Request Quote</button>
+       
+       
+       
+                         
+                       
+                    </div>
+       
+       
+                    </div> -->
+                       
+                    <!-- <div *ngIf="this.isIncident" class="bordered-div">
+       
+                        <div class="space">
+               
+                           
+                        <div class="shoppingCartInfo1" id="shoppingcartid1" >
+                           
+                            <table id="incLineItems" name="incLineItems">
+                                <tbody>
+                            <tr>
+                                <th class="incTitle" colspan="10">Incident Details</th>
+                            </tr>
+                                <tr id="incDetailsContainer1">
+               
+                                    <th class="incTh">Delete Row</th>
+                                    <th class="incTh">Client ID</th>
+                                    <th class="incTh">Request Type</th>
+                                    <th class="incTh">Defect Category</th>
+                                    <th class="incTh">Dev. Required</th>
+                                    <th class="incTh">Priority</th>
+                                    <th class="incTh">Testing Type</th>
+                                    <th class="incTh">QA Test Required</th>
+                                    <th class="incTh">Regression Test Required</th>
+                                    <th class="incTh">Regression TC Qualification</th>
+                                </tr>
+       
+                            </tbody>
+               
+                            </table>
+                        </div>
+       
+                        <button class="button" id="reqQuoteInc" name="reqQuote" onclick="reqQuote1()">Request Quote</button>
+       
+                        </div>
+                           
+                    </div> -->
+                  <!-- </mat-sidenav-content> -->
+                </mat-sidenav-container>
+              <!-- </mat-tab> -->
+          </div>
+          <div *ngIf="isPipo">
+            <!-- <mat-tab  class="tab"  label="PIPO"> -->
+                <!-- <mat-sidenav-container class="sidenav-container"> -->
+                    <!-- <mat-sidenav-content> -->
+                     
+                      <div>
+                        <div class="shoppingCartInfo" id="shoppingcartid">
+       
+       
+       
+                            <table id="lineItems" name="lineItems">
+                                <tr>
+                                    <th class="incTitle" colspan="10">PIPO Details</th>
+                                </tr>
+                                <tr>
+                                    <th rowspan="2">SR no</th>
+                                    <th colspan="2" class="topleft">Simple</th>
+                                    <th colspan="2">Medium</th>
+                                    <th colspan="2">Complex </th>
+                                    <th colspan="2">Very Complex</th>
+                                    <th rowspan="2">Delete Row</th>
+                                </tr>
+                                <tr >
+                                    <th >No of Object Types</th>
+                                    <th >Total Effort</th>
+                                    <th >No of Object Types</th>
+                                    <th >Total Effort</th>
+                                    <th >No of Object Types</th>
+                                    <th >Total Effort</th>
+                                    <th >No of Object Types</th>
+                                    <th >Total Effort</th>
+                                   
+                                 
+                                </tr>
+
+
+                         
+                               
+                            </table>
+       
+                        </div>
+                        <button class="button" id="reqQuotePIPO" name="reqQuote" onclick="reqQuote2()">Request Quote</button>
+       
+                      </div>
+                         
+                    <!-- </mat-sidenav-content> -->
+                  <!-- </mat-sidenav-container> -->
+              <!-- </mat-tab> -->
+       
+     
+          </div>
+          <div *ngIf="isBasis">
+            <!-- <mat-tab  class="tab" label="BASIS"> -->
+     
+     
+            <!-- </mat-tab> -->
+          </div>
+        </mat-sidenav-content>
+      </mat-sidenav-container>
+     
+     
+    </div>
+    <app-footer></app-footer>

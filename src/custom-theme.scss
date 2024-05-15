@@ -1,0 +1,169 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single CSS file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+
+$mat-green-palette: (
+  50: #e8f5e9,
+  100: #c8e6c9,
+  200: #a5d6a7,
+  300: #81c784,
+  400: #66bb6a,
+  500: #86BC25,
+  600: #43a047,
+  700: #388e3c,
+  800: #2e7d32,
+  900: #1b5e20,
+  contrast: (
+    50: rgba(black, 0.87),
+    100: rgba(black, 0.87),
+    200: rgba(black, 0.87),
+    300: white,
+    400: white,
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+  ),
+);
+$primary-color: $mat-green-palette;
+$accent-color: mat.$green-palette;
+$warn-color: mat.$red-palette;
+
+// Define primary palette for green theme
+$OperateCOvE-primary: mat.define-palette($primary-color, 500);
+
+// Define accent palette for green theme
+$OperateCOvE-accent: mat.define-palette($accent-color, 500); // Use a valid hue like 500
+
+// The warn palette is optional (defaults to red) for green theme
+$OperateCOvE-warn: mat.define-palette($warn-color);
+
+// Create light theme object for green theme
+$OperateCOvE-light-theme: mat.define-light-theme((
+  color: (
+    primary: $OperateCOvE-primary,
+    accent: $OperateCOvE-accent,
+    warn: $OperateCOvE-warn,
+  )
+));
+
+// Create dark theme object for green theme
+$OperateCOvE-dark-theme: mat.define-dark-theme((
+  color: (
+    primary: $OperateCOvE-primary,
+    accent: $OperateCOvE-accent,
+    warn: $OperateCOvE-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app for green theme
+@include mat.all-component-themes($OperateCOvE-light-theme);
+
+.dark-theme {
+  // Include dark theme for green theme
+  @include mat.all-component-themes($OperateCOvE-dark-theme);
+}
+
+// Define the purple palette
+$mat-purple-palette: (
+  50: #f3e5f5,
+  100: #e1bee7,
+  200: #ce93d8,
+  300: #ba68c8,
+  400: #ab47bc,
+  500: #9c27b0,
+  600: #8e24aa,
+  700: #7b1fa2,
+  800: #6a1b9a,
+  900: #4a148c,
+  contrast: (
+    50: rgba(black, 0.87),
+    100: rgba(black, 0.87),
+    200: rgba(black, 0.87),
+    300: white,
+    400: white,
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+  ),
+);
+
+// Use the purple palette as the primary color for purple theme
+$primary-color-purple: $mat-purple-palette;
+
+// Define primary palette for purple theme
+$OperateCOvE-primary-purple: mat.define-palette($primary-color-purple, 500);
+
+// Define accent palette for purple theme
+$OperateCOvE-accent-purple: mat.define-palette($mat-purple-palette, 500); // Use a valid hue like 500
+
+// The warn palette is optional (defaults to red) for purple theme
+$OperateCOvE-warn-purple: mat.define-palette($mat-purple-palette);
+
+// Create light theme object for purple theme
+$OperateCOvE-light-theme-purple: mat.define-dark-theme((
+  color: (
+    primary:  $OperateCOvE-primary,
+    accent: $OperateCOvE-accent-purple,
+    warn: $OperateCOvE-warn-purple,
+  )
+));
+
+// Include theme styles for core and each component used in your app for purple theme
+.purple-theme {
+  @include mat.all-component-themes($OperateCOvE-light-theme-purple);
+}
+
+// Create light theme object for purple theme
+$OperateCOvE-dark-theme-green: mat.define-dark-theme((
+  color: (
+    primary:  $OperateCOvE-primary,
+    accent: $OperateCOvE-accent-purple,
+    warn: $OperateCOvE-warn-purple,
+  )
+));
+
+// Include theme styles for core and each component used in your app for purple theme
+.green-theme {
+  @include mat.all-component-themes($OperateCOvE-dark-theme-green);
+}
+
+// Create light theme object for purple theme
+$OperateCOvE-light-theme-pale: mat.define-light-theme((
+  color: (
+    primary:  $OperateCOvE-primary,
+    accent: $OperateCOvE-accent-purple,
+    warn: $OperateCOvE-warn-purple,
+  )
+));
+
+// Include theme styles for core and each component used in your app for purple theme
+.pale-theme {
+  @include mat.all-component-themes($OperateCOvE-light-theme-pale);
+}
+// Create light theme object for purple theme
+$OperateCOvE-light-theme-blue: mat.define-light-theme((
+  color: (
+    primary:  $OperateCOvE-primary,
+    accent: $OperateCOvE-accent-purple,
+    warn: $OperateCOvE-warn-purple,
+  )
+));
+
+// Include theme styles for core and each component used in your app for purple theme
+.red-theme {
+  @include mat.all-component-themes($OperateCOvE-light-theme-blue);
+}

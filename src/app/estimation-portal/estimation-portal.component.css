@@ -1,0 +1,334 @@
+/* g-deep .mat-mdc-tab-group.mat-success .mat-mdc-tab:mot(.mat-mdc-tab-disabled).mdc-tav--active .mdc-tab_text-label,
+::ng-deep .mat-mdc-tab-group.mat-success .mat-mdc-tab:link(.mat-mdc-tab-disabled).mdc-tav--active .mdc-tab_text-label,
+::ng-deep .mat-mdc-tab-group.mat-success .mat-mdc-tab:not(.mat-mdc-tab-disabled).mdc-tav--active .mdc-tab_text-label,
+::ng-deep .mat-mdc-tab-group.mat-success .mat-mdc-tab-link:not(.mat-mdc-tab-disabled).mdc-tav--active .mdc-tab_text-label{
+color : #86BC25 !important;
+} */
+
+
+   /* styles.scss (or styles.css) */
+::ng-deep .abap-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align buttons to the start of the container */
+  }
+  
+  ::ng-deep .abap-content button {
+    font-size: 11px;
+    width: 100px;
+    margin-top: 20px;
+    margin-left: 20px; /* Add margin between buttons */
+    background-color: #86BC25;
+    border-width: 1px; /* Set the border width */
+  border-color: #000000; /* Set the border color */
+  color: #FFFFFF;
+  font-family: "Open Sans";
+  }
+  
+
+  .abap-content {
+    display: flex;
+    width: 50px;
+  }
+  
+  .button-container {
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px; /* Adjust the margin as needed */
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    padding-left: 100px;
+  }
+  
+  .container > div {
+    margin-bottom: 10px; /* Adjust the margin as needed */
+  }
+  
+
+
+
+/* 
+
+  .sidenav-container {
+    height: 100%;
+  }
+ 
+  mat-sidenav {
+    width: 200px;
+  }
+ 
+  mat-nav-list {
+    padding: 8px;
+  }
+
+
+  .header {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .header h1 {
+    margin: 0;
+  }
+   */
+
+
+   .sidenav-container {
+    /* height: 80.5vh; */
+    /* background-color: red; */
+    height: fit-content;
+    display: flex;
+
+    box-shadow: inset 0px -11px 21px rgba(0, 0, 0, 0.2);
+
+    /* margin-top: 1.5rem; */
+    /* box-shadow: inset 0px -11px 21px rgba(0, 0, 0, 0.2); */
+   
+}
+/* .imgcpi{
+  height: 20px;
+  width: 20px;
+}
+.imgbasis{
+  width: 20px;
+}
+.imgabap{
+  height: 20px;
+  width: 20px;
+} */
+.img{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 2;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  /* mix-blend-mode: color-burn; */
+}
+.header {
+  display: flex; /* Use flexbox */
+  align-items: center; /* Vertically center the contents */
+  padding: 10px;
+  height: 40px;
+  font-size: medium;
+  margin-top: 3rem;
+  width: 100%;
+  white-space: nowrap;
+  
+  
+}
+/* .nav-list-name {
+  flex-grow: 1; 
+  text-align: center; 
+} */
+
+.header-icons {
+  display: flex;
+  align-items: center;
+  margin-left: auto; /* Aligns the icons to the right */
+}
+.mat-sidenav {
+    width: 150px;
+    
+    
+    
+}
+
+.mat-sidenav-content {
+    flex: 1;
+    /* padding-bottom: 2.5%; */
+    
+    
+    
+}
+
+
+mat-nav-list a.selected-tab {
+  color: white; /* Text color */
+  background-color: #AFD0A1; /* Background color */
+  border-radius: 5px; /* Border radius */
+  padding: 2px; /* Adjust padding */
+  border-bottom: 1px solid #ccc; /* Add bottom border */
+ 
+}
+
+
+
+  
+  
+
+
+
+.rotate180 {
+  transform: rotate(180deg);
+  transition: transform 0.3s ease-in-out;
+}
+/* Add your component-specific styles here */
+
+mat-sidenav {
+  transition: width 0.3s ease; /* Add a smooth transition effect for width */
+}
+
+/* Angular animation definition for width transition */
+@keyframes sidenav-width-open {
+  from {
+    width: 0;
+  }
+  to {
+    width: 200px;
+  }
+}
+
+@keyframes sidenav-width-closed {
+  from {
+    width: 200px;
+  }
+  to {
+    width: 0;
+  }
+}
+
+/* Apply the animation based on sidenav state */
+mat-sidenav {
+  animation-fill-mode: forwards;
+}
+
+/* Define the animation states */
+mat-sidenav.open {
+  animation: sidenav-width-open 0.3s ease;
+}
+
+mat-sidenav.closed {
+  animation: sidenav-width-closed 0.3s ease;
+}
+
+/* Angular animation definition for content margin transition */
+@keyframes content-margin-open {
+  from {
+    margin-left: 200px;
+  }
+  to {
+    margin-left: 0;
+  }
+}
+
+@keyframes content-margin-closed {
+  from {
+    margin-left: 0;
+  }
+  to {
+    margin-left: 0;
+  }
+}
+
+
+
+.count{
+  background-color:#86BC25;
+  position: relative;
+  height: 100%;
+  text-align: center;
+  border-radius: 1em;
+  color: #FFFFFF;
+  padding: 5%;
+  padding-inline: 15%;
+  font-size: 12px;
+ 
+}
+
+.mat-sidenav-content {
+  background-color:#F3F9FD;
+  /* border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;  */
+ 
+
+
+}
+
+
+
+
+
+
+
+.foot{
+  position: relative;
+  top: 7.15%;
+  background-color: #F3F9FD;
+}
+
+
+
+
+/* Loader  */
+.loader-container {
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.letter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 300%;
+  font-weight: bolder;
+  animation: fade-in 0.5s alternate infinite ease-in-out;
+}
+
+.dot {
+  position: absolute;
+  top: calc(50% + 6px); 
+  left: calc(50% + 20px); 
+  width: 10px;
+  height: 10px;
+  background-color: green;
+  border-radius: 50%;
+  animation: fade-in 0.5s alternate infinite ease-in-out;
+  /* animation: jump 0.5s alternate infinite ease-in-out; */
+}
+
+/* @keyframes jump {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+} */
+
+
+
+@keyframes fade-in{
+0%{
+  opacity:0;
+}  
+25%{
+  opacity:0.25;
+}  
+50%{
+  opacity:0.5;
+}  
+100%{
+  opacity:1;
+}  
+
+}

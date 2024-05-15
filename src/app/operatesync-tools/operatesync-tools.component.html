@@ -1,0 +1,307 @@
+<div class="loader-container" *ngIf="loading">
+  <div>
+    <span class="letter">D</span>
+    <span class="dot"></span>
+  </div>
+</div>
+
+<div class="content" *ngIf="!loading">
+  <title>Tools</title>
+<div class="container">
+  <div class="title-bar">
+    <h1>OperateSync Tools</h1>
+  </div>
+  <div class="tool-buttons">
+    <button (click)="setActiveCategory('service-management')" [class.active]="activeCategory === 'service-management'"
+      [class.clicked]="activeCategory === 'service-management'">Service Management</button>
+    <button (click)="setActiveCategory('release-management')" [class.active]="activeCategory === 'release-management'"
+      [class.clicked]="activeCategory === 'release-management'">Release Management</button>
+    <button (click)="setActiveCategory('source-code-version-control')"
+      [class.active]="activeCategory === 'source-code-version-control'"
+      [class.clicked]="activeCategory === 'source-code-version-control'">Source Code Version Control</button>
+    <button (click)="setActiveCategory('continuous-integration')"
+      [class.active]="activeCategory === 'continuous-integration'"
+      [class.clicked]="activeCategory === 'continuous-integration'">Continuous Integration</button>
+    <button (click)="setActiveCategory('code-quality')" [class.active]="activeCategory === 'code-quality'"
+      [class.clicked]="activeCategory === 'code-quality'">Code Quality</button>
+    <button (click)="setActiveCategory('test-automation')" [class.active]="activeCategory === 'test-automation'"
+      [class.clicked]="activeCategory === 'test-automation'">Test Automation</button>
+    <button (click)="setActiveCategory('continuous-monitoring')"
+      [class.active]="activeCategory === 'continuous-monitoring'"
+      [class.clicked]="activeCategory === 'continuous-monitoring'">Continuous Monitoring</button>
+  </div>
+  <div class="grid-row">
+    <!-- First Column -->
+    <div class="category-column" style="margin-top: 2%;" *ngIf="activeCategory === 'service-management'">
+      <div class="category-card">
+      <div class="category">
+        <!-- <div class="tool-icon-container">
+          <i class="fas fa-tools tool-icon" style="color: #FF5733;"></i>
+        </div> -->
+        <div class="category-font">
+          Service Management</div>
+      </div>
+      
+        <div class="card-content">
+          <ul class="tool-cards">
+            <li class="tool-card">             
+               <!-- <a href="https://www2.deloitte.com/uk/en/legal/about-deloitte.html"target="_blank"style="text-decoration: none; color: inherit;"> -->
+              <i class="fab fa-servicestack" style="color: #FF5733;"></i>  ServiceNow
+              <div class="tool-content"  [@fadeInOut]>
+                ServiceNow is a cloud computing platform that helps companies manage digital workflows for enterprise
+                operations.
+              </div>
+              <!-- </a> -->
+            </li>
+            <li class="tool-card">
+              <!-- <a href="https://www2.deloitte.com/uk/en/legal/about-deloitte.html"target="_blank"style="text-decoration: none; color: inherit;"> -->
+              <i class="fas fa-wrench" style="color: #FF5733;"></i> Remedy
+              <div class="tool-content"  [@fadeInOut]>
+                Remedy is a service management tool used for incident management, problem management, and change
+                management.
+              </div>
+              <!-- </a> -->
+            </li>
+            <li class="tool-card">
+              <!-- <a href="https://www2.deloitte.com/uk/en/legal/about-deloitte.html"target="_blank"style="text-decoration: none; color: inherit;"> -->
+              <i class="fas fa-tools" style="color: #FF5733;"></i> ZOHO ManageEngine 
+              <div class="tool-content"  [@fadeInOut]>
+                Manage Engine is an IT management software used for network management, helpdesk management, and IT
+                asset management.
+              </div>
+            <!-- </a> -->
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- Second Column -->
+    <div class="category-column" style="margin-top: 2%;" *ngIf="activeCategory === 'release-management'" >
+      
+      
+      <div class="category-card">
+      <div class="category">
+        <!-- <div class="tool-icon-container">
+         
+          <i class="fas fa-tools tool-icon" style="color: #FFC300;"></i>
+        </div> -->
+        <div class="category-font">
+          Release Management</div>
+      </div>
+        <div class="card-content">
+          <ul class="tool-cards">
+            <li class="tool-card">
+              <i class="fab fa-servicestack" style="color: #FFC300;"></i>  Jira
+              <div class="tool-content" [@fadeInOut]>
+                ServiceNow is a cloud computing platform that helps companies manage digital workflows for enterprise
+                operations.
+              </div>
+            </li>
+            <li class="tool-card">
+              <i class="fas fa-wrench" style="color: #FFC300;"></i> Azure Devops
+              <div class="tool-content" [@fadeInOut]>
+                Remedy is a service management tool used for incident management, problem management, and change
+                management.
+              </div>
+            </li>
+            <li class="tool-card">
+              <i class="fas fa-tools" style="color: #FFC300;"></i>  SAP Cloud ALM
+              <div class="tool-content" [@fadeInOut]>
+                Manage Engine is an IT management software used for network management, helpdesk management, and IT
+                asset management.
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+ 
+
+    <!-- Third Column -->
+    <div class="category-column" style="margin-top: 2%;" *ngIf="activeCategory === 'source-code-version-control'">
+
+      <div class="category-card">
+      <div class="category">
+        <!-- <div class="tool-icon-container">
+          <i class="fas fa-tools tool-icon" style="color: #3498DB;"></i>
+        </div> -->
+        <div class="category-font" >
+          Source Code Version Control</div>
+
+      </div>
+        <div class="card-content">
+          <ul class="tool-cards">
+            <li class="tool-card">
+              <i class="fab fa-git-alt" style="color: #3498DB;"></i>  ABAPGIT
+              <div class="tool-content" [@fadeInOut]>
+                ABAPGIT is a Git client for the ABAP environment, allowing version control for ABAP code.
+              </div>
+            </li>
+            <li class="tool-card">
+              <i class="fab fa-github" style="color: #3498DB;"></i> GITHUB
+              <div class="tool-content"[@fadeInOut]>
+                GitHub is a web-based platform for version control using Git, used for hosting and collaborating on
+                software development projects.
+              </div>
+            </li>
+            <li class="tool-card">
+              <i class="fab fa-bitbucket" style="color: #3498DB;"></i>   BITBUCKET
+              <div class="tool-content" [@fadeInOut]>
+                Bitbucket is a web-based version control repository hosting service, offering support for Git and
+                Mercurial.
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- Fourth Column -->
+    
+    <div class="category-column" style="margin-top: 2%;" *ngIf="activeCategory === 'continuous-integration'">
+     
+      <div class="category-card">
+      <div class="category">
+        <!-- <div class="tool-icon-container">
+          <i class="fas fa-tools tool-icon" style="color: #27AE60;"></i>
+        </div> -->
+        <div class="category-font">
+          Continuous Integration</div>
+      </div>
+        <div class="card-content">
+          <ul class="tool-cards" >
+            <li class="tool-card"  >
+              <i class="fab fa-sap" style="color: #27AE60;"></i>   SAP SOLMAN (ChARM)  
+              <div class="tool-content" [@fadeInOut]>
+                SAP Solution Manager (Change Request Management) is a tool used for managing changes in SAP systems,
+                ensuring smooth implementation and operation of changes.
+              </div>
+            </li>
+            <li class="tool-card">
+              <i class="fab fa-jenkins" style="color: #27AE60;"></i>   Jenkins
+              <div class="tool-content" [@fadeInOut]>
+                Jenkins is an open-source automation server used for building, testing, and deploying software.
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+ 
+
+    <!-- Fifth Column -->
+    <div class="category-column" style="margin-top: 2%;" *ngIf="activeCategory === 'code-quality'">
+      
+      <div class="category-card">
+      <div class="category">
+        
+        <div class="category-font">
+          Code Quality</div>
+      </div>
+        <div class="card-content">
+          <ul class="tool-cards">
+            <li class="tool-card">
+              <i class="fab fa-sonarqube" style="color: #9B59B6;"></i>   SonarCloud / SonarQube
+              <div class="tool-content" [@fadeInOut] >
+                SonarCloud/SonarQube is a platform for continuous inspection of code quality.
+              </div>
+            </li>
+            <li class="tool-card">
+              <i class="fas fa-search" style="color: #9B59B6;"></i>   ATC / Code Inspector
+              <div class="tool-content" [@fadeInOut] >
+                ATC (ABAP Test Cockpit) / Code Inspector is a tool for checking and improving the quality of ABAP code
+                in SAP systems.
+              </div>
+            </li>
+            <li class="tool-card">
+              <i class="fas fa-bug" style="color: #9B59B6;"></i>   HP UFT
+              <div class="tool-content"[@fadeInOut] >
+                HP Unified Functional Testing (UFT) is a tool for functional and regression test automation, primarily
+                used for GUI applications.
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- Sixth Column -->
+    <div class="category-column" style="margin-top: 2%;" *ngIf="activeCategory === 'test-automation'">
+      
+      <div class="category-card">
+      <div class="category">
+       
+        <div class="category-font">
+          Test Automation</div>
+      </div>
+        <div class="card-content">
+          <ul class="tool-cards">
+            <li class="tool-card">
+              <i class="fas fa-flask" style="color: #8E44AD;"></i>   TotalTestware
+              <div class="tool-content" [@fadeInOut] >
+                TotalTestware is a test automation solution for SAP systems.
+              </div>
+            </li>
+            <li class="tool-card">
+              <i class="fas fa-vial" style="color: #8E44AD;"></i>   Tricentis Tosca
+              <div class="tool-content" [@fadeInOut] >
+                Tricentis Tosca is a continuous testing platform used for functional and regression test automation.
+              </div>
+            </li>
+            <!-- <li class="tool-card">
+              <i class="fas fa-server" style="color: #8E44AD;"></i>   Nagios
+              <div class="tool-content"[@fadeInOut] >
+                Nagios is a monitoring and alerting system used for monitoring IT infrastructure, networks, and servers.
+              </div>
+            </li>
+            <li class="tool-card">
+              <i class="fab fa-splunk" style="color: #8E44AD;"></i>   Splunk
+              <div class="tool-content"[@fadeInOut] >
+                Splunk is a platform for searching, monitoring, and analyzing machine-generated data, including logs and
+                events.
+              </div>
+            </li> -->
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Seventh Column -->
+    <div class="category-column" style="margin-top: 2%;" *ngIf="activeCategory === 'continuous-monitoring'">
+      
+      <div class="category-card">
+      <div class="category">
+        
+        <div class="category-font">
+          Continuous Monitoring</div>
+      </div>
+        <div class="card-content">
+          <ul class="tool-cards">
+            <li class="tool-card">
+              <i class="fab fa-sap" style="color: #34495E;"></i>   SAP SOLMAN (OCC/BPM)
+              <div class="tool-content"[@fadeInOut] >
+                SAP Solution Manager (Operations Control Center/Business Process Monitoring) is a tool for monitoring
+                SAP systems and business processes.
+              </div>
+            </li>
+            <li class="tool-card">
+              <i class="fas fa-server" style="color: #34495E;"></i>   Nagios
+              <div class="tool-content"[@fadeInOut] >
+                Nagios is a monitoring and alerting system used for monitoring IT infrastructure, networks, and servers.
+              </div>
+            </li>
+            <li class="tool-card">
+              <i class="fab fa-splunk" style="color: #34495E;"></i>   Splunk
+              <div class="tool-content"[@fadeInOut] >
+                Splunk is a platform for searching, monitoring, and analyzing machine-generated data, including logs and
+                events.
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+<app-footer></app-footer>

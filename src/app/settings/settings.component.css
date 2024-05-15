@@ -1,0 +1,87 @@
+.header{
+    /* background-color: #26890D; */
+    color: #26890D;
+    height: fit-content;
+    font-size:20px;
+    padding: 0.5rem;
+    margin-top: 1rem;
+    padding-left: 1.5rem;
+    
+}
+
+*{
+  font-family: "Open Sans";
+}
+
+
+hr{
+  margin-top: 0rem;
+}
+.sidenav-container{
+  height: 7rem;
+}
+
+.a{
+    padding-bottom: 10px;
+}
+.top{
+    margin: 1.5rem;
+    font-size: 24px;
+    width: 60.9rem;
+}
+.top2{
+  margin: 3.5rem;
+  font-size: 24px;
+  width:  61rem;
+}
+.top1{
+    margin: 1rem;
+    font-size: 20px;
+}
+.google_translate_container{
+  margin-left: 5%;
+}
+.button{
+  color:#26890D;
+}
+
+/* mat-nav-list {
+    padding: 0;
+    list-style-type: none;
+  }
+  
+  mat-list-item {
+    cursor: pointer;
+    padding: 8px;
+    width: 41rem;
+    border-bottom: 1px solid #ccc;
+    transition: background-color 0.3s;
+  }
+  
+  mat-list-item:hover {
+    background-color: #f0f0f0;
+  }
+   */
+
+   mat-list-item {
+    cursor: pointer;
+    padding: 8px;
+    width: 39.9rem;
+    border-bottom: 1px solid #ccc;
+    transition: background-color 0.3s;
+  }
+  
+  mat-list-item:hover {
+    background-color: #919191;
+  }
+  
+  mat-list-item.selected {
+    background-color: #919191;
+  }
+  
+  mat-list-item span {
+    color: green;
+    margin-left: 5px; /* Adjust the margin as needed */
+  }
+  
+  

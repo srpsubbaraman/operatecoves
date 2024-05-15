@@ -1,0 +1,360 @@
+<div class="msgarea">
+
+  
+
+    <div class="middleRight">
+        <div class="shoppingCartInfo">
+            <!-- <div class="title-info">
+                Get Estimate
+
+            </div> -->
+            <fieldset>
+
+
+
+
+                <div>
+
+                    <div class="getQuote" id="getQuote" name="getQuote">
+                        <!-- <label style="margin-left: -0.1%;">Quote ID: </label> -->
+                        <!-- <input id="quoteID" name="quoteIDTxtBox" type="number" /> -->
+                        <label style="margin: 0.35rem;">Quote ID:
+                        </label>
+                        <input id="outputQuote" name="outputQuote" type="text" />
+                        <button class="button" id="getQuoteButton" name="getQuoteBtn" ng-click="getQuote()"
+                            (click)="getQuote()">Get Quote</button>
+
+
+                            <!-- <button class="excel" *ngIf="functionsExecuted" (click)="exportToExcel()">Export to Excel</button>
+                            <Button class="pdf"  *ngIf="functionsExecuted"  (click)="openDialog(); $event.preventDefault()">Export to PDF</Button> -->
+
+                        <br>
+
+
+
+
+                        <!-- Jira    -->
+                        <!-- <div *ngIf="showJiraFields">
+                            <table style="table-layout: fixed; border: 0px">
+                                <tr style="border: 0px">
+                                    <td style="border: 1.5px solid; font-size: 10px;font-weight: bold;">ALM</td>
+                                    <td style="border: 1.5px solid; font-size: 10px;font-weight: bold;">Jira Project</td>
+                                    <td style="border: 1.5px solid; font-size: 10px;font-weight: bold;">Jira Issue Type
+                                    </td>
+                                    <td style="border: 1.5px solid; font-size: 10px;font-weight: bold;">Jira Issue Status
+                                    </td>
+                                    <td style="border: 1.5px solid; font-size: 10px;font-weight: bold;">Jira Issue ID</td>
+                                    <td style="border: 1.5px solid; font-size: 10px;font-weight: bold;">Jira Issue Title
+                                    </td>
+                                </tr>
+                                <tr style="border: 1.5px">
+                                    <td style="border: 1.5px solid;">
+                                        <select class="select1" [(ngModel)]="selectedALM"
+                                            (change)="onALMSelectionChange()">
+                                            <option value="Jira">Jira</option>
+                                            <option value="ADO">ADO</option>
+                                        </select>
+
+                                    </td>
+                                    <td style="border: 1.5px solid;"><select class="select1" id="jiraProject"
+                                            onchange="loadIssueTypes()"></select></td>
+
+                                    <td style="border: 1.5px solid;"><select class="select1" id="jiraIssueType"
+                                            onchange="loadIssues()"></select></td>
+                                    <td style="border: 1.5px solid;">
+                                        <select class="select1" style="font-size: 10px;" id="jiraIssueStatus"
+                                            onchange="loadIssues()">
+                                            <option selected value="NEW">NEW</option>
+                                            <option value="ANALYZE">ANALYZE</option>
+                                            <option value="READY TO WORK">READY TO WORK</option>
+                                            <option value="IN DEV">IN DEV</option>
+                                            <option value="IN QA">IN QA</option>
+                                            <option value="UAT">UAT</option>
+                                            <option value="READY TO RELEASE">READY TO RELEASE</option>
+                                            <option value="DONE">DONE</option>
+                                            <option value="ON HOLD">HOLD</option>
+                                        </select>
+                                    </td>
+                                    <td style="border: 1.5px solid;"><select class="select1" id="jiraIssueID"
+                                            onchange="loadSummary()"></select></td>
+                                    <td id="jiraIssueSummary"
+                                        style="border: 1.5px solid;font-size: 10px;font-style: open-sans;text-overflow: ellipsis;">
+                                    </td>
+                                </tr>
+                            </table>
+
+                        </div> -->
+
+
+                        <!-- ADO -->
+
+                        <!-- <div *ngIf="showADOFields">
+                            <table style="table-layout: fixed; border: 0px">
+                                <tr style="border: 0px">
+                                    <td style="border: 1.5px solid; font-size: 10px;font-weight: bold;">ALM</td>
+                                    <td style="border: 1.5px solid; font-size: 10px;font-weight: bold;">ADO Project</td>
+                                    <td style="border: 1.5px solid; font-size: 10px;font-weight: bold;">ADO WorkItem</td>
+                                    <td style="border: 1.5px solid; font-size: 10px;font-weight: bold;">ADO WorkItem
+                                        Status</td>
+                                    <td style="border: 1.5px solid; font-size: 10px;font-weight: bold;">ADO WorkItem ID
+                                    </td>
+                                    <td style="border: 1.5px solid; font-size: 10px;font-weight: bold;">ADO WorkItem
+                                        Summary</td>
+                                </tr>
+                                <tr style="border: 1.5px">
+                                    <td style="border: 1.5px solid;">
+
+
+                                        <select class="select1" [(ngModel)]="selectedALM"
+                                            (change)="onALMSelectionChange()">
+                                            <option value="Jira">Jira</option>
+                                            <option value="ADO">ADO</option>
+                                        </select>
+                                    </td>
+
+                                    <td style="border: 1.5px solid;"><select class="select1" id="adoProject"
+                                            onchange="loadWorkItemTypes()"></select></td>
+                                    <td style="border: 1.5px solid;"><select class="select1"
+                                            id="adoWorkItemType"></select></td>
+                                    <td style="border: 1.5px solid;">
+                                        <select class="select1" style="font-size: 10px;" id="adoWorkItemStatus"
+                                            onchange="loadWorkItems()">
+                                            <option selected value="NEW">NEW</option>
+                                            <option value="ANALYZE">ANALYZE</option>
+                                            <option value="READY TO WORK">READY TO WORK</option>
+                                            <option value="IN DEV">IN DEV</option>
+                                            <option value="IN QA">IN QA</option>
+                                            <option value="UAT">UAT</option>
+                                            <option value="READY TO RELEASE">READY TO RELEASE</option>
+                                            <option value="DONE">DONE</option>
+                                            <option value="ON HOLD">ON HOLD</option>
+                                        </select>
+                                    </td>
+                                    <td style="border: 1.5px solid;"><select class="select" id="adoWorkItemID"
+                                            onchange="loadAdoSummary()"></select></td>
+                                    <td id="adoWorkItemSummary"
+                                        style="border: 1.5px solid;font-size: 8px;font-style: italic;text-overflow: ellipsis;">
+                                    </td>
+                                </tr>
+                            </table>
+
+                        </div> -->
+                        <!-- <BR> -->
+
+                        <BR>
+                        <div class="quoteDetails" id="quoteDetails" name="quoteDetails">
+                           <label >Client Name:
+                            </label>
+                            <input disabled id="clientName" name="clientName" type="text" />
+                            <label>Project Name: </label>
+                            <input disabled id="projectName" name="projectName" type="text" />
+
+                            <!-- &nbsp;&nbsp;&nbsp;<label id="sf" style="margin-left: 2.3%;">Stabilization Factor:</label>
+                            <input disabled id="stableFactor" style="margin-left:1%;" name="stableFactor" size="10"
+                                type="text" />
+                            &nbsp;&nbsp;&nbsp;<label id="tf">Testing Factor:
+                                <input disabled id="testingFactor" name="testingFactor" size="10" type="text" /></label>
+                            <BR><BR> -->
+                            <!-- <label style="margin: 0.35rem;">Quote ID:
+                            </label> -->
+                            <!-- <input id="outputQuote" name="outputQuote" type="text" /> -->
+                            <label>Created Date: </label>
+                            <input disabled id="quoteCrtDate" name="quoteCrtDate" type="text" />
+                     
+                            &nbsp;&nbsp;&nbsp;<label id="te" >Total Effort (hrs):</label>
+                            <input disabled id="totalEffort"  name="totalEffort" size="10"
+                                type="text" />
+                            <br>
+
+
+                          
+                           
+                            
+
+                            <!-- <a href="#" (click)="openDialogWithTableContent(); $event.preventDefault()">View Details</a> -->
+
+                            <!-- <button class="button" style="margin-left:2%;" id="linkToJira" name="linkToJira"
+                                onclick="addToJira()">Link to Jira Story
+                            </button> -->
+                            <BR>
+                                <div *ngIf="showJiraFields">
+                                    <table style="table-layout: fixed; border: 0px">
+                                        <tbody>
+                                        <tr style="border: 0px">
+                                            <td style="border: 1.5px solid; font-size: 10px;font-weight: bold;">ALM</td>
+                                            <td style="border: 1.5px solid; font-size: 10px;font-weight: bold;">Jira Project</td>
+                                            <td style="border: 1.5px solid; font-size: 10px;font-weight: bold;">Jira Issue Type
+                                            </td>
+                                            <td style="border: 1.5px solid; font-size: 10px;font-weight: bold;">Jira Issue Status
+                                            </td>
+                                            <td style="border: 1.5px solid; font-size: 10px;font-weight: bold;">Jira Issue ID</td>
+                                            <td style="border: 1.5px solid; font-size: 10px;font-weight: bold;">Jira Issue Title
+                                            </td>
+                                        </tr>
+                                        <tr style="border: 1.5px">
+                                            <td style="border: 1.5px solid;">
+                                                <select class="select1" [(ngModel)]="selectedALM"
+                                                    (change)="onALMSelectionChange()">
+                                                    <option value="Jira">Jira</option>
+                                                    <option value="ADO">ADO</option>
+                                                </select>
+        
+                                            </td>
+                                            <td style="border: 1.5px solid;"><select class="select1" id="jiraProject"
+                                                    (change)="loadIssueTypes()" ></select></td>
+        
+                                            <td style="border: 1.5px solid;"><select class="select1" id="jiraIssueType"
+                                                    (change)="loadIssues()"></select></td>
+                                            <td style="border: 1.5px solid;">
+                                                <select class="select1" style="font-size: 10px;" id="jiraIssueStatus"
+                                                    (change)="loadIssues()">
+                                                    <option selected value="NEW">NEW</option>
+                                                    <option value="ANALYZE">ANALYZE</option>
+                                                    <option value="IN PROGRESS">In PROGRESS</option>
+                                                    <option value="READY TO WORK">READY TO WORK</option>
+                                                    <option value="IN DEV">IN DEV</option>
+                                                    <option value="IN QA">IN QA</option>
+                                                    <option value="UAT">UAT</option>
+                                                    <option value="READY TO RELEASE">READY TO RELEASE</option>
+                                                    <option value="DONE">DONE</option>
+                                                    <option value="ON HOLD">HOLD</option>
+                                                    <option value="CANCELLED">CANCELLED</option>
+                                                </select>
+                                            </td>
+                                            <td style="border: 1.5px solid;"><select class="select1" id="jiraIssueID"
+                                                    (change)="loadSummary()"></select></td>
+                                            <td id="jiraIssueSummary"
+                                                style="border: 1.5px solid;font-size: 10px;font-style: open-sans;text-overflow: ellipsis;">
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                    </table>
+                                    <BR>
+                                    <button class="button"  id="linkToJira" name="linkToJira"
+                                    (click)="addToJira()">Link to Jira
+                                </button>
+                                </div>
+        
+        
+                                <!-- ADO -->
+        
+                                <div *ngIf="showADOFields">
+                                    <table style="table-layout: fixed; border: 0px">
+                                        <tr style="border: 0px">
+                                            <td style="border: 1.5px solid; font-size: 10px;font-weight: bold;">ALM</td>
+                                            <td style="border: 1.5px solid; font-size: 10px;font-weight: bold;">ADO Project</td>
+                                            <td style="border: 1.5px solid; font-size: 10px;font-weight: bold;">ADO WorkItem</td>
+                                            <td style="border: 1.5px solid; font-size: 10px;font-weight: bold;">ADO WorkItem
+                                                Status</td>
+                                            <td style="border: 1.5px solid; font-size: 10px;font-weight: bold;">ADO WorkItem ID
+                                            </td>
+                                            <td style="border: 1.5px solid; font-size: 10px;font-weight: bold;">ADO WorkItem
+                                                Summary</td>
+                                        </tr>
+                                        <tr style="border: 1.5px">
+                                            <td style="border: 1.5px solid;">
+        
+        
+                                                <select class="select1" [(ngModel)]="selectedALM"
+                                                    (change)="onALMSelectionChange()">
+                                                    <option value="Jira">Jira</option>
+                                                    <option value="ADO">ADO</option>
+                                                </select>
+                                            </td>
+        
+                                            <td style="border: 1.5px solid;"><select class="select1" id="adoProject"
+                                                    (change)="loadWorkItemTypes()"></select></td>
+                                            <td style="border: 1.5px solid;"><select class="select1"
+                                                    id="adoWorkItemType" (change)="loadWorkItemStates()"></select></td>
+                                            <td style="border: 1.5px solid;">
+                                                <select class="select1" style="font-size: 10px;" id="adoWorkItemStatus"
+                                                    (change)="loadWorkItems()">
+                                                </select>
+                                            </td>
+                                            <td style="border: 1.5px solid;"><select class="select" id="adoWorkItemID"
+                                                    (change)="loadAdoSummary()"></select></td>
+                                            <td id="adoWorkItemSummary"
+                                                style="border: 1.5px solid;font-size: 8px;font-style: italic;text-overflow: ellipsis;">
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <BR>
+                                    <button class="button" style="margin-left:2%;" id="linkToJira" name="linkToJira"
+                                    (click)="addToJira()">Link to ADO
+                                </button>
+                                </div>
+                                <!-- <br> -->
+                                <!-- <BR><BR> -->
+                                    <!-- <button class="button" style="margin-left:2%;" id="linkToJira" name="linkToJira"
+                                (click)="addToJira()">Link to ADO
+                            </button> -->
+                            <!-- <BR> -->
+                                
+
+
+                                <button class="excel" *ngIf="functionsExecuted" (click)="exportToExcel()">Export to Excel</button>
+                                <Button class="pdf"  *ngIf="functionsExecuted"  (click)="openDialog(); $event.preventDefault()">Export to PDF</Button>
+
+                            <!-- Table  -->
+                            <button class="collapsible" (click)="toggleBox1()">
+                                <i id="toggleIcon" class="fas"
+                                    [ngClass]="{'fa-plus': !showTable, 'fa-minus': showTable}"></i>
+                            </button>
+
+                            <div class="box1" id="estimationCartDetails" [hidden]="!showTable">
+
+                                <!-- <label class="note">Note: Click on the highlighted content for getting estimation breakup <span class="required">*</span></label> -->
+                                <div class="lineItemDetails" class="table1" id="lineItemDetails" name="lineItemDetails">
+                                    <table id="lineItems"  name="lineItems" >
+                                        <tr>
+                                            <th colspan="8">Work Package Categorization</th>
+                                            <th>Item Effort</th>
+                                            <th colspan="2">Functional Efforts</th>
+                                            <th colspan="2">Tech. Efforts</th>
+                                            <th colspan="4">FAT Efforts</th>
+                                            <th colspan="4">QA Efforts</th>
+                                            <th colspan="4">RT Efforts</th>
+                                        </tr>
+                                        <tr >
+                                            <th class="td1">Object Type</th>
+                                            <th class="td1">Complexity</th>
+                                            <th class="td1">Development Category</th>
+                                            <th class="td1">Configuration</th>
+                                            <th class="td1">Test Type</th>
+                                            <th class="td1">QA</th>
+                                            <th class="td1">RT</th>
+                                            <th class="td1">RT TC Qualifier</th>
+                                            <th class="td1">Item Effort</th>
+                                            <th class="td1">Functional Config</th>
+                                            <th class="td1">Functional Effort</th>
+                                            <th class="td1">Coding</th>
+                                            <th class="td1">Other Tech. Effort</th>
+                                            <th class="td1">Test Description</th>
+                                            <th class="td1">Test Execution</th>
+                                            <th class="td1">Script Design</th>
+                                            <th class="td1">Script Execution</th>
+                                            <th class="td1">Test Description</th>
+                                            <th class="td1">Test Execution</th>
+                                            <th class="td1">Script Design</th>
+                                            <th class="td1">Script Execution</th>
+                                            <th class="td1">Test Description</th>
+                                            <th class="td1">Test Execution</th>
+                                            <th class="td1">Script Design</th>
+                                            <th class="td1">Script Execution</th>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+            </fieldset>
+        </div>
+    </div>
+</div>
+<!-- <app-footer></app-footer> -->

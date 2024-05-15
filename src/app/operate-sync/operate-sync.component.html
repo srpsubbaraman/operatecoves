@@ -1,0 +1,331 @@
+<div class="loader-container" *ngIf="loading">
+  <div>
+    <span class="letter">D</span>
+    <span class="dot"></span>
+  </div>
+</div>
+
+<div class="content" *ngIf="!loading">
+  
+
+  <!-- new -->
+  <title>OperateCOvE</title>
+  <div class="faq-container">
+    
+    <!-- <div class="About" #aboutSection id="aboutSection">
+        <p> Deloitte's Assets and Innovation team plays a pivotal role in our mission. This team harnesses the power of emerging technologies and proprietary assets to enhance our capabilities further. By leveraging advanced analytics and other innovative tools, we empower our clients to unlock new opportunities and navigate complex challenges with confidence. With the Assets and Innovation team by our side, Deloitte continues to set the standard for delivering unparalleled solutions that drive real business impact in today's dynamic landscape of digital transformation.</p>
+    </div> -->
+    
+    <div class="parallax-section" (window:scroll)="onWindowScroll()">
+      <!-- <div class="parallax" >    </div> -->
+      <!-- <div class="operatesyncheaderimg" loading="lazy"> -->
+        <div class="operatesyncheaderimg" >
+
+      </div>
+
+        <!-- <h2 id="text">Operate Asset and Innovation</h2> -->
+        <h2  class="intro">Introducing OperateSync<sup>TM</sup></h2>
+        <div class="parallax-content">
+          
+          <!-- <div class="About" #aboutSection id="aboutSection"> -->
+          <p class="information"> Our cutting-edge framework adheres to new age digitization concepts, leveraging technology as a foundational layer to revolutionize Enterprise IT Application Management Services for our clients. OperateSync<sup>TM</sup> integrates advanced service engineering principles, employing cohesive toolsets for ITSM, release planning, DevOps, CI/CD/CT, and CM. With pre-configured rulesets, scripts, and dashboards, it offers a differentiated delivery methodology. Furthermore, our framework boasts a technology-agnostic service and estimation catalogue, extending models to effectively address evolving customer requirements.</p>
+        <!-- </div> -->
+    </div>
+    </div>  
+
+
+    
+
+
+
+
+    <div id="brochure">
+        <div class="bro">
+          <!-- <div>
+            <img [src]="qrCodeData" alt="QR Code" (click)="onQRCodeScanned($event)">
+          </div> -->
+            <p>Learn more about OperateSync<sup>TM</sup> by clicking <a href="#" (click)="downloadPDF($event)" download>here</a>.</p>
+            <!-- <p>Learn more about OperateSync by clicking <a href="#" download>here</a>.</p> -->
+
+            <!-- <button (click)="downloadPdf()">Download PDF</button>
+            
+            <button (click)="downloadFile()">Download File</button> -->
+        </div>
+    </div> 
+
+    <h2  class="introvideo">Process Overview</h2>
+   <div class="videoo" #videosection id="videosection">
+
+    <!-- <h2  class="intro">Introducing OperateSync</h2> -->
+
+
+
+    <mat-sidenav-container class="sidenav-container" style="z-index: 0;">
+        <mat-sidenav #sidenav mode="side" opened="true" [style.width.px]="isSidenavOpened ? '200' : '50'" [@sidenavWidth]="isSidenavOpened ? 'open' : 'closed'" (openedChange)="onSidenavToggle($event)" [style.margin-top.px]="isSidenavOpened ? '0' : '3rem'">
+          <div class ="sidebarheading">
+            <p>Quick Links</p>
+          </div>  
+          <mat-nav-list >
+              <li><a [routerLink]="['/OperatesyncTools']">OperateSync<sup>TM</sup> Tools</a></li>
+              <li><a [routerLink]="['/EstimationPortal']">Estimation Portal</a></li>
+              <li><a [routerLink]="['/Groomingportal']">Grooming Portal</a></li>
+              <li><a [routerLink]="['/Vision']">Our Vision</a></li>
+              <li><a href="#" >Our Leaders</a></li>
+              <li><a href="#" >Latest Updates</a></li>
+              <li><a href="#" >News Letter</a></li>
+              
+  
+            </mat-nav-list>
+           
+          </mat-sidenav>
+
+
+        <mat-sidenav-content [@contentAnimation]="isSidenavOpened ? 'open' : 'closed'" [style.margin-left.px]="isSidenavOpened ? 0 : 50">
+            <!-- <div class="background-image"></div> -->
+ 
+          
+            <div class="video-section">
+              <ngb-carousel [interval]="50000" style="z-index: 0; position: relative;">
+                <ng-template ngbSlide>
+                  <!-- <div class="background-image"></div> -->
+                  <video class="video" width="600" height="180" controls>
+                    <source src="/assets/videos/OS_Intro_FemaleVoice.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                </ng-template>
+          
+                <ng-template ngbSlide>
+                  <div class="background-image1"></div>
+                  <video class="video" width="600" height="260" controls>
+                    <source src="/assets/videos/OperateSync_CR_Process.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                </ng-template>
+              </ngb-carousel>
+            </div>
+
+
+
+
+
+
+
+        </mat-sidenav-content>
+      </mat-sidenav-container>
+        </div>
+  
+        <h2  class="processmodel">OperateSync<sup>TM</sup> Model</h2>
+  <div id ="operatesyncmodel">
+    <span id ="model1">
+      <span id="model1heading">
+    <p>Best Practices</p>
+      </span>
+      <p>
+        Establishing a best standard across teams and projects ensures consistency, streamlined workflows, and enhanced quality assurance, benefiting team members and contributing to project success.
+      </p>
+    </span>
+    <span id ="model2">
+      <span id="model2heading">
+    <p>Implementation</p>
+      </span>
+      <p>We research and implement enhancements based on stakeholder feedback for relevance and effectiveness, fostering openness and driving positive outcomes. This approach helps us maintain a competitive edge and achieve success in the market by exceeding expectations.
+      </p>
+    </span>
+    <span id ="model3">
+      <span id="model3heading">
+        <p>Support</p>
+      </span>
+      <p>
+        We offer extensive technical support, including user management, configurations, and troubleshooting, ensuring smooth operations and enhanced productivity. Clear communication and documentation empower teams to resolve issues efficiently, fostering a seamless working environment for exceptional results.
+      </p>
+    </span>
+    
+    </div>
+    <h2  class="ourclients">Our Clients</h2>
+<div class="company" #companyLogo>
+    <div>
+        <!-- <label class="compdel">
+            Our Clients
+        </label> -->
+
+
+
+        <!-- <div class="client-list">
+            <div class="client-item" *ngFor="let client of clients">
+              <img [src]="client.logoUrl" alt="Client Logo" class="client-logo">
+              <p class="client-name">{{ client.name }}</p>
+            </div>
+          </div> -->
+
+
+
+          
+
+
+<!-- <div id="clientCarousel" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <div *ngFor="let client of clients; let i = index" [class.active]="i === 0" class="carousel-item">
+        <div class="client-item">
+          <img [src]="client.logoUrl" alt="Client Logo" class="client-logo">
+          <p class="client-name">{{ client.name }}</p>
+        </div>
+      </div>
+    </div>
+    <a class="carousel-control-prev" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next"  role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div> -->
+  
+  
+
+<!-- <ngb-carousel #carousel>
+    <ng-template ngbSlide *ngFor="let client of clients">
+      <div class="client-item">
+        <img [src]="client.logoUrl" alt="Client Logo" class="client-logo">
+        <p class="client-name">{{ client.name }}</p>
+      </div>
+    </ng-template>
+  </ngb-carousel> -->
+  
+  <!-- <button (click)="prevSlide()">Previous</button>
+  <button (click)="nextSlide()">Next</button> -->
+
+
+
+  <!-- <ngb-carousel #carousel>
+    <ng-template ngbSlide >
+      <div class="">
+        <img src ="/assets/images/logo/ALEMBIC.png">
+        <img src ="/assets/images/logo/CHEMCO.png">
+        <img src ="/assets/images/logo/GRIDCO.png">
+        <img src ="/assets/images/logo/GULF_OIL.png">
+      </div>
+    </ng-template>
+    <ng-template ngbSlide >
+      <div class="">
+        <img src ="/assets/images/logo/kaisha_lifesciences.png">
+        <img src ="/assets/images/logo/kaisha_packaging.png">
+        <img src ="src/assets/images/logo/TABREED.png">
+        <img src ="/assets/images/logo/kaisha_sovereign.png">
+       
+      </div>
+    </ng-template>
+ 
+  <ng-template ngbSlide >
+    <div class="">
+      <img src ="/assets/images/logo/MANILDRA.png">
+      <img src ="/assets/images/logo/NEOM.png">
+      <img src ="/assets/images/logo/NESCO.png">
+      <img src ="src/assets/images/logo/PRIVI.png">
+     
+    </div>
+  </ng-template>
+ 
+<ng-template ngbSlide >
+  <div class="">
+    <img src ="src/assets/images/logo/SBI.png">
+    <img src ="src/assets/images/logo/STG.png">
+    <img src="src/assets/images/logo/VKL.png">
+  </div>
+</ng-template>
+  </ngb-carousel> -->
+
+
+  
+  
+
+
+
+  <div class="logos">
+    <div class="logos-slide">
+        <div ngbSlide *ngFor="let client of clients">
+            <div class="client-item">
+              <img [src]="client.logoUrl" alt="Client Logo">
+              <p class="client-name">{{ client.name }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="logos-slide">
+        <div ngbSlide *ngFor="let client of clients">
+            <div class="client-item">
+              <img [src]="client.logoUrl" alt="Client Logo">
+              <p class="client-name">{{ client.name }}</p>
+            </div>
+        </div>    
+    </div>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+    </div>
+
+</div>
+
+
+
+
+
+
+   
+    <!-- <div class="footer">
+        <h3 class="connect">Let's connect</h3>
+        <div class="content-container">
+            <div class="fcont">
+                <span (click)="redirectToEmail()" class="gettouch"> <a>Get in touch</a></span><br>
+                    
+                    <span (click)="openTeamProfileInNewWindow()" class="click">
+                        <a>Team profile</a>
+                      </span><br>
+                <span (click)="redirectToMemories()" class="click"
+                    target="_blank"><a>Memories</a>
+                </span><br>
+            <span></span>
+            </div>
+    
+    
+            <div class="smedia">
+                <p class="follow"> Follow us </p>
+                <div class="icons">
+    
+                    <a href="https://www.facebook.com/deloitte" class="social-icon" target="_blank"><i
+                            class="fab fa-facebook-f"></i></a>
+    
+                    <a href="https://www.linkedin.com/company/deloitte" class="social-icon" target="_blank"><i
+                            class="fab fa-linkedin-in"></i></a>
+    
+                    <a href="https://twitter.com/deloitte" class="social-icon" target="_blank"><i
+                            class="fab fa-twitter"></i></a>
+    
+                    <a href="https://www.youtube.com/user/deloittevideo/featured" class="social-icon" target="_blank"><i
+                            class="fab fa-youtube"></i></a>
+    
+                </div>
+            </div>
+            </div>
+    </div> -->
+    </div>
+
+  </div>
+    <app-footer></app-footer>

@@ -1,0 +1,101 @@
+<nav>
+  <div class="nav">
+    <div class="brand">
+      <!-- <div routerLink="/Home" routerLinkActive="router-link-active"> -->
+      <img src="./assets/images/DeloitteLogo_Black_BG.png" class="logofull" />
+      <img src="./assets/images/Deloitte-Symbol.png" class="logoicon" />
+      <label class="logo"><b>&nbsp;|&nbsp;&nbsp;&nbsp;Operate COvE</b></label>
+      <!-- <label class="logo"><b>&nbsp;|&nbsp;&nbsp;&nbsp;OperateCOvE<sup >TM</sup></b></label> -->
+       <!-- </div>   -->
+      <!-- Toggle button icon between ☰ and ✕ -->
+      <button class="hamburger" (click)="toggleMenu()">
+        {{ isMenuOpen ? '✕' : '☰' }}
+      </button>
+
+      <div class="menu-items1" [ngClass]="{'show': isMenuOpen}">
+        <a [routerLink]="['/Home']" >Home</a>
+        <a [routerLink]="['/OperateSync']">OperateSync<sup>TM</sup></a>
+        <a  [routerLink]="['/About']">About Us</a>
+        <a [routerLink]="['/FAQ']">FAQ</a>
+        <a (click)="serviceMenu()">Services</a>
+        <a [routerLink]="['/Settings']">Settings</a>
+        <a [routerLink]="['/Login']">Sign Out</a>
+      </div>
+
+      <div class="home-items" [ngClass]="{'show': isHomeItemsOpen && !isMenuOpen, 'hide': !isHomeItemsOpen || isMenuOpen}">
+        <a (click)="scrollToAbout()" style="cursor: pointer;">
+          <p class="font">Introduction</p>
+        </a>
+        <!-- <a (click)="scrollTovideo()" style="cursor: pointer;">
+          <p class="font">Overview</p>
+        </a> -->
+        <a (click)="scrollToDashboard()" style="cursor: pointer;">
+          <p class="font">Dashboard</p>
+        </a>
+        <a (click)="scrollToTouch()" style="cursor: pointer;">
+          <p class="font">Get in touch</p>
+        </a>
+        <a (click)="scrollToMemories()" style="cursor: pointer;">
+          <p class="font">Memories</p>
+        </a>
+       
+
+      </div>
+
+      <div class="service-items" [ngClass]="{'show': isServiceItemsOpen, 'hide': !isServiceItemsOpen}">
+        
+        <a (click)="estimate()" style="cursor: pointer;">
+          <p class="font">Estimation Portal</p>
+        </a>
+        <a (click)="grooming()" style="cursor: pointer;">
+          <p class="font">Grooming Portal</p>
+        </a><a (click)="team()" style="cursor: pointer;">
+          <p class="font">Team Profile</p>
+
+        <!-- </a><a (click)="scrollToTouch()" style="cursor: pointer;">
+          <p class="font">Pre</p> -->
+        </a>
+       
+
+      </div>
+      <div class="profile-items" [ngClass]="{'show': isProfileItemsOpen, 'hide': !isProfileItemsOpen}">
+        <a (click)="setting()" style="cursor: pointer;">
+          <p class="font">Settings</p>
+        </a>
+        <a style="cursor: pointer;" (click)="signout()">
+           <p class="font">Sign-Out</p></a> <!--routerLink="./LoginComponent" -->
+      </div>
+
+
+      <div class="menu-items"  >
+        <a  [routerLink]="['/Home']" (click)="homeMenu()">
+          Home
+          <i class="fas fa-chevron-down" *ngIf="!isMenuOpen1"
+            style="margin-left: 7px; font-size: 14px; padding-left: 7px;"></i>
+          <i class="fas fa-chevron-up" *ngIf="isMenuOpen1"
+            style="margin-left: 7px; font-size: 14px; padding-left: 7px;"></i>
+        </a>
+
+        <div class="typewriter">
+        <a  [routerLink]="['/OperateSync']" class="highlighter">
+          <!-- <p class="font">Operate Sync</p> -->
+          OperateSync<sup>TM</sup>
+        </a>
+        </div>
+        <a  [routerLink]="['/About']">About&nbsp;Us</a>
+        <a  [routerLink]="['/FAQ']" >FAQ</a>
+       
+        <a  (click)="serviceMenu()">Services
+          <i class="fas fa-chevron-down" *ngIf="!isMenuOpen2"
+            style="margin-left: 7px; font-size: 14px; padding-left: 7px;"></i>
+          <i class="fas fa-chevron-up" *ngIf="isMenuOpen2"
+            style="margin-left: 7px; font-size: 14px; padding-left: 7px;"></i>
+        </a>
+
+
+        <a  (click)="profileMenu()"><i class="fa-solid fa-user"> 
+         </i></a>
+      </div>
+    </div>
+  </div>
+</nav>

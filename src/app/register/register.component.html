@@ -1,0 +1,118 @@
+<div class="msgarea">
+    <div class="msgleft">
+        <div class="title-info">
+            <b>Welcome to the Estimation Portal</b>
+            <!-- <p>Create your account to explore Estimation & Grooming features</p> -->
+
+
+            <br><br>
+            <section class = "login-register" >
+                <!-- <div class="login-card">
+                    <div class="login-form" style="width: 7em;">
+                        Register Here
+                       // Hover here For Registration
+                     </div>
+                     <div class="card-back">
+                    <form ng-submit="register()" class="login">
+
+                    <div class="username">
+                        <label for="username" class="email">Username/Email:</label>
+                        <input type="text" id="username" ng-model="formData.username" placeholder="Enter your email" required>
+                    </div>
+
+                    <div class="password">
+                        <label for="password" class="pass">Password:</label>
+                        <input type="password" id="password" ng-model="formData.password" ng-change="checkPasswordStrength() " placeholder="Create a password" required>
+                        </div>
+                        <div style="font-size: 0.7em ;margin-left: 0.6rem;"  ng-bind="passwordStrength" ng-class="passwordStrengthColorClass" > {{ passwordStrength }}</div>
+                               
+                  //  </div>
+
+                    <div class="password">
+                        <label for="confirm-password" class="pass">Confirm Password:</label>
+                        <input type="password" id="confirm-password" ng-model="formData.confirmPassword" ng-change="checkPasswordMatch()" placeholder="Confirm your password" required>
+                        </div>
+                        <div style="font-size: 0.7em;margin-left: 0.6rem;">
+                        <div ng-show="passwordMatch">Passwords match</div>
+                        <div ng-show="!passwordMatch">Passwords did not match</div>
+                        </div>
+                  //  </div>    
+                    
+                        <button type="submit" class="submit">Register</button>
+                    </form>
+                    </div>
+                </div> -->
+
+
+
+                <div class="login-card">
+                  
+                    
+                    <form ng-submit="register()"  style="margin-top: 1rem;">
+                    
+                    <div class="email">
+                        <label for="email" class="mail">Email:
+                        <input type="text" id="email" ng-model="formData.email" placeholder="Enter your email" required>
+                        </label>
+                    </div>    
+
+                    <div class="username">
+                        <label for="username" class="name">Username:
+                        <input type="text" id="username" ng-model="formData.username" placeholder="Enter your username" required>
+                        </label>
+                    </div>
+
+                    <div class="roles">
+                        <label for="roles" class="role">Roles:
+                        <select ng-model="selectedRole" id="roles" required>
+                            <option value="">Select a role</option>
+                            <option ng-repeat="role in roles" value="{{ role }}">{{ role }}</option>
+                          </select> 
+                        </label>
+                    </div>
+
+                    <div class="password">
+                        <label for="password" class="pass">Password:    
+                        <input type="password" id="password" ng-model="formData.password" ng-change="checkPasswordStrength() " placeholder="Create a password" required>
+                        </label>
+                        </div>
+                        <div style="font-size: 14px;margin-left: 0.6rem;"  ng-bind="passwordStrength" ng-class="passwordStrengthColorClass" > {{ passwordStrength }}</div>
+                               
+                    <!-- </div> -->
+
+                    <div class="password">
+                        <label for="confirm-password" class="pass">Confirm Password:
+                        <input type="password" id="confirm-password" ng-model="formData.confirmPassword" ng-change="checkPasswordMatch()" placeholder="Confirm your password" required>
+                        </label>
+                    </div>
+
+                        <div style="font-size: 14px;margin-left: 0.6rem;"  ng-bind="passwordMatch" ng-class="passwordMatchColorClass" > {{ passwordMatch }}</div>
+
+                        <!-- <div style="font-size: 14px;margin-left:0rem;">
+                        <div ng-show="passwordMatch">Passwords match</div>
+                        <div ng-show="!passwordMatch">Passwords did not match</div>
+                        </div> -->
+                    <!-- </div>     -->
+                    
+                        <button type="submit" class="submit">Register</button>
+                    </form>
+                    
+                </div>
+            </section>
+
+
+  
+        </div>
+    </div>
+    <div class="msgright">
+        <div class="rightimg">
+        <img src="resources/images/Login_Image.png"/>
+        </div>
+        
+    <div >
+        <label class="dis">
+            Deloitte refers to one or more of Deloitte Touche Tohmatsu Limited, a UK private company limited by guarantee ("DTTL"), its network of member firms, and their related entities. DTTL and each of its member firms are legally separate and independent entities. DTTL (also referred to as "Deloitte Global") does not provide services to users. This tool is called Estimation tool for external use by Deloitte members developed and exclusively owned by Deloitte Shared Services India LLP (DSSILLP). The tool can be used by the associates and the clients to get an effort overview of the proposed work. The user shall not copy, reproduce, modify, distribute, or disseminate the tool, nor will the user reverse engineer, decompile, dismantle, or obtain access to the underlying formulae of the tool. © 2023 Deloitte Touche Tohmatsu India LLP.
+        </label>
+    </div>
+    </div>
+</div>

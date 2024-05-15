@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="right">
+        <div class="contain">
+            <h2 class="fade-in">Our Vision</h2>
+            <p class="fade-in">{{ visionStatement }}</p>
+        </div>
+      
+        <div class="contain">
+            <h2 class="fade-in">Our Mission</h2>
+            <p class="fade-in">{{ missionStatement }}</p>
+        </div>
+    
+        <div class="contain">
+        <h3 class="slide-in">Additional Information</h3>
+        <ul class="fade-in">
+            <li> <b>History:</b> {{ history }}</li>
+            <li> <b>Achievements:</b> {{ achievements }} <br> {{ achievements1 }} </li>
+            <li> <b>Customer Testimonials:</b> {{ testimonials }}</li>
+            <li> <b>Social Responsibility:</b> {{ socialResponsibility }}</li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="left">
+      <video class="video" autoplay loop preload="true" onloadedmetadata="this.muted = true">
+        <source src="/assets/videos/vision.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+  <app-footer></app-footer>

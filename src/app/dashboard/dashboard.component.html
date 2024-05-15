@@ -1,0 +1,63 @@
+<div class="container1">
+    
+    <div class="grid-container">
+        <div class="tile-head">
+            <p >Total Estimation Effort</p>
+            
+        </div>
+        <div class="tile1">
+            <p>ABAP</p>
+            <h2 style="font-size: 30px;">{{ abapEstimation }}</h2>
+        </div>
+        <div class="tile2">
+            <p>PI/PO/CPI</p>
+            <h2 style="font-size: 30px;">{{ piPoCpiEstimation }}</h2>
+        </div>
+        <div class="tile3">
+            <p>Basis</p>
+            <h2 style="font-size: 30px;">{{ basisEstimation }}</h2>
+        </div>
+    </div>
+
+    <div class = "down-bar">
+        <div class = "charts">
+    
+    <div class="big-tile">
+        <div class="growth-container">
+            <h1 class="blinking">This Year's Projected Hours <i class="fas fa-chart-line"></i></h1>
+            <mat-form-field appearance="outline" class="year-picker">
+                <mat-select placeholder="Select Year" [(ngModel)]="selectedYear" (ngModelChange)="selectYear($event)">
+                    <mat-option *ngFor="let year of availableYears" [value]="year">{{ year }}</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <h1>Estimation Effort Comparison - {{ selectedYear }} </h1>
+        <canvas #barChartCanvas width="800" height="100"></canvas>
+    </div>
+
+    <div class="recent-activity">
+        <h1 class="blinking">Your Recent Activity</h1>
+        <div class="activity-item">
+            <div class="activity-field1">
+                <span class="content">Client Name<br>Manildra</span>
+            </div>
+            <div class="activity-field2">
+                <span class="content">Project Name<br>Manildra</span>
+            </div>
+            <div class="activity-field3">
+                <span class="content">Estimation<br>ABAP</span>
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+
+<div class="pie-chart">
+    <h3 class="analytics blinking">Analytics - FY'24 </h3> 
+    <canvas #pieChartCanvas width="300" height="300"></canvas>
+</div>
+
+
+</div>
+</div>

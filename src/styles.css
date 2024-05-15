@@ -1,0 +1,139 @@
+/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+/* styles.scss */
+
+
+
+
+/* Customize ng-bootstrap carousel navigation arrows */
+.carousel-control-prev-icon, .carousel-control-next-icon {
+  background-color: transparent;
+  border-radius: 50%;
+}
+.carousel-control-prev-icon:hover, .carousel-control-next-icon:hover {
+  background-color: #000000;
+ 
+}
+
+.estimationbgimage .mat-mdc-tab-list {
+  display: none !important;
+}
+
+
+.main .mat-drawer-content {
+  position: relative;
+  width: -webkit-fill-available;
+  z-index: 1;
+  display: block;
+  height: 100%;
+  overflow: auto;
+  /* background-color: red; */
+}
+
+
+
+
+.carousel-indicators {
+ display: none;
+}
+
+  /* Adjust the top position of the carousel buttons */
+  .carousel-control-prev, .carousel-control-next {
+    /* bottom:20%; You can adjust this value as needed */
+  transition: opacity 0.3s ease; /* Add a smooth transition effect */
+
+  
+}
+
+.video-section .carousel-control-next
+{
+  height: 10%;
+  top: 45%;
+  margin-right: 18%;
+}
+
+
+.video-section .carousel-control-prev
+{
+  height: 10%;
+  top: 45%;
+  /* margin-right: 18%; */
+}
+
+
+.video-section .carousel-control-prev-icon, .carousel-control-next-icon {
+  background-color: #000000;
+  color: #000000;
+  border-radius: 50%;
+ 
+
+
+}
+
+/* Optionally, you can customize the size of the buttons */
+.carousel-control-prev-icon, .carousel-control-next-icon {
+  
+    width: 30px; /* You can adjust this value as needed */
+    height: 30px; /* You can adjust this value as needed */
+  }
+
+  .dark-theme {
+    background-color: #000000;
+    color:  #FFFFFF;
+  }
+  
+  .light-theme {
+    background-color:  #FFFFFF;
+    color: #000000;
+  }
+  .purple-theme {
+    background-color:rgb(71,69,90);
+    color: #FFFFFF;
+  }
+  .green-theme {
+    background-color: #838e81;
+    color: #000;
+}
+.pale-theme {
+  background-color: #e6d8cf;
+  /* background-color: #643f28; */
+  color: #000000;
+}
+.blue-theme {
+  background-color: #e4edf2;
+  /* background-color: #04344e; */
+  color: #000000;
+}
+
+  body {
+    overflow: hidden;
+}
+
+*{
+  font-family: "Open Sans";
+}
+
+
+ 
+
+html, body { height: 100%; }
+body { margin: 0;   font-family: "Open Sans"; }
+
+
+
+html, body { height: 100%; }
+body { margin: 0;   font-family: "Open Sans"; }
+
+
+
+.mat-horizontal-stepper-header-container {
+  white-space: nowrap;
+  display: flex;
+  width: 80%;
+
+  align-items: center;
+}
+
+ /* .menu-items[_ngcontent-ng-c651879140] {
+  display: none !important;
+} */

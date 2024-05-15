@@ -1,0 +1,129 @@
+    /* *{
+        font-family: "Open Sans";
+
+
+    }
+
+    h2 {
+
+        color: #333;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    li {
+        margin-bottom: 10px;
+    }
+
+    strong {
+        font-weight: bold;
+    } */
+
+    /* pre {
+        display: inline;
+        margin: 0;
+        background-color: #f5f5f5;
+        padding: 5px;
+        border: 1px solid #ddd;
+    } */
+
+    body {
+        /* font-family: sans-serif; */
+        margin: 0;
+        padding: 0;
+    }
+
+    *{
+        font-family: "Open Sans";
+     }
+
+    .invoice {
+        width: 102%; /* Adjust width as needed */
+        margin: 25px auto;
+        border: 1px solid #676767;
+        border-radius: 10px;
+        padding: 1%;
+        overflow-y: auto;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2), 0 0 50px rgba(101, 101, 101, 0.1);
+    }
+
+    .invoice h1,
+    .invoice h3 {
+        text-align: center;
+        margin: 0;
+        padding: 0;
+    }
+
+    .billing-info p {
+        margin: 10px 0;
+    }
+
+    .invoice table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+
+    }
+
+    .invoice table th,
+    .invoice table td {
+        padding: 10px;
+        border: 1px solid #ddd;
+        text-align: left;
+        white-space: nowrap; /* Prevent word wrap in table cells */
+
+    }
+
+    .invoice table th {
+        background-color: #eee;
+        font-weight: bold;
+        font-size: 16px; /* Adjust the font size for column headers */
+
+    }
+
+    .invoice table td:nth-child(2),
+    .invoice table td:nth-child(4) {
+        text-align: left;
+
+    }
+
+    table td{
+        font-size: 10px;
+        /* background-color: green; */
+
+    }
+
+    .invoice table td:last-child {
+        text-align: left;
+    }
+
+    .invoice p {
+        margin: 15px 0;
+    }
+
+    .full{
+        width: 90%;
+        margin: 2% auto;
+    }
+    .close {
+        background-color: #D0D0CE;
+        color: #FFFFFF;
+        border: none;
+        padding: 5px 10px;
+        cursor: pointer;
+        position: relative;
+        left: 90%;
+    }
+
+    .total{
+            
+        border-top: dotted;
+        border-bottom: dotted;
+        font-weight: bold;
+    }
+

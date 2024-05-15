@@ -1,0 +1,53 @@
+.photo-section {
+  width: 100%;
+  height: 95vh; /* Ensure full viewport height */
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  background-color:transparent;
+}
+
+.carousel-container {
+  box-shadow: outset 0px 0px 0px 0px #eae7e7;
+  padding-bottom: 10px; /* Add padding for spacing */
+  width: 100%; /* Set the width */
+  height: 85vh;
+  /* background-color: #ffffef; */
+}
+
+.slide-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center; 
+  align-items: center; 
+  margin: 35px 5px 5px 5px;
+}
+*{
+  font-family: "Open Sans";
+}
+
+.pointer1 {
+  font-size: 16px;
+  font-family: "Open Sans";
+  font-weight: bold;
+  /* color: #000; */
+  margin-top: 10px;
+  width:25rem;
+  padding: 10px;
+  padding-left: 100px;
+}
+
+.heading{
+  width:fit-content;
+  font-size: 25px;
+  font-weight: bold;
+  position: relative;
+  margin-left:12px ;  
+  margin-top: 30px;  
+  /* text-decoration: 1px #000000 underline; */
+}
+
+
+
+
+
